@@ -1,0 +1,53 @@
+{
+  "component": "HealthMetricsSidebar",
+  "ownership": "shared-app-shell",
+  "version": 1,
+  "defaultState": "closed",
+  "presentation": "modal-left-drawer",
+  "width": "min(326px, 86vw)",
+  "backdropOpacity": 0.37,
+  "activeItemSource": "current-route",
+  "closeTriggers": [
+    "close-button",
+    "backdrop-tap",
+    "escape-or-mobile-back",
+    "metric-navigation"
+  ],
+  "entries": [
+    {
+      "id": "water",
+      "label": "Nước",
+      "description": "Lượng nước nạp vào",
+      "icon": "droplet"
+    },
+    {
+      "id": "sleep",
+      "label": "Giấc ngủ",
+      "description": "Thời gian & chất lượng",
+      "icon": "moon"
+    },
+    {
+      "id": "heart-rate",
+      "label": "Nhịp tim",
+      "description": "Lần đo & trung bình ngày",
+      "icon": "heart"
+    },
+    {
+      "id": "steps",
+      "label": "Bước chân",
+      "description": "Vận động hằng ngày",
+      "icon": "steps"
+    }
+  ],
+  "assets": [
+    "sidebar-closed.svg",
+    "sidebar-open.svg",
+    "sidebar-active-states.svg"
+  ],
+  "notes": [
+    "design-assets-not-runtime-code",
+    "no-device-connect-state",
+    "no-realtime-monitoring",
+    "no-chalk-frame"
+  ]
+}
