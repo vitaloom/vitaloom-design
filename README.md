@@ -13,6 +13,7 @@ A public collection of UI design references and component specifications for Vit
 ## Feature references
 
 - [Water designs](water/)
+- [Heart Rate screen — two metrics and UI states](heart-rate/README.md)
 
 ## Usage
 
