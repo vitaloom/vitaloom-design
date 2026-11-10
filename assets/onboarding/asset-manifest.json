@@ -1,10 +1,17 @@
 {
-  "status": "original-vector-illustrations-for-visual-review",
-  "type": "transparent-editable-svg",
-  "source": "Original vector paths; not cropped from existing screenshots.",
+  "status": "mixed-transparent-hero-png-and-svg-with-user-approved-replacements",
+  "type": "transparent-raster-png-heroes-and-svg-landscapes",
+  "source": "Original independent illustrations; PNG heroes for screens 002–004 are newly generated, not cropped from screenshots.",
   "canvas": {
-    "width": 390,
-    "height": 570
+    "svgLandscapeViewBox": {
+      "width": 390,
+      "height": 570
+    },
+    "pngHeroPixels": {
+      "width": 1122,
+      "height": 1402
+    },
+    "note": "Hero PNG and SVG scenery have different aspect ratios; position them independently within one responsive illustration stage."
   },
   "screenAssets": [
     {
@@ -16,24 +23,24 @@
     },
     {
       "screenId": "ONB-SCR-002",
-      "hero": "track-hero.svg",
+      "hero": "track-hero.png",
       "landscape": "track-landscape.svg",
       "approvedFullScreenReference": "../../onboarding/02-track-what-matters.webp",
-      "reviewStatus": "PENDING_VISUAL_ACCEPTANCE"
+      "reviewStatus": "APPROVED"
     },
     {
       "screenId": "ONB-SCR-003",
-      "hero": "habits-hero.svg",
+      "hero": "habits-hero.png",
       "landscape": "habits-landscape.svg",
       "approvedFullScreenReference": "../../onboarding/03-build-healthy-habits.webp",
-      "reviewStatus": "PENDING_VISUAL_ACCEPTANCE"
+      "reviewStatus": "APPROVED"
     },
     {
       "screenId": "ONB-SCR-004",
-      "hero": "progress-hero.svg",
+      "hero": "progress-hero.png",
       "landscape": "progress-landscape.svg",
       "approvedFullScreenReference": "../../onboarding/04-see-your-progress.webp",
-      "reviewStatus": "PENDING_VISUAL_ACCEPTANCE"
+      "reviewStatus": "APPROVED"
     }
   ],
   "stackOrder": [
@@ -44,12 +51,13 @@
     "native title text pagination and CTA"
   ],
   "notes": [
-    "All root SVG canvases are transparent.",
-    "Illustration metrics are static visual examples, not runtime health data.",
-    "New illustration style requires visual approval against existing WebP mockups."
+    "SVG landscapes and welcome SVG hero have transparent root canvases; replacement PNG heroes contain an alpha channel.",
+    "Three replacement hero PNGs are user-selected artwork for ONB-SCR-002 to ONB-SCR-004. ONB-SCR-001 welcome SVG remains pending visual approval.",
+    "Illustration metrics are static example labels, not live account health data.",
+    "Keep landscape, hero, UI panel, CTA and native interactive text as separate layers."
   ],
   "referenceCatalog": "../../onboarding/README.md",
   "mappingDocument": "../../onboarding/ASSET_MAPPING.md",
   "optionalSharedDecoration": "../shared/mint-leaf-cluster.svg",
-  "implementationNote": "Pair landscape and hero by screenId, both on common 390x570 illustration stage. Interactive UI comes from app components, not mockup image."
+  "implementationNote": "Within a responsive hero stage, render PNG heroes with contain independently from the SVG landscape; do not assume common aspect ratio or bake app controls into artwork."
 }
