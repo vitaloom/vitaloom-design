@@ -1,0 +1,130 @@
+{
+  "feature": "personal-health-profile",
+  "version": "2026-11-10",
+  "status": "PROPOSED",
+  "assetRoot": ".",
+  "assets": [
+    {
+      "id": "profile-hero-photorealistic",
+      "path": "profile-hero-photorealistic.png",
+      "role": "background/hero",
+      "owner": "personal-health-profile",
+      "format": "png",
+      "naturalSize": [
+        1792,
+        1024
+      ],
+      "status": "USER_SELECTED_VISUAL_DIRECTION"
+    }
+  ],
+  "screenAssets": [
+    {
+      "screenId": "PHP-SCR-001",
+      "screenReference": "../../personal-health-profile/01-profile-setup-basics.png",
+      "layers": [
+        {
+          "assetId": "profile-hero-photorealistic",
+          "role": "background/hero",
+          "path": "profile-hero-photorealistic.png",
+          "order": 10
+        }
+      ],
+      "status": "PENDING_VISUAL_ACCEPTANCE"
+    },
+    {
+      "screenId": "PHP-SCR-002",
+      "screenReference": "../../personal-health-profile/02-profile-setup-lifestyle.png",
+      "layers": [
+        {
+          "assetId": "profile-hero-photorealistic",
+          "role": "background/hero",
+          "path": "profile-hero-photorealistic.png",
+          "order": 10
+        }
+      ],
+      "status": "PENDING_VISUAL_ACCEPTANCE"
+    },
+    {
+      "screenId": "PHP-SCR-003",
+      "screenReference": "../../personal-health-profile/03-setup-validation-error.png",
+      "layers": [
+        {
+          "assetId": "profile-hero-photorealistic",
+          "role": "background/hero",
+          "path": "profile-hero-photorealistic.png",
+          "order": 10
+        }
+      ],
+      "status": "PENDING_VISUAL_ACCEPTANCE"
+    },
+    {
+      "screenId": "PHP-SCR-004",
+      "screenReference": "../../personal-health-profile/04-profile-overview.png",
+      "layers": [
+        {
+          "assetId": "profile-hero-photorealistic",
+          "role": "background/hero",
+          "path": "profile-hero-photorealistic.png",
+          "order": 10
+        }
+      ],
+      "status": "PENDING_VISUAL_ACCEPTANCE"
+    },
+    {
+      "screenId": "PHP-SCR-005",
+      "screenReference": "../../personal-health-profile/05-profile-overview-empty.png",
+      "layers": [
+        {
+          "assetId": "profile-hero-photorealistic",
+          "role": "background/hero",
+          "path": "profile-hero-photorealistic.png",
+          "order": 10
+        }
+      ],
+      "status": "PENDING_VISUAL_ACCEPTANCE"
+    },
+    {
+      "screenId": "PHP-SCR-006",
+      "screenReference": "../../personal-health-profile/06-profile-edit.png",
+      "layers": [],
+      "status": "PENDING_VISUAL_ACCEPTANCE"
+    },
+    {
+      "screenId": "PHP-SCR-007",
+      "screenReference": "../../personal-health-profile/07-edit-partial-save.png",
+      "layers": [],
+      "status": "PENDING_VISUAL_ACCEPTANCE"
+    },
+    {
+      "screenId": "PHP-SCR-008",
+      "screenReference": "../../personal-health-profile/08-concurrent-update.png",
+      "layers": [],
+      "status": "PENDING_VISUAL_ACCEPTANCE"
+    },
+    {
+      "screenId": "PHP-SCR-009",
+      "screenReference": "../../personal-health-profile/09-profile-load-error.png",
+      "layers": [],
+      "status": "PENDING_VISUAL_ACCEPTANCE"
+    },
+    {
+      "screenId": "PHP-SCR-010",
+      "screenReference": "../../personal-health-profile/10-save-unconfirmed.png",
+      "layers": [],
+      "status": "PENDING_VISUAL_ACCEPTANCE"
+    },
+    {
+      "screenId": "PHP-SCR-011",
+      "screenReference": "../../personal-health-profile/11-profile-save-success.png",
+      "layers": [
+        {
+          "assetId": "profile-hero-photorealistic",
+          "role": "background/hero",
+          "path": "profile-hero-photorealistic.png",
+          "order": 10
+        }
+      ],
+      "status": "PENDING_VISUAL_ACCEPTANCE"
+    }
+  ]
+}
