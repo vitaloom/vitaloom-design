@@ -5,6 +5,7 @@ This directory stores **small, reusable visual parts used inside application scr
 ## Folder convention
 
 - [shared/](shared/): brand marks, decorative leaves, common illustrations, reusable icons and backgrounds shared across features.
+- [onboarding/](onboarding/): transparent welcome/track/habits/progress heroes and legacy per-screen landscape SVG fallbacks; the active landscape is a shared six-piece PNG composite with screen-level manifest.
 - [water/](water/): water bottles, drops, water banner artwork and other water-only UI pieces.
 - For future modules, create `assets/<feature>/` **when the first actual asset is added**; do not create empty placeholder folders.
 

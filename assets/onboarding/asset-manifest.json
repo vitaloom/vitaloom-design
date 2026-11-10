@@ -1,10 +1,21 @@
 {
-  "status": "original-vector-illustrations-for-visual-review",
-  "type": "transparent-editable-svg",
-  "source": "Original vector paths; not cropped from existing screenshots.",
+  "status": "user-selected-heroes-with-proposed-layered-shared-landscape",
+  "type": "per-screen-transparent-heroes-plus-six-layer-shared-landscape",
+  "source": "Original independent illustrations; PNG heroes for screens 002–004 are newly generated, not cropped from screenshots.",
   "canvas": {
-    "width": 390,
-    "height": 570
+    "svgLandscapeViewBox": {
+      "width": 390,
+      "height": 570
+    },
+    "pngHeroPixels": {
+      "width": 1122,
+      "height": 1402
+    },
+    "note": "Shared scene frames use 390×570 reference design coordinates; adapt uniformly to the actual available stage. Hero sizes remain independent.",
+    "sharedLandscapeReferenceStage": {
+      "width": 390,
+      "height": 570
+    }
   },
   "screenAssets": [
     {
@@ -12,44 +23,69 @@
       "hero": "welcome-hero.svg",
       "landscape": "welcome-landscape.svg",
       "approvedFullScreenReference": "../../onboarding/01-welcome.webp",
-      "reviewStatus": "PENDING_VISUAL_ACCEPTANCE"
+      "reviewStatus": "PENDING_VISUAL_ACCEPTANCE",
+      "activeLandscape": "shared-composition",
+      "landscapeComposition": "../shared/wellness-landscape/composition.json",
+      "legacyLandscapeStatus": "DEPRECATED_FALLBACK_ONLY",
+      "landscapeReviewStatus": "PROPOSED_PENDING_FE_COMPOSITION_QA"
     },
     {
       "screenId": "ONB-SCR-002",
-      "hero": "track-hero.svg",
+      "hero": "track-hero.png",
       "landscape": "track-landscape.svg",
       "approvedFullScreenReference": "../../onboarding/02-track-what-matters.webp",
-      "reviewStatus": "PENDING_VISUAL_ACCEPTANCE"
+      "reviewStatus": "APPROVED",
+      "activeLandscape": "shared-composition",
+      "landscapeComposition": "../shared/wellness-landscape/composition.json",
+      "legacyLandscapeStatus": "DEPRECATED_FALLBACK_ONLY",
+      "landscapeReviewStatus": "PROPOSED_PENDING_FE_COMPOSITION_QA"
     },
     {
       "screenId": "ONB-SCR-003",
-      "hero": "habits-hero.svg",
+      "hero": "habits-hero.png",
       "landscape": "habits-landscape.svg",
       "approvedFullScreenReference": "../../onboarding/03-build-healthy-habits.webp",
-      "reviewStatus": "PENDING_VISUAL_ACCEPTANCE"
+      "reviewStatus": "APPROVED",
+      "activeLandscape": "shared-composition",
+      "landscapeComposition": "../shared/wellness-landscape/composition.json",
+      "legacyLandscapeStatus": "DEPRECATED_FALLBACK_ONLY",
+      "landscapeReviewStatus": "PROPOSED_PENDING_FE_COMPOSITION_QA"
     },
     {
       "screenId": "ONB-SCR-004",
-      "hero": "progress-hero.svg",
+      "hero": "progress-hero.png",
       "landscape": "progress-landscape.svg",
       "approvedFullScreenReference": "../../onboarding/04-see-your-progress.webp",
-      "reviewStatus": "PENDING_VISUAL_ACCEPTANCE"
+      "reviewStatus": "APPROVED",
+      "activeLandscape": "shared-composition",
+      "landscapeComposition": "../shared/wellness-landscape/composition.json",
+      "legacyLandscapeStatus": "DEPRECATED_FALLBACK_ONLY",
+      "landscapeReviewStatus": "PROPOSED_PENDING_FE_COMPOSITION_QA"
     }
   ],
   "stackOrder": [
     "native gradient",
-    "landscape",
-    "hero",
+    "shared landscape: six PNG layers in composition.json zIndex order",
+    "per-screen foreground hero",
     "native lower rounded content panel",
-    "native title text pagination and CTA"
+    "native text pagination and CTA"
   ],
   "notes": [
-    "All root SVG canvases are transparent.",
-    "Illustration metrics are static visual examples, not runtime health data.",
-    "New illustration style requires visual approval against existing WebP mockups."
+    "New landscape PNG pieces were independently generated, not extracted from approved screen images.",
+    "All four onboarding screens use the active shared composition; old per-screen landscape SVGs remain fallback files only.",
+    "Three PNG hero assets for screens 002–004 were user-selected; welcome SVG hero still awaits visual acceptance.",
+    "Shared landscape composition still needs visual QA on target devices; no UI controls or live data are embedded."
   ],
   "referenceCatalog": "../../onboarding/README.md",
   "mappingDocument": "../../onboarding/ASSET_MAPPING.md",
   "optionalSharedDecoration": "../shared/mint-leaf-cluster.svg",
-  "implementationNote": "Pair landscape and hero by screenId, both on common 390x570 illustration stage. Interactive UI comes from app components, not mockup image."
+  "implementationNote": "Render shared 6-layer scene from composition.json with static local PNG requires, then render current hero independently above. Keep native UI/CTA above all graphics. Legacy landscape SVG filenames are present only for incremental migration.",
+  "manifestVersion": 2,
+  "landscapePolicy": {
+    "activeType": "shared-png-composition",
+    "composition": "../shared/wellness-landscape/composition.json",
+    "status": "PROPOSED_PENDING_FE_COMPOSITION_QA",
+    "legacyLandscapeField": "landscape",
+    "legacyUsage": "For compatibility only; do not render together with shared composition."
+  }
 }
