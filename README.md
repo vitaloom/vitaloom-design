@@ -40,3 +40,9 @@ SVG files are editable vector designs and can be previewed directly on GitHub. N
 **Flow:** Introductory Onboarding (4 slides) → Authentication welcome (Sign In / Create Account) → bottom-sheet form → authenticated app or optional first-time Personal Health Profile invitation. The Introductory Onboarding carousel is distinct from optional health-profile setup after account creation.
 
 The approved screen artwork is stored as optimized WebP images with relative image links in each module. `BEHAVIOR.md` links visible interactions and navigation to stable Screen IDs and references canonical Business Rules, without inventing API contracts.
+
+## Personal Health Profile
+
+- [Personal Health Profile — 11 proposed screens](personal-health-profile/README.md) · [Behavior](personal-health-profile/BEHAVIOR.md) · [Asset mapping](personal-health-profile/ASSET_MAPPING.md) · [Reusable photorealistic hero](assets/personal-health-profile/README.md).
+
+The realistic hero direction is user-selected; screen compositions remain `PENDING_VISUAL_ACCEPTANCE`. These are design references, not deployed frontend screens.

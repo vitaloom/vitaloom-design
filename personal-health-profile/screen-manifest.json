@@ -1,0 +1,112 @@
+{
+  "module": "personal-health-profile",
+  "status": "PROPOSED / PENDING_VISUAL_ACCEPTANCE",
+  "approved_business_rules": "https://github.com/vitaloom/vitaloom-business-docs-and-tools/tree/main/docs/usecase_spec/personal-health-profile",
+  "artwork": "../assets/personal-health-profile/profile-hero-photorealistic.png",
+  "image_format": "PNG",
+  "image_dimensions_px": [
+    1170,
+    2532
+  ],
+  "screens": [
+    {
+      "screen_id": "PHP-SCR-001",
+      "path": "01-profile-setup-basics.png",
+      "title": "First-time setup · basic details",
+      "hero_asset": "../assets/personal-health-profile/profile-hero-photorealistic.png",
+      "use_case": "PHP-UC-001",
+      "status": "PROPOSED / PENDING_VISUAL_ACCEPTANCE",
+      "source_html": "source/01-profile-setup-basics.html"
+    },
+    {
+      "screen_id": "PHP-SCR-002",
+      "path": "02-profile-setup-lifestyle.png",
+      "title": "First-time setup · body and activity",
+      "hero_asset": "../assets/personal-health-profile/profile-hero-photorealistic.png",
+      "use_case": "PHP-UC-001",
+      "status": "PROPOSED / PENDING_VISUAL_ACCEPTANCE",
+      "source_html": "source/02-profile-setup-lifestyle.html"
+    },
+    {
+      "screen_id": "PHP-SCR-003",
+      "path": "03-setup-validation-error.png",
+      "title": "F1 validation · atomic save blocked",
+      "hero_asset": "../assets/personal-health-profile/profile-hero-photorealistic.png",
+      "use_case": "PHP-UC-001",
+      "status": "PROPOSED / PENDING_VISUAL_ACCEPTANCE",
+      "source_html": "source/03-setup-validation-error.html"
+    },
+    {
+      "screen_id": "PHP-SCR-004",
+      "path": "04-profile-overview.png",
+      "title": "Profile view · populated",
+      "hero_asset": "../assets/personal-health-profile/profile-hero-photorealistic.png",
+      "use_case": "PHP-UC-002",
+      "status": "PROPOSED / PENDING_VISUAL_ACCEPTANCE",
+      "source_html": "source/04-profile-overview.html"
+    },
+    {
+      "screen_id": "PHP-SCR-005",
+      "path": "05-profile-overview-empty.png",
+      "title": "Profile view · empty after skip",
+      "hero_asset": "../assets/personal-health-profile/profile-hero-photorealistic.png",
+      "use_case": "PHP-UC-002",
+      "status": "PROPOSED / PENDING_VISUAL_ACCEPTANCE",
+      "source_html": "source/05-profile-overview-empty.html"
+    },
+    {
+      "screen_id": "PHP-SCR-006",
+      "path": "06-profile-edit.png",
+      "title": "Edit · existing values",
+      "hero_asset": null,
+      "use_case": "PHP-UC-003",
+      "status": "PROPOSED / PENDING_VISUAL_ACCEPTANCE",
+      "source_html": "source/06-profile-edit.html"
+    },
+    {
+      "screen_id": "PHP-SCR-007",
+      "path": "07-edit-partial-save.png",
+      "title": "F2 · partial save with inline error",
+      "hero_asset": null,
+      "use_case": "PHP-UC-003",
+      "status": "PROPOSED / PENDING_VISUAL_ACCEPTANCE",
+      "source_html": "source/07-edit-partial-save.html"
+    },
+    {
+      "screen_id": "PHP-SCR-008",
+      "path": "08-concurrent-update.png",
+      "title": "Conflict · latest data reloaded",
+      "hero_asset": null,
+      "use_case": "PHP-UC-003",
+      "status": "PROPOSED / PENDING_VISUAL_ACCEPTANCE",
+      "source_html": "source/08-concurrent-update.html"
+    },
+    {
+      "screen_id": "PHP-SCR-009",
+      "path": "09-profile-load-error.png",
+      "title": "Failed profile fetch · not empty",
+      "hero_asset": null,
+      "use_case": "PHP-UC-002/003",
+      "status": "PROPOSED / PENDING_VISUAL_ACCEPTANCE",
+      "source_html": "source/09-profile-load-error.html"
+    },
+    {
+      "screen_id": "PHP-SCR-010",
+      "path": "10-save-unconfirmed.png",
+      "title": "Unconfirmed save · verify before retry",
+      "hero_asset": null,
+      "use_case": "PHP-UC-001/003",
+      "status": "PROPOSED / PENDING_VISUAL_ACCEPTANCE",
+      "source_html": "source/10-save-unconfirmed.html"
+    },
+    {
+      "screen_id": "PHP-SCR-011",
+      "path": "11-profile-save-success.png",
+      "title": "Confirmed save success",
+      "hero_asset": "../assets/personal-health-profile/profile-hero-photorealistic.png",
+      "use_case": "PHP-UC-001/003",
+      "status": "PROPOSED / PENDING_VISUAL_ACCEPTANCE",
+      "source_html": "source/11-profile-save-success.html"
+    }
+  ]
+}
