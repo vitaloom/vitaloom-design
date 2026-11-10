@@ -33,7 +33,7 @@ SVG files are editable vector designs and can be previewed directly on GitHub. N
 
 ## Approved first-use and authentication designs
 
-- [Introductory Onboarding — 4 approved screens](onboarding/README.md) · [Onboarding behavior](onboarding/BEHAVIOR.md)
+- [Introductory Onboarding — 4 approved screens](onboarding/README.md) · [Onboarding behavior](onboarding/BEHAVIOR.md) · [Onboarding asset mapping](onboarding/ASSET_MAPPING.md)
 - [Authentication — 4 approved screens](authentication/README.md) · [Authentication behavior](authentication/BEHAVIOR.md)
 
 **Flow:** Introductory Onboarding (4 slides) → Authentication welcome (Sign In / Create Account) → bottom-sheet form → authenticated app or optional first-time Personal Health Profile invitation. The Introductory Onboarding carousel is distinct from optional health-profile setup after account creation.
