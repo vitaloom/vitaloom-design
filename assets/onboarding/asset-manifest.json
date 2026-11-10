@@ -1,0 +1,43 @@
+{
+  "status": "original-vector-illustrations-for-visual-review",
+  "type": "transparent-editable-svg",
+  "source": "Original vector paths; not cropped from existing screenshots.",
+  "canvas": {
+    "width": 390,
+    "height": 570
+  },
+  "screenAssets": [
+    {
+      "screenId": "ONB-SCR-001",
+      "hero": "welcome-hero.svg",
+      "landscape": "welcome-landscape.svg"
+    },
+    {
+      "screenId": "ONB-SCR-002",
+      "hero": "track-hero.svg",
+      "landscape": "track-landscape.svg"
+    },
+    {
+      "screenId": "ONB-SCR-003",
+      "hero": "habits-hero.svg",
+      "landscape": "habits-landscape.svg"
+    },
+    {
+      "screenId": "ONB-SCR-004",
+      "hero": "progress-hero.svg",
+      "landscape": "progress-landscape.svg"
+    }
+  ],
+  "stackOrder": [
+    "native gradient",
+    "landscape",
+    "hero",
+    "native lower rounded content panel",
+    "native title text pagination and CTA"
+  ],
+  "notes": [
+    "All root SVG canvases are transparent.",
+    "Illustration metrics are static visual examples, not runtime health data.",
+    "New illustration style requires visual approval against existing WebP mockups."
+  ]
+}
