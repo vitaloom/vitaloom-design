@@ -30,3 +30,12 @@ SVG files are editable vector designs and can be previewed directly on GitHub. N
 - [Water screen catalog](water/README.md) and [Water behavior](water/BEHAVIOR.md) — links to the three existing Water PNG screens without moving or renaming them.
 
 **Conventions:** Full-screen mockups stay next to their feature documentation; small reusable artwork goes in `assets/shared/` or `assets/<feature>/`. Existing Heart Rate and shared-sidebar specifications remain authoritative until deliberately standardized.
+
+## Approved first-use and authentication designs
+
+- [Introductory Onboarding — 4 approved screens](onboarding/README.md) · [Onboarding behavior](onboarding/BEHAVIOR.md)
+- [Authentication — 4 approved screens](authentication/README.md) · [Authentication behavior](authentication/BEHAVIOR.md)
+
+**Flow:** Introductory Onboarding (4 slides) → Authentication welcome (Sign In / Create Account) → bottom-sheet form → authenticated app or optional first-time Personal Health Profile invitation. The Introductory Onboarding carousel is distinct from optional health-profile setup after account creation.
+
+The approved screen artwork is stored as optimized WebP images with relative image links in each module. `BEHAVIOR.md` links visible interactions and navigation to stable Screen IDs and references canonical Business Rules, without inventing API contracts.
