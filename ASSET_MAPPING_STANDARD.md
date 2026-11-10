@@ -28,7 +28,7 @@ vitaloom-design/
     └── ASSET_MAPPING.md            # Needed when screen has separate assets
 ```
 
-Keep complete screen mockups beside the owning feature, and independent visuals in `assets/<feature>/`. Only artwork reused by **multiple** features belongs in `assets/shared/`. Avoid binary duplication and empty folders. Use stable Screen IDs, descriptive ASCII kebab-case filenames, relative links and approved project-use rights. Prefer editable SVG for vectors, transparent PNG for raster illustrations, or WebP when supported by the app.
+Keep complete screen mockups beside the owning feature, and independent visuals in `assets/<feature>/`. Reusable, screen-independent visual primitives (including scenery layers) intended for multiple screens or features belong in `assets/shared/`; feature-only scene-specific artwork stays under `assets/<feature>/`. Avoid binary duplication and empty folders. Use stable Screen IDs, descriptive ASCII kebab-case filenames, relative links and approved project-use rights. Prefer editable SVG for vectors, transparent PNG for raster illustrations, or WebP when supported by the app.
 
 **Legacy designs:** Existing feature mockups remain in place. A feature with no independent visual assets does not need a placeholder mapping; adopt this standard when it receives or revises separable artwork.
 
@@ -59,7 +59,7 @@ Use **only roles present in the actual design**. Recommended semantics:
 5. `surface`: native card or content panel when functional.
 6. `interactive-ui`: real controls: buttons, forms, navigation, pager, toasts and status.
 
-These are **role descriptions, not a fixed mandatory layer count**. Specify z-order and sizing for each feature. Use a common illustration coordinate stage for matched assets **only when they share a design viewBox**; never enforce Onboarding's `390 × 570` artboard or mint colors globally. Respect responsive width, safe areas, scrolling and accessibility.
+These are **role descriptions, not a fixed mandatory layer count**. Specify z-order and sizing for each feature. If scenery is assembled from **multiple independent assets**, use a separate composition recipe (for example `assets/shared/<scene>/composition.json`) with explicit relative PNG paths, stable layer IDs, numeric z-order, frame positions, reference-stage size, scaling and review status; then link that recipe from each owning feature manifest. Do not rasterize the component kit into a single mandatory screen background. Use a common illustration coordinate stage for matched assets **only when they share a design viewBox**; never enforce Onboarding's `390 × 570` artboard or mint colors globally. Respect responsive width, safe areas, scrolling and accessibility.
 
 For independent hero/scenery artwork use clean self-contained outlines and transparent root canvases, unless an opaque background is explicitly itself the design asset. When tasked to **create new artwork**, do not crop/mask an old screenshot and claim it was freshly drawn. Keep OS chrome and functional UI separate from decorative images. Decorative imagery is hidden from screen readers; meaningful illustrations require accessible alternatives as appropriate.
 

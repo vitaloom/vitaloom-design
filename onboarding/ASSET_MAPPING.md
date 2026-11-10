@@ -1,69 +1,51 @@
-# Onboarding — approved screen to transparent asset mapping
+# Onboarding — mapping for hero assets and shared composable landscape
 
-**Status:** user-approved full-screen mockups; **new transparent PNG hero assets adopted** for ONB-SCR-002/003/004 (10 November 2026). The welcome SVG remains a visual-review candidate.
-**Scope:** ONB-SCR-001 to ONB-SCR-004. This document applies the repository-wide [Asset Mapping Standard](../ASSET_MAPPING_STANDARD.md) to onboarding-specific art and layout; it does not prescribe universal layers, color tokens or fixed viewBox sizes. [BEHAVIOR.md](BEHAVIOR.md) remains the interaction authority.
+**Scope:** `ONB-SCR-001` through `ONB-SCR-004`. Approved full-screen WebP mockups remain the visual references. Foreground PNG hero artwork for 002–004 was specifically selected; the welcome SVG hero remains a separate visual candidate. **The new shared landscape composition is proposed and needs Expo visual QA**.
 
-## Source-of-truth relationship
+Behavior/navigation authority: [BEHAVIOR.md](BEHAVIOR.md). Repository policy: [ASSET_MAPPING_STANDARD.md](../ASSET_MAPPING_STANDARD.md).
 
-- Full-screen designs in this `onboarding/` folder are the approved visual references and remain unchanged.
-- Individual artwork under [`../assets/onboarding/`](../assets/onboarding/) consists of transparent PNG hero illustrations for screens 002–004, one welcome SVG hero, and SVG landscapes. The new PNG illustrations are newly generated, **not cropped from the full-screen designs**.
-- SVG landscapes and the welcome SVG hero use a `0 0 390 570` illustration coordinate system. The new raster PNG heroes are `1122 × 1402` pixels with alpha. **Do not assume their aspect ratio matches the SVG landscape viewBox.**
-- Machine-readable mapping: [`../assets/onboarding/asset-manifest.json`](../assets/onboarding/asset-manifest.json).
+## Per-screen asset mapping
 
-## Per-screen mapping
-
-| Screen ID | Approved mockup | Foreground hero (transparent PNG for 002–004) | Behind-hero landscape (new SVG) | Hero illustration meaning |
+| Screen ID | Approved full-screen design | Foreground hero | Active landscape recipe | Legacy standalone landscape (fallback only) |
 | --- | --- | --- | --- | --- |
-| `ONB-SCR-001` | [01-welcome.webp](01-welcome.webp) | [welcome-hero.svg](../assets/onboarding/welcome-hero.svg) | [welcome-landscape.svg](../assets/onboarding/welcome-landscape.svg) | Woman holding a water bottle with decorative lettering |
-| `ONB-SCR-002` | [02-track-what-matters.webp](02-track-what-matters.webp) | [track-hero.png](../assets/onboarding/track-hero.png) | [track-landscape.svg](../assets/onboarding/track-landscape.svg) | User-selected soft 3D illustration of tilted health cards on a mint device |
-| `ONB-SCR-003` | [03-build-healthy-habits.webp](03-build-healthy-habits.webp) | [habits-hero.png](../assets/onboarding/habits-hero.png) | [habits-landscape.svg](../assets/onboarding/habits-landscape.svg) | User-selected soft 3D calendar with target, water bottle, sleep clock and heart |
-| `ONB-SCR-004` | [04-see-your-progress.webp](04-see-your-progress.webp) | [progress-hero.png](../assets/onboarding/progress-hero.png) | [progress-landscape.svg](../assets/onboarding/progress-landscape.svg) | User-selected soft 3D weekly progress card and trophy callout |
+| `ONB-SCR-001` | [01-welcome.webp](01-welcome.webp) | [welcome-hero.svg](../assets/onboarding/welcome-hero.svg) | [Shared composition](../assets/shared/wellness-landscape/composition.json) | [welcome-landscape.svg](../assets/onboarding/welcome-landscape.svg) |
+| `ONB-SCR-002` | [02-track-what-matters.webp](02-track-what-matters.webp) | [track-hero.png](../assets/onboarding/track-hero.png) | [Shared composition](../assets/shared/wellness-landscape/composition.json) | [track-landscape.svg](../assets/onboarding/track-landscape.svg) |
+| `ONB-SCR-003` | [03-build-healthy-habits.webp](03-build-healthy-habits.webp) | [habits-hero.png](../assets/onboarding/habits-hero.png) | [Shared composition](../assets/shared/wellness-landscape/composition.json) | [habits-landscape.svg](../assets/onboarding/habits-landscape.svg) |
+| `ONB-SCR-004` | [04-see-your-progress.webp](04-see-your-progress.webp) | [progress-hero.png](../assets/onboarding/progress-hero.png) | [Shared composition](../assets/shared/wellness-landscape/composition.json) | [progress-landscape.svg](../assets/onboarding/progress-landscape.svg) |
 
-### Optional shared decoration
+All 4 screens now use the same *active* landscape composition; **never render the old landscape SVG and new layered scene together**. The old SVG files remain in source control solely as temporary compatibility references for frontend code that has not migrated. Their paths are still present as the legacy `landscape` field in the manifest; prefer `activeLandscape=shared-composition` and `landscapeComposition` instead.
 
-[mint-leaf-cluster.svg](../assets/shared/mint-leaf-cluster.svg) is a reusable independent vector illustration. It is **optional**, not a fifth mandatory layer in every scene. Several hero PNGs and SVG landscapes already include leaves; avoid accidentally duplicating them with shared decoration.
+## Shared PNG layers and ordering
 
-## Layer order in React Native / Expo
+Render components from [shared wellness landscape catalog](../assets/shared/wellness-landscape/README.md) according to [composition.json](../assets/shared/wellness-landscape/composition.json):
 
-From back to front:
+| Order | Layer | File | Role |
+| --- | --- | --- | --- |
+| 10 | Back hills | [mint-back-hills.png](../assets/shared/wellness-landscape/mint-back-hills.png) | Rounded mint hills |
+| 20 | Middle waves | [mint-middle-waves.png](../assets/shared/wellness-landscape/mint-middle-waves.png) | Soft overlapping ribbons |
+| 30 | Front mound | [mint-front-mound.png](../assets/shared/wellness-landscape/mint-front-mound.png) | Foreground foot |
+| 40 | Left sprout | [mint-leaf-sprout.png](../assets/shared/wellness-landscape/mint-leaf-sprout.png) | Upright accent |
+| 50 | Bottom-left leaves | [mint-leaves-left.png](../assets/shared/wellness-landscape/mint-leaves-left.png) | Side decoration |
+| 60 | Bottom-right leaves | [mint-leaves-right.png](../assets/shared/wellness-landscape/mint-leaves-right.png) | Side decoration |
 
-1. **App-owned background gradient:** warm cream `#FFFCF9` to soft mint `#E6F9F3`; gradient should be implemented in the layout, not baked into SVG root backgrounds.
-2. **Landscape SVG:** decorative mountains, waves and foliage for the current screen (no touch handling).
-3. **Hero illustration:** `*.png` with transparency for screens 002–004, `welcome-hero.svg` for screen 001 (no touch handling).
-4. **Native rounded white content panel:** sits above/overlaps the illustration region and contains the current title, subtitle, pagination indicator and CTA.
-5. **Native app UI:** system/safe-area accommodation, text, buttons and event handlers; never render these as an image.
+All assets are individually generated transparent PNGs, not slices from screenshots. Do not reuse the old `mint-leaf-cluster.svg` simultaneously, as the composite already contains foliage.
 
-Keep hero and landscape under one responsive illustration stage, but **position and scale them independently**: render PNG heroes with React Native `Image`/`expo-image` using `contain`, and SVG landscapes using `react-native-svg` or the existing SVG pipeline. Preserve transparent alpha and avoid cropping the subject. Do not use a full-screen mockup WebP as interactive UI.
+## Composition and responsive contract (Expo/React Native)
 
-### Composition sketch
+Layer sequence from back to front:
 
-```text
-OnboardingScreen (native layout)
-├── HeroStage (matching 390:570 illustration aspect ratio)
-│   ├── Native cream/mint background gradient
-│   ├── <LandscapeSvg />     // decorative; absolute fill
-│   └── <HeroIllustration /> // PNG for screens 002–004; SVG for 001
-└── ContentPanel (native rounded surface; overlaps HeroStage)
-    ├── Title and description
-    ├── 4 pagination dots (current state)
-    └── CTA (native pressable, navigation per BEHAVIOR.md)
-```
+1. Native background cream `#FFFCF9` to mint `#E6F9F3` gradient (not part of PNGs).
+2. Shared **six image layers**, drawn as individual absolutely positioned images using each `frame` and `zIndex` from the JSON recipe.
+3. Separate foreground **hero** image for the current screen; image fitting and sizing independent from landscape.
+4. Native lower white rounded panel and interactive title, subtitle, pagination and CTA.
 
-## Visual review and acceptance
+Coordinates are from a **390 × 570 reference scene**, not a fixed device resolution. Calculate a uniform scale using the actual available illustration-stage width/height, center it and preserve every image's original aspect ratio. Some waves use negative x to extend softly off-stage; verify intended clipping on compact phones. Never render a full-screen WebP mockup as UI.
 
-- [ ] `ONB-SCR-001`: welcome illustration matches desired photorealistic vs. vector direction; bottle and lettering are legible.
-- [ ] `ONB-SCR-002`: each card/icon in the tracking illustration is recognizable at mobile scale.
-- [ ] `ONB-SCR-003`: calendar, goal target, water, sleep and heart motifs read clearly.
-- [ ] `ONB-SCR-004`: bars, progress arrow and trophy remain legible at typical device sizes.
-- [ ] New hero PNGs have transparent alpha and clean isolated outlines; remaining SVG layers have transparent roots.
-- [ ] SVG landscape and PNG hero align on varying device widths despite different aspect ratios; no forced cropping over the white panel.
-- [ ] Text and buttons are native accessible components; no accidental noninteractive screenshot implementation.
-- [ ] Ensure no UI treats the numbers illustrated inside hero assets as actual authenticated metrics.
+Only copy static asset paths through `require()` so Metro can package them. `Image` / `expo-image` uses `contain` for PNGs. Mark the six decorative components inaccessible to assistive tech and non-interactive. User-facing text/actions must remain native.
 
-**Visual acceptance:** the user explicitly selected the new PNG illustrations for screens 002–004 as replacements. The welcome SVG remains a candidate because its stylized vector differs from the approved realistic full-screen reference. Actual device-size compositing still requires frontend QA.
+## Machine-readable authority and review status
 
-## Documentation traceability
-
-- [Onboarding visual catalog](README.md) and [behavior contract](BEHAVIOR.md)
-- [Editable assets](../assets/onboarding/README.md) and [JSON manifest](../assets/onboarding/asset-manifest.json)
-- [Global asset mapping standard](../ASSET_MAPPING_STANDARD.md), [asset storage rules](../assets/README.md) and [screen behavior standard](../BEHAVIOR_STANDARD.md)
+- [Feature asset-manifest.json](../assets/onboarding/asset-manifest.json) records the active shared recipe by Screen ID plus the legacy SVG fallback field.
+- [Composition recipe JSON](../assets/shared/wellness-landscape/composition.json) owns shared layer IDs, PNG filenames, positions, intrinsic stage and `zIndex`; do not maintain conflicting layout constants elsewhere.
+- `ONB-SCR-001`: welcome hero is pending visual acceptance; 002–004: new PNG heroes selected by user. The **combined landscape** is a new proposal, not automatically approved by the selected hero artwork.
+- Validate all 4 screens on narrow and tall devices, confirm no duplicate leaves, check cropping around CTA/panel, and confirm illustrated measurements are not live user data.

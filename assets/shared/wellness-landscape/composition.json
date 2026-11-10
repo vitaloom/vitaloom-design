@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "id": "vita-loom-soft-wellness-landscape",
+  "scope": "Reusable transparent raster scenery for onboarding; no heroes, UI, OS chrome or screen backgrounds.",
+  "source": "Individually generated PNG illustrations; not cropped from approved screen mockups.",
+  "status": "PROPOSED_PENDING_FE_COMPOSITION_QA",
+  "stage": {
+    "referenceWidth": 390,
+    "referenceHeight": 570,
+    "units": "design points",
+    "responsiveRule": "Scale all x/y/width/height uniformly to the actual illustration stage, preserving its 390:570 design ratio; center within the available screen area."
+  },
+  "background": {
+    "render": "native",
+    "gradient": [
+      "#FFFCF9",
+      "#E6F9F3"
+    ],
+    "bakedIntoPng": false
+  },
+  "layerOrder": "ascending zIndex; all scenery below each screen's foreground hero",
+  "layers": [
+    {
+      "id": "back-hills",
+      "file": "mint-back-hills.png",
+      "role": "scenery",
+      "zIndex": 10,
+      "frame": {
+        "x": -42,
+        "y": 98,
+        "width": 478,
+        "height": 233
+      },
+      "fit": "contain"
+    },
+    {
+      "id": "middle-waves",
+      "file": "mint-middle-waves.png",
+      "role": "scenery",
+      "zIndex": 20,
+      "frame": {
+        "x": -22,
+        "y": 279,
+        "width": 436,
+        "height": 103
+      },
+      "fit": "contain"
+    },
+    {
+      "id": "front-mound",
+      "file": "mint-front-mound.png",
+      "role": "scenery",
+      "zIndex": 30,
+      "frame": {
+        "x": -23,
+        "y": 366,
+        "width": 436,
+        "height": 85
+      },
+      "fit": "contain"
+    },
+    {
+      "id": "left-sprout",
+      "file": "mint-leaf-sprout.png",
+      "role": "decoration",
+      "zIndex": 40,
+      "frame": {
+        "x": 9,
+        "y": 201,
+        "width": 107,
+        "height": 107
+      },
+      "fit": "contain"
+    },
+    {
+      "id": "left-leaves",
+      "file": "mint-leaves-left.png",
+      "role": "decoration",
+      "zIndex": 50,
+      "frame": {
+        "x": 2,
+        "y": 386,
+        "width": 110,
+        "height": 84
+      },
+      "fit": "contain"
+    },
+    {
+      "id": "right-leaves",
+      "file": "mint-leaves-right.png",
+      "role": "decoration",
+      "zIndex": 60,
+      "frame": {
+        "x": 281,
+        "y": 343,
+        "width": 107,
+        "height": 107
+      },
+      "fit": "contain"
+    }
+  ],
+  "usedBy": [
+    "ONB-SCR-001",
+    "ONB-SCR-002",
+    "ONB-SCR-003",
+    "ONB-SCR-004"
+  ],
+  "presentation": {
+    "pointerEvents": "none",
+    "accessible": false,
+    "clipping": "Only clip at illustration stage edges; never crop the hero by forcing scenery aspect ratio.",
+    "heroAboveLandscape": true,
+    "interactiveContentOutsideScene": true
+  },
+  "note": "Frame values are a recomposable suggested baseline, not a fixed device size or an approved screen mockup."
+}
