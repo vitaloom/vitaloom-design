@@ -1,6 +1,6 @@
 # UI assets — VitaLoom Design
 
-This directory stores **small, reusable visual parts used inside application screens**, not full-screen mockups.
+This directory stores **small, reusable visual parts used inside application screens**, not full-screen mockups. See the [global asset mapping standard](../ASSET_MAPPING_STANDARD.md) for how each owning screen references these parts.
 
 ## Folder convention
 
@@ -42,6 +42,7 @@ These names are examples of future files, not assets already committed. Add link
 - If an image is reused across multiple screens or features, prefer `assets/shared/` and link to it from both feature docs.
 - If only one feature uses it, put it in `assets/<feature>/`.
 - Do not duplicate identical binary files across folders.
-- Each feature's screen behavior documentation may reference these assets in an optional **Visual asset mapping** section, distinguishing illustration from functional controls.
+- When a feature has independent artwork, maintain a screen-to-asset mapping under `<feature>/ASSET_MAPPING.md` and link it from feature README/behavior documents, following [ASSET_MAPPING_STANDARD.md](../ASSET_MAPPING_STANDARD.md).
+- Do not create placeholder mappings or claim visual approval for new art merely because a full-screen mockup is approved. Functional controls stay native UI.
 
 See [BEHAVIOR_STANDARD.md](../BEHAVIOR_STANDARD.md) for screen interaction documentation.

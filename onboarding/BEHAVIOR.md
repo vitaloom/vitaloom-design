@@ -74,4 +74,20 @@ See [AUTH-SCR-001 — Authentication hub](../authentication/README.md#approved-s
 
 All images are optimized WebP copies extracted from the selected four-screen onboarding design. No business rules have been inferred from illustration values.
 
-**Change log:** 2026-11-10 — Initial four-screen behavior mapping and approved image handoff.
+## 8. Visual asset mapping (non-behavioral)
+
+The [asset mapping contract](ASSET_MAPPING.md) links each stable screen ID and approved WebP mockup to its new, transparent SVG hero and decorative landscape. The SVGs are separate vector illustrations for visual review; they do **not** change entry/exit conditions, the intended CTA sequence or the UX open questions above.
+
+| Screen | Full-screen reference | Hero artwork | Background hills and waves |
+| --- | --- | --- | --- |
+| `ONB-SCR-001` | [01-welcome.webp](01-welcome.webp) | [welcome-hero.svg](../assets/onboarding/welcome-hero.svg) | [welcome-landscape.svg](../assets/onboarding/welcome-landscape.svg) |
+| `ONB-SCR-002` | [02-track-what-matters.webp](02-track-what-matters.webp) | [track-hero.svg](../assets/onboarding/track-hero.svg) | [track-landscape.svg](../assets/onboarding/track-landscape.svg) |
+| `ONB-SCR-003` | [03-build-healthy-habits.webp](03-build-healthy-habits.webp) | [habits-hero.svg](../assets/onboarding/habits-hero.svg) | [habits-landscape.svg](../assets/onboarding/habits-landscape.svg) |
+| `ONB-SCR-004` | [04-see-your-progress.webp](04-see-your-progress.webp) | [progress-hero.svg](../assets/onboarding/progress-hero.svg) | [progress-landscape.svg](../assets/onboarding/progress-landscape.svg) |
+
+The white rounded information panel, copy, pagination and CTA remain native UI rather than image assets. Decorative assets are not interactive controls. **Do not claim that this redraw matches approved artwork pixel-for-pixel or that visual review is complete.**
+
+## 9. Change log
+
+- 2026-11-10 — Initial four-screen behavior mapping and approved image handoff.
+- 2026-11-10 — Added screen-to-transparent-asset links (documentation only; no flow change).

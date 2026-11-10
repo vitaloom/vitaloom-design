@@ -1,0 +1,55 @@
+{
+  "status": "original-vector-illustrations-for-visual-review",
+  "type": "transparent-editable-svg",
+  "source": "Original vector paths; not cropped from existing screenshots.",
+  "canvas": {
+    "width": 390,
+    "height": 570
+  },
+  "screenAssets": [
+    {
+      "screenId": "ONB-SCR-001",
+      "hero": "welcome-hero.svg",
+      "landscape": "welcome-landscape.svg",
+      "approvedFullScreenReference": "../../onboarding/01-welcome.webp",
+      "reviewStatus": "PENDING_VISUAL_ACCEPTANCE"
+    },
+    {
+      "screenId": "ONB-SCR-002",
+      "hero": "track-hero.svg",
+      "landscape": "track-landscape.svg",
+      "approvedFullScreenReference": "../../onboarding/02-track-what-matters.webp",
+      "reviewStatus": "PENDING_VISUAL_ACCEPTANCE"
+    },
+    {
+      "screenId": "ONB-SCR-003",
+      "hero": "habits-hero.svg",
+      "landscape": "habits-landscape.svg",
+      "approvedFullScreenReference": "../../onboarding/03-build-healthy-habits.webp",
+      "reviewStatus": "PENDING_VISUAL_ACCEPTANCE"
+    },
+    {
+      "screenId": "ONB-SCR-004",
+      "hero": "progress-hero.svg",
+      "landscape": "progress-landscape.svg",
+      "approvedFullScreenReference": "../../onboarding/04-see-your-progress.webp",
+      "reviewStatus": "PENDING_VISUAL_ACCEPTANCE"
+    }
+  ],
+  "stackOrder": [
+    "native gradient",
+    "landscape",
+    "hero",
+    "native lower rounded content panel",
+    "native title text pagination and CTA"
+  ],
+  "notes": [
+    "All root SVG canvases are transparent.",
+    "Illustration metrics are static visual examples, not runtime health data.",
+    "New illustration style requires visual approval against existing WebP mockups."
+  ],
+  "referenceCatalog": "../../onboarding/README.md",
+  "mappingDocument": "../../onboarding/ASSET_MAPPING.md",
+  "optionalSharedDecoration": "../shared/mint-leaf-cluster.svg",
+  "implementationNote": "Pair landscape and hero by screenId, both on common 390x570 illustration stage. Interactive UI comes from app components, not mockup image."
+}
