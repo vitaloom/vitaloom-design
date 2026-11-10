@@ -17,7 +17,7 @@ The WebP mockups below are the **approved full-screen design references**. The S
 
 [View all four approved screens in one image](onboarding-approved-overview.webp).
 
-**Implementation handoff:** [screen-to-asset mapping, layer order and QA](ASSET_MAPPING.md) · [asset catalog](../assets/onboarding/README.md) · [machine-readable manifest](../assets/onboarding/asset-manifest.json). A [shared mint leaf](../assets/shared/mint-leaf-cluster.svg) is optional decoration; avoid duplicating leaves already drawn in the hero/landscape SVGs.
+**Implementation handoff:** [screen-to-asset mapping, layer order and QA](ASSET_MAPPING.md) (following the [global asset mapping standard](../ASSET_MAPPING_STANDARD.md)) · [asset catalog](../assets/onboarding/README.md) · [machine-readable manifest](../assets/onboarding/asset-manifest.json). A [shared mint leaf](../assets/shared/mint-leaf-cluster.svg) is optional decoration; avoid duplicating leaves already drawn in the hero/landscape SVGs.
 
 ## Design contract
 

@@ -26,6 +26,7 @@ SVG files are editable vector designs and can be previewed directly on GitHub. N
 ## Screen behavior and small assets
 
 - [Screen behavior documentation standard](BEHAVIOR_STANDARD.md) — screen IDs, interaction contracts, UI states, navigation, and traceability.
+- [Global screen-to-asset mapping standard](ASSET_MAPPING_STANDARD.md) — feature screens, standalone artwork, roles, ownership and implementation handoff.
 - [Reusable visual assets](assets/README.md) — small icons, transparent illustrations, leaves, backgrounds; [shared assets](assets/shared/README.md) and [Water assets](assets/water/README.md).
 - [Water screen catalog](water/README.md) and [Water behavior](water/BEHAVIOR.md) — links to the three existing Water PNG screens without moving or renaming them.
 

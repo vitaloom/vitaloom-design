@@ -1,7 +1,7 @@
 # Onboarding — approved screen to transparent asset mapping
 
 **Status:** approved **screen mockups** + newly drawn **SVG asset candidates awaiting visual acceptance**.
-**Scope:** ONB-SCR-001 to ONB-SCR-004. This document defines screen/artwork relationships only; [BEHAVIOR.md](BEHAVIOR.md) remains the interaction authority.
+**Scope:** ONB-SCR-001 to ONB-SCR-004. This document applies the repository-wide [Asset Mapping Standard](../ASSET_MAPPING_STANDARD.md) to onboarding-specific art and layout; it does not prescribe universal layers, color tokens or fixed viewBox sizes. [BEHAVIOR.md](BEHAVIOR.md) remains the interaction authority.
 
 ## Source-of-truth relationship
 
@@ -66,4 +66,4 @@ OnboardingScreen (native layout)
 
 - [Onboarding visual catalog](README.md) and [behavior contract](BEHAVIOR.md)
 - [Editable assets](../assets/onboarding/README.md) and [JSON manifest](../assets/onboarding/asset-manifest.json)
-- [Asset storage rules](../assets/README.md) and [screen behavior standard](../BEHAVIOR_STANDARD.md)
+- [Global asset mapping standard](../ASSET_MAPPING_STANDARD.md), [asset storage rules](../assets/README.md) and [screen behavior standard](../BEHAVIOR_STANDARD.md)

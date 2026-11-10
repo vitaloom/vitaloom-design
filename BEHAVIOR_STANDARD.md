@@ -59,7 +59,7 @@ Use **CONFIRMED** only for behavior backed by an approved specification or user-
 6. **Validation and recovery:** reference authoritative domain rules; define how the UI displays and recovers.
 7. **Accessibility:** labels, screen reader state, keyboard/back handling, touch targets and contrast.
 8. **Acceptance checklist:** observable pass/fail examples tied to action IDs.
-9. Open decisions, change log and optional **Visual asset mapping** to `assets/`.
+9. Open decisions and change log. When independent artwork exists, include **Visual asset mapping** referencing `<feature>/ASSET_MAPPING.md` under the [global mapping standard](ASSET_MAPPING_STANDARD.md).
 
 ## 5. Sample interaction table
 
@@ -77,6 +77,7 @@ Use **CONFIRMED** only for behavior backed by an approved specification or user-
 - [ ] Proposed UX is not mislabeled an approved business rule.
 - [ ] Shared components are linked rather than duplicated.
 - [ ] Icons/backgrounds and feature screenshots go in their intended directories.
+- [ ] Where independent artwork exists, an actual screen-to-asset mapping is documented using [ASSET_MAPPING_STANDARD.md](ASSET_MAPPING_STANDARD.md).
 - [ ] Docs do not claim that a design image equals implemented or tested frontend behavior.
 
 ## 7. Adopted references
@@ -87,5 +88,6 @@ Use **CONFIRMED** only for behavior backed by an approved specification or user-
 - [Heart Rate — existing combined design specification](heart-rate/README.md)
 - [Shared sidebar — existing interaction contract](shared/health-metrics-sidebar/README.md)
 - [Small/reusable assets policy](assets/README.md)
+- [Global asset mapping standard](ASSET_MAPPING_STANDARD.md)
 
 This convention does **not** introduce new business requirements or API contracts.
