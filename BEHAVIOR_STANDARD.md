@@ -81,6 +81,8 @@ Use **CONFIRMED** only for behavior backed by an approved specification or user-
 
 ## 7. Adopted references
 
+- [Onboarding — four approved first-launch screens](onboarding/BEHAVIOR.md)
+- [Authentication — welcome, sign in, sign up and profile invitation](authentication/BEHAVIOR.md)
 - [Water — screen registry and interaction contract](water/BEHAVIOR.md)
 - [Heart Rate — existing combined design specification](heart-rate/README.md)
 - [Shared sidebar — existing interaction contract](shared/health-metrics-sidebar/README.md)
