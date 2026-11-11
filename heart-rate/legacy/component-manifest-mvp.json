@@ -1,0 +1,62 @@
+{
+  "name": "HeartRateScreen",
+  "scope": "feature-content",
+  "shell": "shared/health-metrics-sidebar",
+  "sidebar": {
+    "defaultOpen": false,
+    "toggle": true,
+    "ownedBy": "AppShell"
+  },
+  "api": "GET /api/heart-rate/summary",
+  "selectedDateScopes": "dailyAverage-only",
+  "metrics": [
+    "latestRecorded",
+    "dailyAverage"
+  ],
+  "timeZone": "Asia/Ho_Chi_Minh",
+  "states": [
+    {
+      "name": "default",
+      "asset": "default.svg",
+      "description": "Heart Rate — current day default"
+    },
+    {
+      "name": "loading",
+      "asset": "loading.svg",
+      "description": "Heart Rate — loading state"
+    },
+    {
+      "name": "no-data",
+      "asset": "no-data.svg",
+      "description": "Heart Rate — no accepted measurements"
+    },
+    {
+      "name": "historical-unverified",
+      "asset": "historical-unverified.svg",
+      "description": "Heart Rate — historical unverified state"
+    },
+    {
+      "name": "daily-no-data",
+      "asset": "daily-no-data.svg",
+      "description": "Heart Rate — latest exists, selected day missing"
+    },
+    {
+      "name": "error",
+      "asset": "error.svg",
+      "description": "Heart Rate — data retrieval failure"
+    }
+  ],
+  "forbidden": [
+    "chalk-border",
+    "device-mockup",
+    "ecg",
+    "live-monitoring",
+    "fake-device-connect",
+    "zero-for-no-data"
+  ],
+  "artboard": {
+    "width": 430,
+    "height": 1050
+  },
+  "assetsType": "editable-svg-visual-reference"
+}

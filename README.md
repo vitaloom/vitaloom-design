@@ -13,7 +13,9 @@ A public collection of UI design references and component specifications for Vit
 ## Feature references
 
 - [Water designs](water/)
-- [Heart Rate screen — two metrics and UI states](heart-rate/README.md)
+- [Heart Rate — **analytics refresh** (light/dark + interaction)](heart-rate/README.md)
+- [Steps — **analytics refresh** (light/dark + interaction)](steps/README.md)
+- [Shared analytics UI patterns](shared/analytics-components/README.md)
 
 ## Usage
 
@@ -51,3 +53,13 @@ The realistic hero direction is user-selected; screen compositions remain `PENDI
 
 - [Sleep Tracking — screen registry and selected design baseline](sleep-tracking/README.md) · [Behavior](sleep-tracking/BEHAVIOR.md) · [Asset mapping](sleep-tracking/ASSET_MAPPING.md) · [Expo handoff](sleep-tracking/FE_HANDOFF.md).
 - **Available:** six selected screen PNGs, one overview, and nine independently generated transparent PNG assets are [committed](sleep-tracking/SCREEN_IMPORT.md); [asset catalog](assets/sleep-tracking/README.md) includes optional SVG fallbacks.
+
+## Current analytics design baseline (Steps + Heart Rate)
+
+- [Steps — latest design and behavior](steps/README.md) · [canonical API/model links](steps/REFERENCES.md)
+- [Heart Rate — latest design and behavior](heart-rate/README.md) · [canonical API/model links](heart-rate/REFERENCES.md)
+- [Chart interactions + theme guidance](shared/analytics-components/README.md)
+
+These design documents **do not duplicate Backend API schemas or database models**. Read canonical Backend and Business Docs linked from `REFERENCES.md` when implementing. Old Heart Rate MVP screens are [historical only](heart-rate/legacy/README.md).
+
+**Review status:** Proposed light/dark vector implementations of the approved concept; BE compatibility and final visual sign-off are separate. This branch is for agent investigation and implementation, not an auto-approved merge.
