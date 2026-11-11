@@ -4,6 +4,8 @@
 >
 > **Visual baseline:** screen compositions were selected by the user; the 9 standalone PNG artworks were generated independently and **not cropped from the UI screenshots**. SVG outlines under `icons/` are independently authored, PROPOSED editable alternatives, not visually approved substitutes for the glossy PNGs.
 
+> **MANDATORY: Screens 7–12 are structure-only references; the dominant purple background/buttons/cards are WRONG. FE must render green/mint wellness dominant UI; purple is limited to small assets/icons.** See [corrective specification](ADDITIONAL_SCREENS_20261111.md).
+
 ## 1. Composition layers and ownership
 
 1. `background`: native mint/cream gradient and organic wave shapes (native view, no screenshot backgrounds).
@@ -28,6 +30,19 @@
 | `SLT-SCR-004` | [04 AI Insight Detail](04-ai-insight-detail.png) | [pillow](../assets/sleep-tracking/pillow-stars.png), [reaction graphics](../assets/sleep-tracking/feeling-comfortable.png), [bars](../assets/sleep-tracking/bars.png) |
 | `SLT-SCR-005` | [05 Weekly Sleep Report](05-ai-weekly-sleep-story.png) | [moon hero](../assets/sleep-tracking/moon-cloud-stars.png), [trend graphic](../assets/sleep-tracking/trend-up.png), [reaction graphics](../assets/sleep-tracking/feeling-tired.png) |
 
+### Added screen/state-to-asset mapping (2026-11-11)
+
+| Stable ID / state | Structural image (color rejected) | Independent asset role |
+|---|---|---|
+| `SLT-SCR-006` | [Journal](7_sleep_journal.png) | [star-pillow-cloud.png](../assets/sleep-tracking/star-pillow-cloud.png) hero; [bed.png](../assets/sleep-tracking/bed.png) small sleep card icon |
+| `SLT-SCR-007` | [Record Detail](8_sleep_record_detail.png) | same hero and small bed accent; native detail table/actions |
+| `SLT-SCR-008` | [Edit Record](9_sleep_record_detail_edit.png) | same hero; bed for sleep type, existing feeling illustrations; native form |
+| `SLT-SCR-009` | [Goal](10_sleep_goal_setup.png) | small bed on goal card, optional hero; native selectors and buttons |
+| `SLT-SCR-003 / NO_DATA` | [Insights empty](11_sleep_insight_empty.png) | combined hero; native tabs/CTA |
+| `SLT-SCR-003 / INSUFFICIENT_DATA` | [Insights insufficient](12_sleep_not_enough_data_insight.png) | combined hero; native evidence/requirements/CTA |
+
+**Composition:** green/mint native background → isolated transparent artwork with `contain` → cream/white surface cards → green/teal functional controls. Keep only limited purple accents (bed/pillow/icon). Do not use screenshots for functional UI or data charts; preserve screen IDs and separate Insights states.
+
 [See selected overview](00-sleep-design-overview.png).
 
 ## 3. Transparent PNG inventory (all actual files)
@@ -43,6 +58,8 @@
 | [feeling-tired.png](../assets/sleep-tracking/feeling-tired.png) | Tired illustration | Sleep feature | Generated original / AVAILABLE |
 | [trend-up.png](../assets/sleep-tracking/trend-up.png) | Decorative upward trend | Sleep feature | Generated original / AVAILABLE |
 | [bars.png](../assets/sleep-tracking/bars.png) | Decorative rising bars | Sleep feature | Generated original / AVAILABLE |
+| [star-pillow-cloud.png](../assets/sleep-tracking/star-pillow-cloud.png) | New standalone combined hero | Sleep feature | COMMITTED; green UI usage, pending FE visual QA |
+| [bed.png](../assets/sleep-tracking/bed.png) | New small standalone purple bed | Sleep feature | COMMITTED; minor accent ONLY |
 
 **Important:** Decorative graph PNGs cannot replace data-bound charts in functional screens. Real bars, labels and evidence must be generated from verified analytics. Self-assessment control state is native, not encoded in a preselected PNG.
 
@@ -61,5 +78,6 @@
 - [x] Nine individual PNG assets exist in `assets/sleep-tracking/` and have alpha transparency.
 - [x] Assets are independently generated, not cropped from main screen screenshots.
 - [x] Mapping references actual relative paths and is consistent with manifests.
-- [ ] UI states beyond happy path (empty/error/loading/AI stale) receive separate visual acceptance.
+- [x] Six supplemental reference files and two new standalone assets exist and are mapped; purple-dominant screen colors explicitly rejected.
+- [ ] Corrected green FE layout and remaining alternate/error states receive separate visual acceptance.
 - [ ] Expo UI uses native functional controls and matches selected visual references after device QA.
