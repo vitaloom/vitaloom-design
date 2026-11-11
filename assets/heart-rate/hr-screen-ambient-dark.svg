@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="960" viewBox="0 0 430 960" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Decorative subtle dark blush background glow for the Heart Rate page">
+<title>Heart Rate dark ambient tint — decorative transparent backdrop</title>
+<defs>
+<radialGradient id="warm-top"><stop stop-color="#8B4565" stop-opacity=".21"/><stop offset=".58" stop-color="#8B4565" stop-opacity=".06"/><stop offset="1" stop-color="#8B4565" stop-opacity="0"/></radialGradient>
+<radialGradient id="warm-side"><stop stop-color="#522F54" stop-opacity=".13"/><stop offset=".55" stop-color="#522F54" stop-opacity=".05"/><stop offset="1" stop-color="#522F54" stop-opacity="0"/></radialGradient>
+<radialGradient id="soft-bottom"><stop stop-color="#533F5A" stop-opacity=".11"/><stop offset=".60" stop-color="#533F5A" stop-opacity=".03"/><stop offset="1" stop-color="#533F5A" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="418" cy="36" rx="225" ry="215" fill="url(#warm-top)"/>
+<ellipse cx="-56" cy="330" rx="222" ry="285" fill="url(#warm-side)"/>
+<ellipse cx="396" cy="851" rx="285" ry="216" fill="url(#soft-bottom)"/>
+</svg>
