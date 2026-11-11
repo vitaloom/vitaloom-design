@@ -1,0 +1,32 @@
+{
+  "name": "StepsAnalyticsScreen",
+  "status": "PROPOSED",
+  "scope": "feature-content",
+  "shell": "shared/health-metrics-sidebar",
+  "references": {
+    "ui": "README.md",
+    "behavior": "BEHAVIOR.md",
+    "canonical": "REFERENCES.md",
+    "shared": "../shared/analytics-components/README.md"
+  },
+  "visualStates": [
+    {
+      "name": "default-light",
+      "asset": "final-light.svg",
+      "screenId": "STP-SCR-001"
+    },
+    {
+      "name": "default-dark",
+      "asset": "final-dark.svg",
+      "screenId": "STP-SCR-001-D"
+    }
+  ],
+  "chart": "sparse hourly/daily bars with visible Y axis, missing buckets never drawn as zero",
+  "forbidden": [
+    "fake-baseline-bars",
+    "invented-goal-progress",
+    "continuous-tracking-claims",
+    "future-events",
+    "duplicate-backend-contract"
+  ]
+}

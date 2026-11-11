@@ -1,0 +1,159 @@
+{
+  "feature": "heart-rate",
+  "status": "PROPOSED_ARTWORK_PENDING_VISUAL_ACCEPTANCE",
+  "canonicalScreenDirectory": "../../heart-rate",
+  "sourceOfTruth": "../../ASSET_MAPPING_STANDARD.md",
+  "assetProvenance": "Independently authored editable vectors, not extracted from or pixel-identical to the approved generated full-screen mockup.",
+  "screenAssets": [
+    {
+      "screenId": "HRT-SCR-001",
+      "theme": "light",
+      "fullScreenReference": "../../heart-rate/final-light.svg",
+      "visualStatus": "PROPOSED",
+      "layers": [
+        {
+          "id": "page-ambient",
+          "role": "decoration",
+          "path": "hr-screen-ambient-light.svg",
+          "order": -1,
+          "placement": "absolute page backdrop behind scroll content, opacity as authored; pointerEvents=none"
+        },
+        {
+          "id": "hero-surface",
+          "role": "background",
+          "path": null,
+          "order": 0,
+          "renderer": "native theme gradient/card"
+        },
+        {
+          "id": "hero-scenery",
+          "role": "scenery",
+          "path": "heart-hero-scenery.svg",
+          "order": 1,
+          "placement": "absolute bottom; contain/full width, clipped to hero"
+        },
+        {
+          "id": "hero-illustration",
+          "role": "hero",
+          "path": "heart-pulse-hero.svg",
+          "order": 2,
+          "placement": "absolute right; contain, no pointer events"
+        },
+        {
+          "id": "hero-values",
+          "role": "interactive-ui",
+          "path": null,
+          "order": 3,
+          "renderer": "native UI; source from real API"
+        }
+      ],
+      "sharedIconCatalog": "../shared/analytics-icons/README.md",
+      "pageBackground": {
+        "renderer": "native theme gradient",
+        "referenceStops": [
+          "#FFF9FA",
+          "#FFF3F6"
+        ],
+        "scope": "heart-rate feature page only, behind native content; not AppShell"
+      },
+      "uiAssets": [
+        {
+          "role": "kpi-min-icon",
+          "path": "icons/hr-min-light.svg",
+          "position": "Minimum tile"
+        },
+        {
+          "role": "kpi-avg-icon",
+          "path": "icons/hr-avg-light.svg",
+          "position": "Average tile"
+        },
+        {
+          "role": "kpi-max-icon",
+          "path": "icons/hr-max-light.svg",
+          "position": "Maximum tile"
+        },
+        {
+          "role": "analytics-title-icon",
+          "path": "icons/hr-analytics-light.svg",
+          "position": "Analytics section title"
+        }
+      ],
+      "uiAssetsStatus": "PROPOSED_EDITORIAL_REDRAW"
+    },
+    {
+      "screenId": "HRT-SCR-001-D",
+      "theme": "dark",
+      "fullScreenReference": "../../heart-rate/final-dark.svg",
+      "visualStatus": "PROPOSED",
+      "layers": [
+        {
+          "id": "page-ambient",
+          "role": "decoration",
+          "path": "hr-screen-ambient-dark.svg",
+          "order": -1,
+          "placement": "absolute page backdrop behind scroll content, opacity as authored; pointerEvents=none"
+        },
+        {
+          "id": "hero-surface",
+          "role": "background",
+          "path": null,
+          "order": 0,
+          "renderer": "native theme gradient/card"
+        },
+        {
+          "id": "hero-scenery",
+          "role": "scenery",
+          "path": "heart-hero-scenery.svg",
+          "order": 1,
+          "placement": "absolute bottom; contain/full width, clipped to hero"
+        },
+        {
+          "id": "hero-illustration",
+          "role": "hero",
+          "path": "heart-pulse-hero.svg",
+          "order": 2,
+          "placement": "absolute right; contain, no pointer events"
+        },
+        {
+          "id": "hero-values",
+          "role": "interactive-ui",
+          "path": null,
+          "order": 3,
+          "renderer": "native UI; source from real API"
+        }
+      ],
+      "sharedIconCatalog": "../shared/analytics-icons/README.md",
+      "pageBackground": {
+        "renderer": "native theme gradient",
+        "referenceStops": [
+          "#211F29",
+          "#1A242B"
+        ],
+        "scope": "heart-rate feature page only, behind native content; not AppShell"
+      },
+      "uiAssets": [
+        {
+          "role": "kpi-min-icon",
+          "path": "icons/hr-min-dark.svg",
+          "position": "Minimum tile"
+        },
+        {
+          "role": "kpi-avg-icon",
+          "path": "icons/hr-avg-dark.svg",
+          "position": "Average tile"
+        },
+        {
+          "role": "kpi-max-icon",
+          "path": "icons/hr-max-dark.svg",
+          "position": "Maximum tile"
+        },
+        {
+          "role": "analytics-title-icon",
+          "path": "icons/hr-analytics-dark.svg",
+          "position": "Analytics section title"
+        }
+      ],
+      "uiAssetsStatus": "PROPOSED_EDITORIAL_REDRAW"
+    }
+  ]
+}

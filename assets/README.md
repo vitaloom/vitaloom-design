@@ -47,3 +47,19 @@ These names are examples of future files, not assets already committed. Add link
 - Do not create placeholder mappings or claim visual approval for new art merely because a full-screen mockup is approved. Functional controls stay native UI.
 
 See [BEHAVIOR_STANDARD.md](../BEHAVIOR_STANDARD.md) for screen interaction documentation.
+
+## Steps + Heart Rate enhancement artwork
+
+- [Steps hero illustration + scenery](steps/README.md)
+- [Heart Rate hero illustration + scenery](heart-rate/README.md)
+- [Shared analytics icon kit](shared/analytics-icons/README.md)
+- [UI enhancement handoff](../UI_ENHANCEMENT_HANDOFF.md) · [Steps mapping](../steps/ASSET_MAPPING.md) · [HR mapping](../heart-rate/ASSET_MAPPING.md)
+
+The independently authored SVGs use transparent roots, should be layered under native screen controls, and remain visual drafts until a final screenshot comparison.
+
+### Additional Heart Rate presentation kit
+
+- [Theme-specific Min / Avg / Max / analytics icons](heart-rate/icons/README.md)
+- [Transparent HR ambient light and dark backgrounds](heart-rate/BACKGROUND_TOKENS.md)
+
+These remain independent SVGs. The **page background is a feature-scoped native gradient plus optional transparent overlay**, not a rasterized entire screen.

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Heart Rate Lowest metric icon (dark)">
+<title>Heart Rate Lowest — dark theme</title>
+<defs>
+<linearGradient id="badge-surface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#244F4A"/><stop offset="1" stop-color="#1B3B3E"/></linearGradient>
+<radialGradient id="badge-gloss" cx=".20" cy=".08" r=".85"><stop stop-color="#FFFFFF" stop-opacity=".16"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+</defs>
+<circle cx="32" cy="32" r="29" fill="url(#badge-surface)"/>
+<circle cx="32" cy="32" r="28" stroke="#70E2CB" stroke-opacity=".26" fill="none"/>
+<circle cx="32" cy="32" r="29" fill="url(#badge-gloss)"/>
+<ellipse cx="25" cy="13" rx="16" ry="5" fill="#52CBB1" fill-opacity=".06" transform="rotate(-20 25 13)"/>
+<path d="M32 18 V44 M22 35 L32 45 L42 35" stroke="#70E2CB" stroke-width="4.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
