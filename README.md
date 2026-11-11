@@ -12,6 +12,9 @@ A public collection of UI design references and component specifications for Vit
 
 ## Feature references
 
+- [Statistics Overview — Wellness Analytics B (approved simple direction)](statistics/README.md) · [Day/Week and navigation behavior](statistics/BEHAVIOR.md) · [Asset mapping](statistics/ASSET_MAPPING.md).
+
+
 - [Water designs](water/)
 - [Heart Rate — **analytics refresh** (light/dark + interaction)](heart-rate/README.md)
 - [Steps — **analytics refresh** (light/dark + interaction)](steps/README.md)

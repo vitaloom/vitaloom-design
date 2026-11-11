@@ -1,0 +1,84 @@
+{
+  "name": "StatisticsWellnessOverview",
+  "version": "1.0",
+  "baseline": "WELLNESS_ANALYTICS_B_SIMPLE",
+  "status": "APPROVED_DESIGN_DIRECTION",
+  "references": {
+    "screens": "README.md",
+    "behaviors": "BEHAVIOR.md",
+    "assetMapping": "ASSET_MAPPING.md",
+    "appShell": "../shared/health-metrics-sidebar/README.md"
+  },
+  "screens": [
+    {
+      "id": "STA-SCR-001-W-L",
+      "file": "overview-week-light.svg",
+      "mode": "week",
+      "theme": "light",
+      "default": true
+    },
+    {
+      "id": "STA-SCR-001-W-D",
+      "file": "overview-week-dark.svg",
+      "mode": "week",
+      "theme": "dark"
+    },
+    {
+      "id": "STA-SCR-001-D-L",
+      "file": "overview-day-light.svg",
+      "mode": "day",
+      "theme": "light"
+    },
+    {
+      "id": "STA-SCR-001-D-D",
+      "file": "overview-day-dark.svg",
+      "mode": "day",
+      "theme": "dark"
+    }
+  ],
+  "metrics": [
+    {
+      "key": "heart-rate",
+      "route": "/heart-rate",
+      "preview": "gap-aware line with dots",
+      "iconRef": "../assets/heart-rate/heart-pulse-hero.svg"
+    },
+    {
+      "key": "steps",
+      "route": "/steps",
+      "preview": "sparse vertical bars",
+      "iconRef": "../assets/steps/steps-sneakers-hero.svg"
+    },
+    {
+      "key": "water",
+      "route": "/water",
+      "preview": "daily intake bars (week) / compact progress (day)",
+      "iconRef": "vitaloom-frontend/assets/images/bottle.png"
+    },
+    {
+      "key": "sleep",
+      "route": "/sleep",
+      "preview": "duration bars (week) / duration visual (day)",
+      "iconRef": "../assets/sleep-tracking/moon-cloud-stars.png"
+    }
+  ],
+  "ui": {
+    "defaultMode": "week",
+    "modeOptions": [
+      "day",
+      "week"
+    ],
+    "layout": "vertical scroll",
+    "cardTap": "navigate existing detail",
+    "chartTooltip": false,
+    "cardHorizontalScroll": false
+  },
+  "forbidden": [
+    "enriched comparison / detailed insights",
+    "toggle minimal/details",
+    "duplicate page from Home",
+    "quick-add controls",
+    "duplicated backend DTO",
+    "mock numbers treated as actual results"
+  ]
+}

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" role="img" aria-label="VitaLoom Statistics Wellness Analytics B — Tuần — Dark mode">
+<title>VitaLoom Statistics Overview — Week / dark</title><defs><linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#151F29"/><stop offset="1" stop-color="#1A242C"/></linearGradient><linearGradient id="hr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#473644"/><stop offset="1" stop-color="#3B3042"/></linearGradient><linearGradient id="steps" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#284944"/><stop offset="1" stop-color="#203C3C"/></linearGradient><linearGradient id="water" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24445A"/><stop offset="1" stop-color="#233849"/></linearGradient><linearGradient id="sleep" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B324F"/><stop offset="1" stop-color="#2A2C43"/></linearGradient><linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F87596"/><stop offset="1" stop-color="#DB4B76"/></linearGradient><linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#39E4AF"/><stop offset="1" stop-color="#04AA81"/></linearGradient>
+<linearGradient id="heart-fill" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#FFB6CA"/><stop offset=".35" stop-color="#FF7495"/><stop offset=".95" stop-color="#DB3F6C"/></linearGradient>
+<linearGradient id="blue-fill" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#C5F2FF"/><stop offset=".8" stop-color="#5CAFF6"/></linearGradient>
+<filter id="shadow" x="-20%" y="-20%" width="150%" height="160%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#071115" flood-opacity=".33"/></filter>
+<clipPath id="page"><rect x="0" y="0" width="390" height="844"/></clipPath></defs>
+<rect x="0" y="0" width="390" height="844" rx="0" fill="url(#canvas)" />
+<g opacity=".12"><path d="M0 152 Q60 132 95 145 Q162 118 210 150 Q260 124 296 137 Q355 110 390 131V180H0Z" fill="#9BEED5"/></g>
+<text x="24" y="23" fill="#F0F8F7" font-size="12" font-weight="700" >9:41</text>
+<g fill="#F0F8F7"><rect x="321" y="15" width="3" height="6" rx="1" fill="#F0F8F7" /><rect x="326" y="12" width="3" height="9" rx="1" fill="#F0F8F7" /><rect x="331" y="9" width="3" height="12" rx="1" fill="#F0F8F7" /></g>
+<path d="M342 14Q348 9 354 14 M345 17Q348 14 351 17" stroke="#F0F8F7" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+<rect x="359" y="9" width="21" height="12" rx="3" fill="#F0F8F7" /><rect x="380" y="13" width="2" height="4" rx="1" fill="#F0F8F7" />
+<line x1="25" y1="46" x2="39" y2="46" stroke="#0F9D97" stroke-width="2.3" stroke-linecap="round"/><line x1="25" y1="51" x2="39" y2="51" stroke="#0F9D97" stroke-width="2.3" stroke-linecap="round"/><line x1="25" y1="56" x2="39" y2="56" stroke="#0F9D97" stroke-width="2.3" stroke-linecap="round"/>
+<text x="57" y="56" fill="#F0F8F7" font-size="18" font-weight="800" >VitaLoom</text>
+<g fill="none" stroke="#F0F8F7" stroke-width="1.6"><rect x="351" y="39" width="18" height="19" rx="3"/><path d="M351 45H369 M356 36V42 M364 36V42"/><path d="M357 49V53 M362 49V53"/></g>
+<text x="22" y="89" fill="#FF93AE" font-size="10" font-weight="800" letter-spacing="1.4">THỐNG KÊ SỨC KHỎE</text>
+<text x="22" y="119" fill="#F0F8F7" font-size="28" font-weight="840" >Thống kê</text>
+<text x="22" y="140" fill="#A9C1C3" font-size="12" font-weight="450" >Khám phá xu hướng các chỉ số sức khỏe.</text>
+<g opacity=".85"><rect x="328" y="104" width="9" height="23" rx="3" fill="#83E6BE" /><rect x="341" y="94" width="9" height="33" rx="3" fill="#64DCAA" /><rect x="354" y="86" width="9" height="41" rx="3" fill="#3ACFA1" /></g>
+<rect x="22" y="158" width="346" height="38" rx="20" fill="#29373F" />
+<rect x="197" y="160" width="169" height="34" rx="18" fill="url(#rose)" />
+
+<text x="107" y="182" fill="#D9EFEF" font-size="13" font-weight="700" text-anchor="middle">Ngày</text>
+<text x="283" y="182" fill="#FFFFFF" font-size="13" font-weight="700" text-anchor="middle">Tuần</text>
+<text x="30" y="224" fill="#DFF8F4" font-size="27" font-weight="450" >‹</text>
+<text x="360" y="224" fill="#DFF8F4" font-size="27" font-weight="450" text-anchor="middle">›</text>
+<text x="194" y="224" fill="#F0F8F7" font-size="12" font-weight="680" text-anchor="middle">09 – 15 tháng 11, 2026</text>
+<rect x="20" y="244" width="350" height="114" rx="19" fill="url(#hr)" stroke="#34434A" stroke-width=".7" filter="url(#shadow)"/>
+<g transform="translate(36 266) scale(0.8)">
+<path d="M23 41 C18 36 2 25 2 13 C2 0 17 -2 23 7 C30 -3 44 0 44 13 C44 25 28 37 23 41Z" fill="url(#heart-fill)" stroke="#FA7391" stroke-width="1.4"/>
+<path d="M5 23 H14 L18 16 L23 30 L28 12 L33 23 H41" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M9 9 C13 4 18 6 20 9" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="3.2" stroke-linecap="round"/></g>
+<text x="91" y="274" fill="#F5FAF9" font-size="15" font-weight="820" >Nhịp tim</text>
+<text x="91" y="292" fill="#C0CFD1" font-size="10.5" font-weight="470" >Trung bình trong tuần</text>
+<path d="M348 271l6 6 -6 6" stroke="#DFF8F4" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="92" y="329" fill="#F5FAF9" font-size="23" font-weight="830" >72</text><text x="126" y="329" fill="#F5FAF9" font-size="11" font-weight="640" >nhịp/phút</text>
+<line x1="239" y1="346" x2="353" y2="346" stroke="undefined" stroke-width="0.7" opacity=".25"/><path d="M239.0 331.8 L257.3 326.9 L275.6 328.9 L293.9 322.5 L312.2 314.6 L330.5 323.9 L348.8 319.1 " stroke="#FF789B" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="239" cy="331.79" r="2.8" fill="#FF789B" stroke="#293740" stroke-width=".8"/><circle cx="257.3" cy="326.89" r="2.8" fill="#FF789B" stroke="#293740" stroke-width=".8"/><circle cx="275.6" cy="328.85" r="2.8" fill="#FF789B" stroke="#293740" stroke-width=".8"/><circle cx="293.9" cy="322.48" r="2.8" fill="#FF789B" stroke="#293740" stroke-width=".8"/><circle cx="312.2" cy="314.64" r="2.8" fill="#FF789B" stroke="#293740" stroke-width=".8"/><circle cx="330.5" cy="323.95" r="2.8" fill="#FF789B" stroke="#293740" stroke-width=".8"/><circle cx="348.8" cy="319.05" r="2.8" fill="#FF789B" stroke="#293740" stroke-width=".8"/>
+<rect x="20" y="366" width="350" height="114" rx="19" fill="url(#steps)" stroke="#34434A" stroke-width=".7" filter="url(#shadow)"/>
+<g transform="translate(30 386) scale(0.97) rotate(-13 24 23)">
+<path d="M1 22 L9 8 L19 4 L30 16 L40 18 Q46 19 47 29 L45 35 Q38 39 27 37 L4 36Z" fill="#EDFFF9" stroke="#58D7B5" stroke-width="1.6"/>
+<path d="M4 30 Q24 37 46 31 L45 38 Q25 43 3 36Z" fill="#00B48B"/>
+<path d="M16 11 L26 16 M13 16 L23 21 M10 21 L19 26" fill="none" stroke="#04A987" stroke-width="3" stroke-linecap="round"/>
+<path d="M16 23 Q28 28 37 26" fill="none" stroke="#B5F6E2" stroke-width="4" stroke-linecap="round"/>
+<g transform="translate(12 -2) rotate(20 20 14) scale(.66)"><path d="M1 20 L9 8 L19 4 L30 16 L40 18 Q46 19 47 29 L45 35 Q38 39 27 37 L4 36Z" fill="#FFFFFF" stroke="#8CEBD2" stroke-width="2"/><path d="M4 30 Q25 35 46 31 L45 38 Q25 43 3 36Z" fill="#2BC9A1"/><path d="M16 11 L26 16 M13 16 L23 21 M10 21 L19 26" fill="none" stroke="#05B58D" stroke-width="3" stroke-linecap="round"/></g></g>
+<text x="91" y="396" fill="#F5FAF9" font-size="15" font-weight="820" >Bước chân</text>
+<text x="91" y="414" fill="#C0CFD1" font-size="10.5" font-weight="470" >Tổng số bước</text>
+<path d="M348 393l6 6 -6 6" stroke="#DFF8F4" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="92" y="451" fill="#F5FAF9" font-size="23" font-weight="830" >52.381</text><text x="178" y="451" fill="#F5FAF9" font-size="11" font-weight="640" >bước</text>
+<line x1="235" y1="468" x2="360" y2="468" stroke="undefined" stroke-width="0.8" opacity=".20"/><rect x="239" y="454" width="12" height="14" rx="3" fill="#2FBF93" /><rect x="257" y="447" width="12" height="21" rx="3" fill="#2FBF93" /><rect x="275" y="442" width="12" height="26" rx="3" fill="#2FBF93" /><rect x="293" y="432" width="12" height="36" rx="3" fill="#2FBF93" /><rect x="311" y="450" width="12" height="18" rx="3" fill="#5DE4AD" /><rect x="329" y="428" width="12" height="40" rx="3" fill="#2FBF93" /><rect x="347" y="440" width="12" height="28" rx="3" fill="#2FBF93" />
+<rect x="20" y="488" width="350" height="114" rx="19" fill="url(#water)" stroke="#34434A" stroke-width=".7" filter="url(#shadow)"/>
+<g transform="translate(35 511) scale(0.86) rotate(10 23 22)">
+<path d="M14 10H32L34 16L39 39Q39 43 34 45H10Q6 43 7 39L12 16Z" fill="url(#blue-fill)" stroke="#39B7E6" stroke-width="1.3"/>
+<path d="M15 7H31V12H15Z" fill="#068ACC"/><rect x="15" y="3" width="16" height="6" rx="2" fill="#1072C2"/>
+<path d="M12 25H36L38 34H9Z" fill="#E8FBFF" opacity=".83"/><path d="M23 24Q28 29 26 32Q20 35 19 29Z" fill="#09B3D9"/>
+<path d="M13 19 L10 33" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity=".65"/></g>
+<text x="91" y="518" fill="#F5FAF9" font-size="15" font-weight="820" >Lượng nước</text>
+<text x="91" y="536" fill="#C0CFD1" font-size="10.5" font-weight="470" >Trung bình mỗi ngày</text>
+<path d="M348 515l6 6 -6 6" stroke="#DFF8F4" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="92" y="573" fill="#F5FAF9" font-size="23" font-weight="830" >1,8</text><text x="128" y="573" fill="#F5FAF9" font-size="11" font-weight="640" >lít</text>
+<line x1="235" y1="590" x2="360" y2="590" stroke="undefined" stroke-width="0.8" opacity=".20"/><rect x="239" y="573" width="12" height="17" rx="3" fill="#3B9ED4" /><rect x="257" y="567" width="12" height="23" rx="3" fill="#3B9ED4" /><rect x="275" y="566" width="12" height="24" rx="3" fill="#3B9ED4" /><rect x="293" y="558" width="12" height="32" rx="3" fill="#3B9ED4" /><rect x="311" y="550" width="12" height="40" rx="3" fill="#7BC9F4" /><rect x="329" y="569" width="12" height="21" rx="3" fill="#3B9ED4" /><rect x="347" y="561" width="12" height="29" rx="3" fill="#3B9ED4" />
+<rect x="20" y="610" width="350" height="114" rx="19" fill="url(#sleep)" stroke="#34434A" stroke-width=".7" filter="url(#shadow)"/>
+<g transform="translate(33 632) scale(0.87)">
+<rect x="2" y="11" width="46" height="32" rx="10" fill="#9C7EEA" stroke="#BEACFF" stroke-width="1"/>
+<path d="M8 22Q22 14 40 23L44 40Q24 46 5 39Z" fill="#C5B0FF" opacity=".8"/>
+<path d="M22 4C10 9 10 26 23 31C32 34 40 25 40 16C34 21 25 18 22 4Z" fill="#FFD967"/>
+<path d="M36 3L37 8L42 9L37 11L36 16L33 10L29 9L34 7Z" fill="#D8C6FF"/></g>
+<text x="91" y="640" fill="#F5FAF9" font-size="15" font-weight="820" >Giấc ngủ</text>
+<text x="91" y="658" fill="#C0CFD1" font-size="10.5" font-weight="470" >Trung bình mỗi đêm</text>
+<path d="M348 637l6 6 -6 6" stroke="#DFF8F4" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="92" y="695" fill="#F5FAF9" font-size="18" font-weight="830" >7 giờ 24 phút</text>
+<line x1="235" y1="712" x2="360" y2="712" stroke="undefined" stroke-width="0.8" opacity=".20"/><rect x="239" y="689" width="12" height="23" rx="3" fill="#8872D7" /><rect x="257" y="685" width="12" height="27" rx="3" fill="#8872D7" /><rect x="275" y="683" width="12" height="29" rx="3" fill="#8872D7" /><rect x="293" y="679" width="12" height="33" rx="3" fill="#8872D7" /><rect x="311" y="687" width="12" height="25" rx="3" fill="#BD9EFA" /><rect x="329" y="672" width="12" height="40" rx="3" fill="#8872D7" /><rect x="347" y="680" width="12" height="32" rx="3" fill="#8872D7" />
+<text x="195" y="740" fill="#A9C1C3" font-size="10.5" font-weight="500" text-anchor="middle">Chạm vào chỉ số để xem chi tiết</text>
+<rect x="0" y="763" width="390" height="81" rx="24" fill="#182630" stroke="#34434A" stroke-width=".8"/>
+<g transform="translate(65 792)" fill="none" stroke="#B1C5C5" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M-10 0L0 -9L10 0V13H-10ZM-3 13V5H4V13"/></g>
+<text x="65" y="828" fill="#B1C5C5" font-size="10" font-weight="520" text-anchor="middle">Trang chủ</text>
+<g fill="#FF6E97"><rect x="180" y="797" width="5" height="14" rx="1.5" fill="#FF6E97" /><rect x="187" y="791" width="5" height="20" rx="1.5" fill="#FF6E97" /><rect x="194" y="786" width="5" height="25" rx="1.5" fill="#FF6E97" /><rect x="201" y="793" width="5" height="18" rx="1.5" fill="#FF6E97" /></g>
+<text x="194" y="828" fill="#FF6E97" font-size="10" font-weight="730" text-anchor="middle">Thống kê</text>
+<g transform="translate(323 795)" stroke="#B1C5C5" stroke-width="1.7" fill="none"><circle cx="0" cy="-4" r="5"/><path d="M-10 14Q-9 3 0 3Q10 3 10 14"/></g>
+<text x="323" y="828" fill="#B1C5C5" font-size="10" font-weight="520" text-anchor="middle">Hồ sơ</text>
+</svg>
