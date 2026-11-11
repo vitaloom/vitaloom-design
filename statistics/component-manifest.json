@@ -1,0 +1,56 @@
+{
+  "name": "StatisticsWellnessOverview",
+  "status": "APPROVED_B_WEEK_RASTER_BASELINE",
+  "version": "2.0",
+  "sourceOfTruth": "User-approved original Wellness Analytics B mockup. Raster screenshot crops committed here as low-resolution, composition-faithful previews; full original in design review conversation.",
+  "screens": [
+    {
+      "id": "STA-SCR-001-W-L",
+      "mode": "week",
+      "theme": "light",
+      "visual": "approved-b-week-light.webp",
+      "authority": "APPROVED_RASTER"
+    },
+    {
+      "id": "STA-SCR-001-W-D",
+      "mode": "week",
+      "theme": "dark",
+      "visual": "approved-b-week-dark.webp",
+      "authority": "APPROVED_RASTER"
+    },
+    {
+      "id": "STA-SCR-001-D-L",
+      "mode": "day",
+      "theme": "light",
+      "visual": null,
+      "authority": "BEHAVIOR_APPROVED_VISUAL_DERIVED_FROM_WEEK"
+    },
+    {
+      "id": "STA-SCR-001-D-D",
+      "mode": "day",
+      "theme": "dark",
+      "visual": null,
+      "authority": "BEHAVIOR_APPROVED_VISUAL_DERIVED_FROM_WEEK"
+    }
+  ],
+  "behavior": "BEHAVIOR.md",
+  "assetMapping": "ASSET_MAPPING.md",
+  "visualLegacyDirectory": "legacy/",
+  "defaultMode": "week",
+  "metricOrder": [
+    "heart-rate",
+    "steps",
+    "water",
+    "sleep"
+  ],
+  "previewInteraction": "WHOLE_CARD_NAVIGATES",
+  "forbidden": [
+    "using legacy SVG as visual source",
+    "rendering screenshot as actual app",
+    "enriched comparisons",
+    "toggle detailed/minimal",
+    "duplicate business rules or backend DTOs",
+    "redesign metric details"
+  ],
+  "notes": "Do not treat the original illustrative metric values or generated chart preview points as real data."
+}
