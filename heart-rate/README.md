@@ -11,6 +11,12 @@
 
 These editable SVGs are **full-screen visual references**, not code or account data. Example figures are illustrative and chosen to support the pictured chart. The user-approved prior raster mockup is the target visual language; review fidelity before production sign-off.
 
+## Independent hero artwork
+
+- [Glossy heart](../assets/heart-rate/heart-pulse-hero.svg) and [blush hero scenery](../assets/heart-rate/heart-hero-scenery.svg) are reusable transparent vectors.
+- [HR asset mapping / layer order](ASSET_MAPPING.md) · [shared icon kit](../assets/shared/analytics-icons/README.md) · [visual enhancement handoff](../UI_ENHANCEMENT_HANDOFF.md).
+- Independent assets are redrawn and still PROPOSED pending visual review; do not mislabel them as exact screenshots.
+
 ## Preserve
 
 - Steps-like left-aligned heading structure: eyebrow, “Nhịp tim”, supporting subtitle.

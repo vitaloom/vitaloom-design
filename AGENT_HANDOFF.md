@@ -3,6 +3,8 @@
 **Branch:** `design/steps-heart-rate-analytics-refresh-20261111`  
 **Delivery mode:** Investigation and FE/BE implementation on feature branches; **do not create a PR or merge to `main` on the user's behalf**. This branch is the current UI reference; its new SVG screen drawings are editable visual reconstructions of the agreed light-mode concepts, while dark is proposed. Confirm fidelity before final acceptance.
 
+**Visual refinement task:** [UI_ENHANCEMENT_HANDOFF.md](UI_ENHANCEMENT_HANDOFF.md) has the current feature artwork and specific UI changes; inspect it first when improving existing frontend screens. **Do not investigate DevTools warnings/errors for this UI-only task.**
+
 ## Start here
 
 1. [Steps design](steps/README.md) · [behavior](steps/BEHAVIOR.md) · [canonical links](steps/REFERENCES.md).

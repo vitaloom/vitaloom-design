@@ -1,0 +1,83 @@
+{
+  "feature": "heart-rate",
+  "status": "PROPOSED_ARTWORK_PENDING_VISUAL_ACCEPTANCE",
+  "canonicalScreenDirectory": "../../heart-rate",
+  "sourceOfTruth": "../../ASSET_MAPPING_STANDARD.md",
+  "assetProvenance": "Independently authored editable vectors, not extracted from or pixel-identical to the approved generated full-screen mockup.",
+  "screenAssets": [
+    {
+      "screenId": "HRT-SCR-001",
+      "theme": "light",
+      "fullScreenReference": "../../heart-rate/final-light.svg",
+      "visualStatus": "PROPOSED",
+      "layers": [
+        {
+          "id": "hero-surface",
+          "role": "background",
+          "path": null,
+          "order": 0,
+          "renderer": "native theme gradient/card"
+        },
+        {
+          "id": "hero-scenery",
+          "role": "scenery",
+          "path": "heart-hero-scenery.svg",
+          "order": 1,
+          "placement": "absolute bottom; contain/full width, clipped to hero"
+        },
+        {
+          "id": "hero-illustration",
+          "role": "hero",
+          "path": "heart-pulse-hero.svg",
+          "order": 2,
+          "placement": "absolute right; contain, no pointer events"
+        },
+        {
+          "id": "hero-values",
+          "role": "interactive-ui",
+          "path": null,
+          "order": 3,
+          "renderer": "native UI; source from real API"
+        }
+      ],
+      "sharedIconCatalog": "../shared/analytics-icons/README.md"
+    },
+    {
+      "screenId": "HRT-SCR-001-D",
+      "theme": "dark",
+      "fullScreenReference": "../../heart-rate/final-dark.svg",
+      "visualStatus": "PROPOSED",
+      "layers": [
+        {
+          "id": "hero-surface",
+          "role": "background",
+          "path": null,
+          "order": 0,
+          "renderer": "native theme gradient/card"
+        },
+        {
+          "id": "hero-scenery",
+          "role": "scenery",
+          "path": "heart-hero-scenery.svg",
+          "order": 1,
+          "placement": "absolute bottom; contain/full width, clipped to hero"
+        },
+        {
+          "id": "hero-illustration",
+          "role": "hero",
+          "path": "heart-pulse-hero.svg",
+          "order": 2,
+          "placement": "absolute right; contain, no pointer events"
+        },
+        {
+          "id": "hero-values",
+          "role": "interactive-ui",
+          "path": null,
+          "order": 3,
+          "renderer": "native UI; source from real API"
+        }
+      ],
+      "sharedIconCatalog": "../shared/analytics-icons/README.md"
+    }
+  ]
+}

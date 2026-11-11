@@ -2,6 +2,8 @@
 
 **Status:** PROPOSED shared UI guideline; frontend owns actual components. This folder is not an API/BFF schema and does not supersede the live app design system.
 
+**New independent artwork:** [Steps illustration](../../assets/steps/README.md) · [HR illustration](../../assets/heart-rate/README.md) · [Analytics icon set](../../assets/shared/analytics-icons/README.md). **Current UI enhancement task:** [Implementation handoff](../../UI_ENHANCEMENT_HANDOFF.md).
+
 ## Suggested reusable frontend pieces
 
 | Concept | Responsibility | Ownership |

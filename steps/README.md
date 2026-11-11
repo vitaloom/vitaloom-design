@@ -11,6 +11,12 @@
 
 Vector previews reconstruct the accepted visual direction and use **illustrative fixtures**. They are not runtime components, evidence of endpoint output, or user data. Keep labels/date values runtime-derived. The original approved image in the design discussion is the aesthetic target; compare during implementation before final visual acceptance.
 
+## Independent hero artwork
+
+- [Steps sneakers](../assets/steps/steps-sneakers-hero.svg), [mint hero scenery](../assets/steps/steps-hero-scenery.svg) and [icon kit](../assets/shared/analytics-icons/README.md).
+- [Steps asset mapping and layer order](ASSET_MAPPING.md) · [visual enhancement implementation guide](../UI_ENHANCEMENT_HANDOFF.md).
+- These illustrations are reusable, transparent SVG redraws; independent artwork review remains PROPOSED.
+
 ## Layout authority
 
 1. Shared header and bottom navigation belong to [AppShell](../shared/health-metrics-sidebar/README.md), not Steps.
@@ -24,7 +30,7 @@ Vector previews reconstruct the accepted visual direction and use **illustrative
 - [Steps behavior](BEHAVIOR.md), [canonical references & UI dependencies](REFERENCES.md).
 - [Shared chart / theme conventions](../shared/analytics-components/README.md).
 - [Global interaction standard](../BEHAVIOR_STANDARD.md), [global asset standard](../ASSET_MAPPING_STANDARD.md).
-- If separately exported illustrations become available, create a Steps `ASSET_MAPPING.md` using actual paths. **No standalone illustration exports are provided in this branch**; the shoe illustration inside the SVG is part of the full-screen reference only.
+- Standalone hero illustration and wave exports **are now provided**, and composition is documented in [ASSET_MAPPING.md](ASSET_MAPPING.md). The full-screen SVG remains a reference, not an app asset.
 
 ## Required FE review
 
