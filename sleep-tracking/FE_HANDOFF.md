@@ -60,6 +60,6 @@ Do not invent endpoint paths, response field names, token storage, retry API, or
 - Journal, Goal, consent and alternate-state UI references.
 - API contract with exact request/response/error schema, idempotency rules and evidence version semantics.
 - Cross-module HIR-UC-002 presentation alignment and privacy/security review.
-- Binary screenshot/PNG asset import and app-specific font/spacing token review.
+- App-specific font/spacing token review. Screenshot/PNG asset import is now complete; see [asset mapping](ASSET_MAPPING.md).
 
 Release readiness requires Expo device QA against approved visual and validated BR/UC, not just this handoff.

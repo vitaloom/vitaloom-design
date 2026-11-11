@@ -4,6 +4,8 @@
 >
 > **Implementation:** not evidence of a running React Native screen or implemented API.
 
+![Selected VitaLoom Sleep Tracking overview](./00-sleep-design-overview.png)
+
 ## Source of truth
 
 - [Sleep module scope](https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/00-module.md), [F1 Journal rules](https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/f1-sleep-journal/rules.md), [F2 Goal/Insights rules](https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/f2-sleep-goals-insights/rules.md)
@@ -15,14 +17,14 @@
 
 | Stable ID | Selected screen / PNG filename | Owner and scope | File |
 | --- | --- | --- | --- |
-| SLT-SCR-001 | `01-sleep-home.png` | Journal + Goal + one featured insight | Pending binary import |
-| SLT-SCR-002A | `02a-sleep-entry-time-range.png` | SLT-UC-004: start/end with date + hour/minute selectors | Pending binary import |
-| SLT-SCR-002B | `02b-sleep-entry-duration-only.png` | SLT-UC-004: duration + end date | Pending binary import |
-| SLT-SCR-003 | `03-sleep-insights.png` | SLT-UC-009: A/B/C discovery | Pending binary import |
-| SLT-SCR-004 | `04-ai-insight-detail.png` | SLT-UC-009: evidence + optional AI explanation | Pending binary import |
-| SLT-SCR-005 | `05-ai-weekly-sleep-story.png` | HIR-UC-002: weekly report section, Sleep F2 metrics | Pending binary import |
+| SLT-SCR-001 | [`01-sleep-home.png`](./01-sleep-home.png) | Journal + Goal + one featured insight | AVAILABLE / PNG |
+| SLT-SCR-002A | [`02a-sleep-entry-time-range.png`](./02a-sleep-entry-time-range.png) | SLT-UC-004: start/end with date + hour/minute selectors | AVAILABLE / PNG |
+| SLT-SCR-002B | [`02b-sleep-entry-duration-only.png`](./02b-sleep-entry-duration-only.png) | SLT-UC-004: duration + end date | AVAILABLE / PNG |
+| SLT-SCR-003 | [`03-sleep-insights.png`](./03-sleep-insights.png) | SLT-UC-009: A/B/C discovery | AVAILABLE / PNG |
+| SLT-SCR-004 | [`04-ai-insight-detail.png`](./04-ai-insight-detail.png) | SLT-UC-009: evidence + optional AI explanation | AVAILABLE / PNG |
+| SLT-SCR-005 | [`05-ai-weekly-sleep-story.png`](./05-ai-weekly-sleep-story.png) | HIR-UC-002: weekly report section, Sleep F2 metrics | AVAILABLE / PNG |
 
-Also planned: `00-sleep-design-overview.png` (contact overview), optional; not a standalone interactive screen.
+Also available: [`00-sleep-design-overview.png`](./00-sleep-design-overview.png) (selected multi-screen overview; not an interactive screen).
 
 ### Important visual decisions
 
@@ -38,7 +40,7 @@ Also planned: `00-sleep-design-overview.png` (contact overview), optional; not a
 - [SCREEN_STATES.md](SCREEN_STATES.md) — state matrix for loading/empty/errors/AI.
 - [ASSET_MAPPING.md](ASSET_MAPPING.md) — per-screen composition & actual proposed SVG fallback inventory.
 - [FE_HANDOFF.md](FE_HANDOFF.md) — UI data dependencies, API-contract boundaries, Expo implementation notes.
-- [SCREEN_IMPORT.md](SCREEN_IMPORT.md) — exact PNG destinations and integrity verification before marking image links live.
+- [SCREEN_IMPORT.md](SCREEN_IMPORT.md) — completed PNG import/integrity record and targets.
 - [Screen manifest](screen-manifest.json), [small asset catalog](../assets/sleep-tracking/README.md).
 
 ## Ownership / deferred screens

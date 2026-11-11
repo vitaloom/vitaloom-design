@@ -50,4 +50,4 @@ The realistic hero direction is user-selected; screen compositions remain `PENDI
 ## Sleep Tracking UI baseline
 
 - [Sleep Tracking — screen registry and selected design baseline](sleep-tracking/README.md) · [Behavior](sleep-tracking/BEHAVIOR.md) · [Asset mapping](sleep-tracking/ASSET_MAPPING.md) · [Expo handoff](sleep-tracking/FE_HANDOFF.md).
-- **Note:** approved raster screenshots and independently generated transparent PNG artwork are pending binary import; see [import checklist](sleep-tracking/SCREEN_IMPORT.md). Proposed editable SVG fallback icons are included under [assets/sleep-tracking](assets/sleep-tracking/README.md).
+- **Available:** six selected screen PNGs, one overview, and nine independently generated transparent PNG assets are [committed](sleep-tracking/SCREEN_IMPORT.md); [asset catalog](assets/sleep-tracking/README.md) includes optional SVG fallbacks.

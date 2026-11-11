@@ -2,61 +2,106 @@
   "schemaVersion": 1,
   "feature": "sleep-tracking",
   "assetRoot": "assets/sleep-tracking",
-  "pngSourceStatus": "PENDING_BINARY_IMPORT",
+  "pngSourceStatus": "COMMITTED",
   "originalPngTargets": [
     {
       "name": "moon-cloud-stars.png",
-      "status": "PENDING_BINARY_IMPORT",
-      "fileExistsInGitHub": false,
-      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+      "status": "COMMITTED",
+      "fileExistsInGitHub": true,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "hasAlpha": true
     },
     {
       "name": "sleep-cloud.png",
-      "status": "PENDING_BINARY_IMPORT",
-      "fileExistsInGitHub": false,
-      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+      "status": "COMMITTED",
+      "fileExistsInGitHub": true,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "hasAlpha": true
     },
     {
       "name": "pillow-stars.png",
-      "status": "PENDING_BINARY_IMPORT",
-      "fileExistsInGitHub": false,
-      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+      "status": "COMMITTED",
+      "fileExistsInGitHub": true,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "hasAlpha": true
     },
     {
       "name": "star-smiling.png",
-      "status": "PENDING_BINARY_IMPORT",
-      "fileExistsInGitHub": false,
-      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+      "status": "COMMITTED",
+      "fileExistsInGitHub": true,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "hasAlpha": true
     },
     {
       "name": "feeling-comfortable.png",
-      "status": "PENDING_BINARY_IMPORT",
-      "fileExistsInGitHub": false,
-      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+      "status": "COMMITTED",
+      "fileExistsInGitHub": true,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "hasAlpha": true
     },
     {
       "name": "feeling-normal.png",
-      "status": "PENDING_BINARY_IMPORT",
-      "fileExistsInGitHub": false,
-      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+      "status": "COMMITTED",
+      "fileExistsInGitHub": true,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "hasAlpha": true
     },
     {
       "name": "feeling-tired.png",
-      "status": "PENDING_BINARY_IMPORT",
-      "fileExistsInGitHub": false,
-      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+      "status": "COMMITTED",
+      "fileExistsInGitHub": true,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "hasAlpha": true
     },
     {
       "name": "trend-up.png",
-      "status": "PENDING_BINARY_IMPORT",
-      "fileExistsInGitHub": false,
-      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+      "status": "COMMITTED",
+      "fileExistsInGitHub": true,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "hasAlpha": true
     },
     {
       "name": "bars.png",
-      "status": "PENDING_BINARY_IMPORT",
-      "fileExistsInGitHub": false,
-      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+      "status": "COMMITTED",
+      "fileExistsInGitHub": true,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "hasAlpha": true
     }
   ],
   "proposedFallbacks": [
@@ -121,7 +166,7 @@
         "icons/trend-up.svg",
         "icons/bars.svg"
       ],
-      "approvedPngStatus": "PENDING_BINARY_IMPORT"
+      "approvedPngStatus": "COMMITTED"
     },
     "SLT-SCR-002A": {
       "fallbacks": [
@@ -129,7 +174,7 @@
         "icons/feeling-normal.svg",
         "icons/feeling-tired.svg"
       ],
-      "approvedPngStatus": "PENDING_BINARY_IMPORT"
+      "approvedPngStatus": "COMMITTED"
     },
     "SLT-SCR-002B": {
       "fallbacks": [
@@ -137,14 +182,14 @@
         "icons/feeling-normal.svg",
         "icons/feeling-tired.svg"
       ],
-      "approvedPngStatus": "PENDING_BINARY_IMPORT"
+      "approvedPngStatus": "COMMITTED"
     },
     "SLT-SCR-003": {
       "fallbacks": [
         "icons/trend-up.svg",
         "icons/bars.svg"
       ],
-      "approvedPngStatus": "PENDING_BINARY_IMPORT"
+      "approvedPngStatus": "COMMITTED"
     },
     "SLT-SCR-004": {
       "fallbacks": [
@@ -152,14 +197,14 @@
         "icons/feeling-comfortable.svg",
         "icons/feeling-tired.svg"
       ],
-      "approvedPngStatus": "PENDING_BINARY_IMPORT"
+      "approvedPngStatus": "COMMITTED"
     },
     "SLT-SCR-005": {
       "fallbacks": [
         "icons/bars.svg",
         "icons/trend-up.svg"
       ],
-      "approvedPngStatus": "PENDING_BINARY_IMPORT"
+      "approvedPngStatus": "COMMITTED"
     }
   }
 }
