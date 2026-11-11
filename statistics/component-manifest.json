@@ -1,41 +1,54 @@
 {
+  "schemaVersion": 3,
   "name": "StatisticsWellnessOverview",
-  "status": "APPROVED_B_WEEK_RASTER_BASELINE",
-  "version": "2.0",
-  "sourceOfTruth": "User-approved original Wellness Analytics B mockup. Raster screenshot crops committed here as low-resolution, composition-faithful previews; full original in design review conversation.",
+  "version": "3.0",
+  "status": "CURRENT_USER_UPLOADED_REFERENCE_WITH_DOCUMENTED_DAY_ORDER_DEFECT",
+  "sourceCommits": [
+    "2fbcbfcd200895a6202fb88e62c2ff0d186be8d1",
+    "f152c19df06696bc150cf8878cfd0b02ea125d01"
+  ],
+  "authority": "Four actual statistics/statistic_*.png images; Week image order is canonical. Explicit user correction overrides erroneous Day image order.",
   "screens": [
     {
       "id": "STA-SCR-001-W-L",
       "mode": "week",
       "theme": "light",
-      "visual": "approved-b-week-light.webp",
-      "authority": "APPROVED_RASTER"
+      "visual": "statistic_week_light.png",
+      "status": "CURRENT_USER_UPLOADED_REFERENCE",
+      "knownVisualIssues": []
     },
     {
       "id": "STA-SCR-001-W-D",
       "mode": "week",
       "theme": "dark",
-      "visual": "approved-b-week-dark.webp",
-      "authority": "APPROVED_RASTER"
+      "visual": "statistic_week_dark.png",
+      "status": "CURRENT_USER_UPLOADED_REFERENCE",
+      "knownVisualIssues": []
     },
     {
       "id": "STA-SCR-001-D-L",
       "mode": "day",
       "theme": "light",
-      "visual": null,
-      "authority": "BEHAVIOR_APPROVED_VISUAL_DERIVED_FROM_WEEK"
+      "visual": "statistic_day_light.png",
+      "status": "REFERENCE_WITH_KNOWN_ORDER_DEFECT",
+      "knownVisualIssues": [
+        "Metric section order is wrong in PNG; FE must enforce metricOrder. Sleep is last."
+      ]
     },
     {
       "id": "STA-SCR-001-D-D",
       "mode": "day",
       "theme": "dark",
-      "visual": null,
-      "authority": "BEHAVIOR_APPROVED_VISUAL_DERIVED_FROM_WEEK"
+      "visual": "statistic_day_dark.png",
+      "status": "REFERENCE_WITH_KNOWN_ORDER_DEFECT",
+      "knownVisualIssues": [
+        "Metric section order is wrong in PNG; FE must enforce metricOrder. Sleep is last."
+      ]
     }
   ],
   "behavior": "BEHAVIOR.md",
   "assetMapping": "ASSET_MAPPING.md",
-  "visualLegacyDirectory": "legacy/",
+  "assetManifest": "../assets/statistic/asset-manifest.json",
   "defaultMode": "week",
   "metricOrder": [
     "heart-rate",
@@ -43,14 +56,40 @@
     "water",
     "sleep"
   ],
-  "previewInteraction": "WHOLE_CARD_NAVIGATES",
-  "forbidden": [
-    "using legacy SVG as visual source",
-    "rendering screenshot as actual app",
-    "enriched comparisons",
-    "toggle detailed/minimal",
-    "duplicate business rules or backend DTOs",
-    "redesign metric details"
+  "banner": {
+    "textSide": "left",
+    "illustrationSide": "right",
+    "content": "native UI + decorative assets"
+  },
+  "periodSelector": {
+    "modes": [
+      "day",
+      "week"
+    ],
+    "global": true
+  },
+  "sleepModeVisual": {
+    "week": "compact data-bound trend preview",
+    "day": "recorded feeling reaction + short descriptive text; no week-style graph",
+    "missingFeeling": "neutral no-feeling state; no guess"
+  },
+  "previewInteraction": "WHOLE_CARD_NAVIGATES_TO_EXISTING_DETAIL",
+  "assetRoot": "../assets/statistic",
+  "deprecatedVisualRefs": [
+    "approved-b-week-light.webp",
+    "approved-b-week-dark.webp",
+    "legacy/overview-day-light.svg",
+    "legacy/overview-day-dark.svg",
+    "legacy/overview-week-light.svg",
+    "legacy/overview-week-dark.svg"
   ],
-  "notes": "Do not treat the original illustrative metric values or generated chart preview points as real data."
+  "forbidden": [
+    "using an incorrect Day image card order",
+    "rendering screenshots as actual app",
+    "using static graph PNGs as live metric data",
+    "inventing sleep feelings",
+    "duplicating business rules or backend DTOs",
+    "redesigning metric details"
+  ],
+  "notes": "Design screenshots' example values are illustrative; asset mapping and behavior are separate from backend data authority."
 }

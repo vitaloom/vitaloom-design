@@ -1,46 +1,49 @@
-# Statistics Overview — Wellness Analytics B (approved visual direction)
+# Statistics — VitaLoom Health Overview
 
-**Status: APPROVED VISUAL BASELINE FOR WEEK OVERVIEW.** The **user-approved high-fidelity Wellness Analytics B** from the original four-screen design board is the **sole visual source of truth**. This folder now includes *unaltered-composition crops* of the two B phone screens as raster previews. They are scaled-down preview exports of the user's selected board, **not manually redrawn SVGs**. The original board image supplied during design review takes precedence if a tiny preview lacks fine detail.  
+**Current source:** user-uploaded PNG screens at commits [2fbcbfc](https://github.com/vitaloom/vitaloom-design/commit/2fbcbfcd200895a6202fb88e62c2ff0d186be8d1) and [f152c19](https://github.com/vitaloom/vitaloom-design/commit/f152c19df06696bc150cf8878cfd0b02ea125d01) (2026-11-12 documentation sync). **Module folder: `statistics/`; asset folder: `assets/statistic/` (singular).** These are the current visual references; older `approved-b-week-*.webp` and `legacy/overview-*.svg` references were removed from main and are **not** implementable baselines.
 
-**Do not implement any of the older `overview-*.svg` drawings as current design.** Those were primitive approximations and have been moved under [legacy](legacy/README.md) specifically to prevent an agent copying their inferior illustrations.
+> **MANDATORY VISUAL EXCEPTION — Day Light and Day Dark:** The uploaded `statistic_day_light.png` and `statistic_day_dark.png` show an incorrect metric section order. Do **not** reproduce that order in FE. Both Day screens must follow Week order: **Nhịp tim → Bước chân → Lượng nước → Giấc ngủ**. Keep the Sleep section last; retain its Day-specific feeling reaction and supporting text. The PNG files remain unchanged for traceability. This correction is explicitly user-directed, not an optional suggestion.
 
-## Current approved visual references (mode = Week)
+## Screen inventory
 
-| Screen | Reference | Purpose |
-| --- | --- | --- |
-| `STA-SCR-001-W-L` | ![Approved B — Week Light](approved-b-week-light.webp) | Light mode, original B card artwork and proportions |
-| `STA-SCR-001-W-D` | ![Approved B — Week Dark](approved-b-week-dark.webp) | Dark mode, original B colors and rendering |
+| Stable screen ID | Mode / theme | Current full-screen reference | Visual status |
+| --- | --- | --- | --- |
+| `STA-SCR-001-W-L` | Tuần · Light | [statistic_week_light.png](statistic_week_light.png) | `CURRENT_USER_UPLOADED_REFERENCE` |
+| `STA-SCR-001-W-D` | Tuần · Dark | [statistic_week_dark.png](statistic_week_dark.png) | `CURRENT_USER_UPLOADED_REFERENCE` |
+| `STA-SCR-001-D-L` | Ngày · Light | [statistic_day_light.png](statistic_day_light.png) | `REFERENCE_WITH_KNOWN_ORDER_DEFECT` |
+| `STA-SCR-001-D-D` | Ngày · Dark | [statistic_day_dark.png](statistic_day_dark.png) | `REFERENCE_WITH_KNOWN_ORDER_DEFECT` |
 
-[Open Week Light](approved-b-week-light.webp) · [Open Week Dark](approved-b-week-dark.webp).
+The Day screenshots are **valid visual references for artwork, layout language and Day-specific Sleep presentation**, **not** for their incorrect section sequence. The Week screenshots establish the correct section order for every mode and theme. Screen IDs remain stable across this migration.
 
-These are **reduced-resolution raster crops** directly from the approved board, included to preserve visual fidelity and avoid another redraw. They should **not** be used as actual UI images. Real UI must be responsive React Native components with real data and independent chart rendering. Use the original board presented in the review conversation for the highest-clarity comparison. Do not interpret its example metric values as API fixtures.
+## Page structure (top to bottom)
 
-### Day mode
+1. **Statistics banner/header:** left-aligned heading and supporting copy, with decorative statistics artwork on the **right**. Copy and controls are native text/UI, not pixels extracted from the reference.
+2. **Global period selector:** `Ngày` / `Tuần`. A date/week context and previous/next navigation follow the active selection as supported by the actual app.
+3. **Four vertically stacked metric sections/cards (fixed order):**
+   1. **Nhịp tim** (Heart Rate) — coral/pink family; headline value and small relevant trend presentation.
+   2. **Bước chân** (Steps) — green/mint; value plus steps preview.
+   3. **Lượng nước** (Water) — blue; value plus hydration preview.
+   4. **Giấc ngủ** (Sleep) — lavender accent; **Week:** compact sleep trend. **Day:** one recorded feeling reaction with short explanation (e.g. “Thoải mái sau khi thức dậy”), **instead of** the Week-style graph.
+4. **Shared app navigation** follows the real AppShell structure; do not duplicate bottom navigation or the health-metrics drawer inside this module.
 
-**Behavior approved, separate visual artwork NOT independently approved:** The global period control supports Day as well as Week. Use the exact same card shell, iconography, spacing, palette and visual language as the approved Week B mockup. Adjust the displayed metric context, period text and charts according to [BEHAVIOR.md](BEHAVIOR.md). **Do not revive the hand-drawn SVG day version as a new visual baseline.** If a separate Day screenshot is needed later, it requires its own design review.
+The same four metric sections remain available in **both** Day/Week and Light/Dark. Maintain coherent spacing, soft wellness surfaces, rounded corners and legibility, while respecting the full-screen reference for individual section composition. Natural vertical scrolling is expected; never shrink content to force all cards above the fold.
 
-## Scope and layout
+## Behavior and information integrity
 
-- **Statistics is a multi-metric trend explorer**, not Home 2.0.
-- One vertically scrollable page with **four metric preview cards**, in order: Heart Rate → Steps → Water → Sleep.
-- Shared header/navigation shell. Native `Thống kê` heading, subtle wave and compact green decorative bars at upper right. Separate global `Ngày / Tuần` segmented selector and period navigation.
-- Week is the **default** first-visit scope. User taps whole card to open existing metric detail screen.
-- Each card: expressive original **metric artwork** on left, title + short context, large value + unit, **small chart preview** at lower-right, chevron at upper-right. No tooltip on preview cards.
-- HR coral/blush, Steps mint, Water sky blue, Sleep lavender. Light page mostly cream-white and mint; dark page deep navy/charcoal with softened metric-color panels.
-- Cards may extend below screen and require vertical scrolling. **Do not compress them just to show all four in one viewport.**
-- Only compact B: no comparison with previous periods, no Min/Avg/Max sub-cards, no long insight ribbons, no `Tối giản / Chi tiết` toggle, no quick-add, and no new metric-detail redesign.
+- **Week remains the first-visit default** from the previously documented interaction contract; returning from detail should preserve the selected period in the same session where feasible.
+- All sections use the **same selected local date or week**; do not make separate period selectors for individual cards.
+- Each metric section opens its **existing** dedicated feature screen; mini trend previews are not independent analytics drilldowns.
+- Display factual data only. Example values/graph pixels in uploaded PNGs are illustrative, not backend records, fixtures, contract fields, or health judgments.
+- Day Sleep's reaction/text is conditional on a **recorded user feeling**; do not infer that the user feels comfortable without a valid source. When unavailable, use an explicit no-feeling state.
+- Light/Dark differ in palette/contrast, **not** information hierarchy or behavior.
 
-## Responsive reference
+## Handoff and files
 
-A cropped screenshot from a design presentation is not a precise DP scale. For a 393dp viewport, start with ~16dp outer gutters, ~16dp internal card padding, ~18–22dp radius, ~10–14dp card gap, and a ~110–145dp natural card height depending on text scaling/locale. Treat these as **implementation guidelines**, not a reason to change the approved screenshot's proportions. Mini charts should fit their designated right-side space with no horizontal scrolling.
+- [Screen behavior, navigation, UI states and acceptance checks](BEHAVIOR.md)
+- [Screen-to-asset mapping and layered composition](ASSET_MAPPING.md)
+- [Current screen/component manifest](component-manifest.json)
+- [Standalone artwork catalog](../assets/statistic/README.md) and [asset manifest](../assets/statistic/asset-manifest.json)
+- [Global mapping standard](../ASSET_MAPPING_STANDARD.md) · [Behavior standard](../BEHAVIOR_STANDARD.md)
+- [Shared AppShell/drawer](../shared/health-metrics-sidebar/README.md)
 
-**Important:** The SVGs in [legacy](legacy/) are not authoritative for proportions, font, illustration or icons. The original B screenshot is authoritative for those properties. Other modules' legacy backgrounds or redesign experiments must not override it.
-
-## Related specifications
-
-- [Behavior: day/week/navigation, independently handled states](BEHAVIOR.md)
-- [Asset reuse and screenshot fidelity](ASSET_MAPPING.md)
-- [Manifest — current screen authority and deprecated references](component-manifest.json)
-- [Shared health metrics drawer](../shared/health-metrics-sidebar/README.md)
-
-**API/model ownership:** This is a visual specification, not a duplicate API schema or database model. Read current canonical backend docs and existing frontend repositories when implementing.
+**FE implementation:** copy individual approved-reference assets into the feature's asset structure as needed, but implement text, values, controls, accessible cards and data-driven charts as React Native components. No backend schema/API change is implied by this document. Confirm data availability against canonical Business Docs and backend contracts before binding metrics.
