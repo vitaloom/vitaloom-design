@@ -14,8 +14,12 @@
 | `SLT-SCR-003` | Sleep Insights | Home `Insights`; filter A/B/C | SLT-UC-009 |
 | `SLT-SCR-004` | Insight Detail | Select an eligible insight; evidence/source | SLT-UC-009 |
 | `SLT-SCR-005` | Weekly Sleep Report | Home `Weekly Report`, within HIR workflow | HIR-UC-002 + F2 |
-| `SLT-DST-001` | Journal / record detail | Home `Journal`, evidence source records | SLT-UC-005/006/007, **no approved image yet** |
-| `SLT-DST-002` | Sleep Goal | Goal card tap | SLT-UC-008, **no approved image yet** |
+| `SLT-SCR-006` | Sleep Journal | Home Journal, select record or Add Sleep | SLT-UC-005; [structure-only 7](7_sleep_journal.png) |
+| `SLT-SCR-007` | Record Detail | Journal or linked source record; edit/delete | SLT-UC-005/006/007; [structure-only 8](8_sleep_record_detail.png) |
+| `SLT-SCR-008` | Edit Record | Detail Edit, current version | SLT-UC-006; [structure-only 9](9_sleep_record_detail_edit.png) |
+| `SLT-SCR-009` | Sleep Goal | Home Goal; set/update/remove | SLT-UC-008; [structure-only 10](10_sleep_goal_setup.png) |
+| `SLT-SCR-003/NO_DATA` | Insights empty state | Verified no-data query | [structure-only 11](11_sleep_insight_empty.png), not a route |
+| `SLT-SCR-003/INSUFFICIENT_DATA` | Insights insufficient state | Category-specific unmet eligibility | [structure-only 12](12_sleep_not_enough_data_insight.png), not a route |
 | `SLT-DST-003` | AI data-use choice | On-demand when AI not yet opted in | BR-M.6/BR-F2.36, **screen placement OPEN** |
 
 IDs refer to screens/destinations, **not hard-coded React Navigation route names**.
@@ -30,8 +34,10 @@ flowchart TD
   D[SLT-SCR-003 Insights]
   E[SLT-SCR-004 Insight Detail]
   F[SLT-SCR-005 Weekly Report]
-  J[SLT-DST-001 Journal / Source Records]
-  G[SLT-DST-002 Sleep Goal]
+  J[SLT-SCR-006 Journal]
+  R[SLT-SCR-007 Detail]
+  U[SLT-SCR-008 Edit Record]
+  G[SLT-SCR-009 Sleep Goal]
   X[SLT-DST-003 AI choice]
   A -->|Record Sleep| B
   B <-->|Input Method| C
@@ -41,13 +47,21 @@ flowchart TD
   D -->|Eligible insight| E
   A -->|Featured insight| E
   E -->|View source records| J
+  J -->|Select record| R
+  R -->|Edit| U
+  U -->|Confirmed update| R
+  R -->|Confirmed delete| J
+  J -->|Add Sleep| B
   A -->|Journal| J
   A -->|Goal card| G
+  D -->|Verified NO_DATA/INSUFFICIENT_DATA - Record Sleep| B
   A -->|Weekly Report| F
   F -->|Key insight| E
   E -.->|Optional AI, consent missing| X
   F -.->|Optional AI, consent missing| X
 ```
+
+**MANDATORY VISUAL CORRECTION:** New screenshot references 7–12 are structure-only and display an INCORRECT purple-dominant UI. Implement them green/mint wellness-first; purple only minor bed/pillow/icon accent. See [additional-screens specification](ADDITIONAL_SCREENS_20261111.md).
 
 Shared Health Metrics Drawer / bottom navigation are owned by AppShell. Do not create a second drawer inside Sleep. Android Back/gesture should follow stack navigation; draft-discard confirmation is `PROPOSED`.
 
@@ -80,6 +94,26 @@ Shared Health Metrics Drawer / bottom navigation are owned by AppShell. Do not c
 | `SLT-ACT-023` | Report / week navigation | Previous / next week | Load server-verified aggregates; current week has no AI Story | CONFIRMED AI eligibility; control PROPOSED |
 | `SLT-ACT-024` | Report / Key Insight | Tap card | Open 004 only if READY & evidence matches selected period | CONFIRMED BR-F2.30–33 |
 | `SLT-ACT-025` | Report/Detail / AI data-use choice | Opt in or decline | Decline: factual metrics and deterministic explanations still available | CONFIRMED BR-M.6 / BR-F2.36 |
+
+### New interaction mapping (2026-11-11)
+
+| Action ID | Surface | Trigger | Result / exception |
+|---|---|---|---|
+| `SLT-ACT-026` | Journal | Open/view date group | Verified sessions grouped by stored statistical day; loading/unverified ≠ empty |
+| `SLT-ACT-027` | Journal item | Tap card | Open 007 by confirmed session ID; duration-only has no invented clock times |
+| `SLT-ACT-028` | Journal Add Sleep | Tap CTA | Open shared record entry form |
+| `SLT-ACT-029` | Detail Edit | Tap | Load current record/revision; open 008; 404/stale → refresh |
+| `SLT-ACT-030` | Edit Save | Submit | Validate and prevent duplicates; confirmed update → refresh detail; conflict/unknown → retain draft, reconcile |
+| `SLT-ACT-031` | Detail Delete | Tap | Display confirmation before sending any write |
+| `SLT-ACT-032` | Delete Confirm | Confirm | Confirmed delete → Journal; stale/unknown → reload/reconfirm, no false success |
+| `SLT-ACT-033` | Goal hours/minutes | Change value | Validate 60–1440 minutes, 15-minute steps, 24h only 00m |
+| `SLT-ACT-034` | Goal Save | Submit | Confirmed update then refresh; rejected/unknown keeps prior confirmed goal |
+| `SLT-ACT-035` | Goal Remove | Tap, confirm | Confirmed removal only; historic goals retained |
+| `SLT-ACT-036` | Insights NO_DATA | Record Sleep CTA | Navigate to new record form after verified no-data read |
+| `SLT-ACT-037` | Insights INSUFFICIENT_DATA | Continue Tracking | Navigate record form; show insight-specific unmet criteria |
+| `SLT-ACT-038` | Insights tabs | Change filter | Recompute READY / NO_DATA / INSUFFICIENT_DATA / UNVERIFIED per selected category |
+
+**Important business corrections:** the detail screenshot's sample statistical day may conflict with the cross-midnight wake date; the *end date in stored reference timezone* is authoritative for a timed session. The duration-only Journal screenshot shows an end clock that is not available in a duration-only record and must not be synthesized. The Edit timezone for a persisted timed record is immutable. A three-day threshold in an insufficient-data screenshot is illustrative, not a universal rule. These new screenshots do **not** authorize purple UI colors.
 
 ## 4. Entry validation & time-picker contract
 
@@ -146,9 +180,11 @@ Use native touch targets ≥44×44 pt, real buttons for reactions/filters, progr
 - `SLT-UX-OPEN-003`: new/edit dirty draft policy and switching methods with partially completed values.
 - `SLT-UX-OPEN-004`: location/wording of AI consent/disclosure and revoke flow; privacy review.
 - `SLT-UX-OPEN-005`: synchronize HIR-UC-002 report ownership/AI presentation rules; no duplicate Sleep workflow.
-- `SLT-UX-OPEN-006`: add actual Journal/Goal and error/empty/state mockups before claiming all UX states are visually approved.
-- `SLT-UX-OPEN-007`: select specific proposed separate art assets; SVG fallbacks here are not automatically approved PNG replacements.
+- `SLT-UX-OPEN-006`: Journal/Detail/Edit/Goal and Insights NO_DATA/INSUFFICIENT_DATA structural references now exist; corrected GREEN FE visuals and remaining error/confirmation states are pending approval.
+- `SLT-UX-OPEN-007`: new independent assets bed.png and star-pillow-cloud.png uploaded; verify their use in green-themed FE. SVGs remain merely proposed alternatives.
 
 ## Change log
+
+- 2026-11-11 — Registered images 7–12, Journal/Detail/Edit/Goal and Insights NO_DATA/INSUFFICIENT states, actions 026–038, and mandatory green wellness palette override (purple screenshot colors rejected).
 
 - 2026-11-11 — Defined selected 6-screen baseline interaction contract, wheel picker normalization proposal, A/B/C evidence constraints, and offline/AI failure behavior.
