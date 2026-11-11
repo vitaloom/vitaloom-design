@@ -205,6 +205,93 @@
         "icons/trend-up.svg"
       ],
       "approvedPngStatus": "COMMITTED"
+    },
+    "SLT-SCR-006": {
+      "reference": "../../sleep-tracking/7_sleep_journal.png",
+      "assets": [
+        "star-pillow-cloud.png",
+        "bed.png"
+      ],
+      "colorOverrideRequired": true,
+      "visualDecision": "STRUCTURE_ONLY_COLOR_OVERRIDE_REQUIRED"
+    },
+    "SLT-SCR-007": {
+      "reference": "../../sleep-tracking/8_sleep_record_detail.png",
+      "assets": [
+        "star-pillow-cloud.png",
+        "bed.png"
+      ],
+      "colorOverrideRequired": true,
+      "visualDecision": "STRUCTURE_ONLY_COLOR_OVERRIDE_REQUIRED"
+    },
+    "SLT-SCR-008": {
+      "reference": "../../sleep-tracking/9_sleep_record_detail_edit.png",
+      "assets": [
+        "star-pillow-cloud.png",
+        "bed.png",
+        "feeling-comfortable.png",
+        "feeling-normal.png",
+        "feeling-tired.png"
+      ],
+      "colorOverrideRequired": true,
+      "visualDecision": "STRUCTURE_ONLY_COLOR_OVERRIDE_REQUIRED"
+    },
+    "SLT-SCR-009": {
+      "reference": "../../sleep-tracking/10_sleep_goal_setup.png",
+      "assets": [
+        "star-pillow-cloud.png",
+        "bed.png"
+      ],
+      "colorOverrideRequired": true,
+      "visualDecision": "STRUCTURE_ONLY_COLOR_OVERRIDE_REQUIRED"
     }
+  },
+  "additionalStandaloneAssets": [
+    {
+      "name": "star-pillow-cloud.png",
+      "path": "star-pillow-cloud.png",
+      "sourceCommit": "7dd2fa987116642477310f4631e1b084e4c7005f",
+      "status": "COMMITTED",
+      "role": "hero",
+      "provenance": "independently generated artwork, not a screenshot crop",
+      "visualUse": "green-wellness UI hero",
+      "alphaVerification": "VERIFY_ON_FE_IMPORT"
+    },
+    {
+      "name": "bed.png",
+      "path": "bed.png",
+      "sourceCommit": "7dd2fa987116642477310f4631e1b084e4c7005f",
+      "status": "COMMITTED",
+      "role": "small-purple-bed-accent",
+      "provenance": "independently generated artwork, not a screenshot crop",
+      "visualUse": "purple accent only; never dominant UI color",
+      "alphaVerification": "VERIFY_ON_FE_IMPORT"
+    }
+  ],
+  "screenStateAssets": [
+    {
+      "parentScreenId": "SLT-SCR-003",
+      "state": "NO_DATA",
+      "reference": "../../sleep-tracking/11_sleep_insight_empty.png",
+      "assets": [
+        "star-pillow-cloud.png"
+      ],
+      "colorOverrideRequired": true
+    },
+    {
+      "parentScreenId": "SLT-SCR-003",
+      "state": "INSUFFICIENT_DATA",
+      "reference": "../../sleep-tracking/12_sleep_not_enough_data_insight.png",
+      "assets": [
+        "star-pillow-cloud.png"
+      ],
+      "colorOverrideRequired": true
+    }
+  ],
+  "visualPolicy": {
+    "newScreens7to12": "STRUCTURE_ONLY_COLOR_OVERRIDE_REQUIRED",
+    "primary": "wellness-green-mint",
+    "purple": "minor independent illustration/icon accent only",
+    "reference": "../../sleep-tracking/ADDITIONAL_SCREENS_20261111.md"
   }
 }
