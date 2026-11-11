@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="320" viewBox="0 0 440 320" role="img" aria-label="VitaLoom Steps — two mint and white dimensional sneakers; transparent artwork"><title>VitaLoom Steps — two mint and white dimensional sneakers; transparent artwork</title><defs>
+<linearGradient id="body" x1=".04" y1=".08" x2=".9" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".36" stop-color="#F6FFFC"/><stop offset=".74" stop-color="#C6F3E7"/><stop offset="1" stop-color="#A4E9D7"/></linearGradient>
+<linearGradient id="sole" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#37D9B5"/><stop offset=".5" stop-color="#09B393"/><stop offset="1" stop-color="#078D7C"/></linearGradient>
+<linearGradient id="heel" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#B9F6E9"/><stop offset="1" stop-color="#25BDA4"/></linearGradient>
+<linearGradient id="toe" x1=".15" y1="0" x2=".9" y2="1"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#B0F0E2"/></linearGradient>
+<linearGradient id="shoeShadow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#047F72" stop-opacity=".24"/><stop offset="1" stop-color="#036B61" stop-opacity=".04"/></linearGradient>
+<filter id="shadow" x="-25%" y="-35%" width="160%" height="185%"><feGaussianBlur stdDeviation="8"/></filter>
+<filter id="softShadow" x="-30%" y="-40%" width="180%" height="190%"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#027E71" flood-opacity=".23"/></filter>
+</defs><ellipse cx="233" cy="279" rx="181" ry="21" fill="#0B8F77" opacity=".12" filter="url(#shadow)"/>
+<ellipse cx="311" cy="148" rx="94" ry="12" fill="#0B8F77" opacity=".12" filter="url(#shadow)"/>
+<g transform="translate(205 34) rotate(-22) scale(0.91)" filter="url(#softShadow)">
+<path d="M11 70 C8 58 12 43 26 29 C37 19 50 13 64 18 L85 27 C100 37 110 46 126 48 C144 49 159 48 179 57 C197 65 202 74 202 87 L201 104 C195 115 180 121 162 121 L40 121 C22 121 6 115 5 101 Z" fill="url(#body)" stroke="#55CBB5" stroke-opacity=".75" stroke-width="2"/>
+<path d="M5 92 C44 100 89 101 126 100 C162 99 184 95 202 86 L202 106 C191 123 178 128 153 128 L39 128 C16 128 0 118 5 92 Z" fill="url(#sole)" stroke="#07877D" stroke-width="1.4"/>
+<path d="M10 103 C58 114 156 118 200 102" fill="none" stroke="#A7F9E5" stroke-width="3" opacity=".8"/>
+<path d="M29 31 C35 20 54 12 65 18 L88 28 L72 64 L45 64 Z" fill="url(#heel)" opacity=".94"/>
+<path d="M29 31 C41 32 45 41 45 63" fill="none" stroke="#ECFFFA" stroke-width="4" opacity=".85"/>
+<path d="M75 28 C100 36 117 54 141 54 C150 55 169 55 184 63 C195 69 201 79 198 87 C172 94 131 96 108 95 C88 94 69 85 57 77 Z" fill="url(#toe)" stroke="#95E7D7" stroke-width="1.4"/>
+<path d="M77 34 L111 51 L88 82 L59 65 Z" fill="#E4FBF3" stroke="#80DCC5" stroke-width="1.4"/>
+<path d="M79 41 L99 51 M73 49 L93 60 M68 57 L87 69 M64 65 L82 77" stroke="#11AC91" stroke-width="5.5" stroke-linecap="round"/>
+<path d="M80 41 L100 51 M75 48 L95 59 M70 55 L89 67" stroke="#F4FFFC" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M113 60 C138 63 160 62 179 70" fill="none" stroke="#FFFFFF" stroke-width="4.5" opacity=".8" stroke-linecap="round"/>
+<path d="M12 80 C17 70 29 67 38 68 L46 87 C37 91 24 93 8 91 Z" fill="#2AC8AA" opacity=".75"/>
+<path d="M21 112 C77 126 144 123 177 115" fill="none" stroke="#067F77" opacity=".42" stroke-width="2"/>
+<path d="M53 20 C71 19 80 33 89 36" fill="none" stroke="#FFFFFF" stroke-opacity=".8" stroke-width="3.5" stroke-linecap="round"/>
+</g>
+<g transform="translate(66 141) rotate(12) scale(1.24)" filter="url(#softShadow)">
+<path d="M11 70 C8 58 12 43 26 29 C37 19 50 13 64 18 L85 27 C100 37 110 46 126 48 C144 49 159 48 179 57 C197 65 202 74 202 87 L201 104 C195 115 180 121 162 121 L40 121 C22 121 6 115 5 101 Z" fill="url(#body)" stroke="#55CBB5" stroke-opacity=".75" stroke-width="2"/>
+<path d="M5 92 C44 100 89 101 126 100 C162 99 184 95 202 86 L202 106 C191 123 178 128 153 128 L39 128 C16 128 0 118 5 92 Z" fill="url(#sole)" stroke="#07877D" stroke-width="1.4"/>
+<path d="M10 103 C58 114 156 118 200 102" fill="none" stroke="#A7F9E5" stroke-width="3" opacity=".8"/>
+<path d="M29 31 C35 20 54 12 65 18 L88 28 L72 64 L45 64 Z" fill="url(#heel)" opacity=".94"/>
+<path d="M29 31 C41 32 45 41 45 63" fill="none" stroke="#ECFFFA" stroke-width="4" opacity=".85"/>
+<path d="M75 28 C100 36 117 54 141 54 C150 55 169 55 184 63 C195 69 201 79 198 87 C172 94 131 96 108 95 C88 94 69 85 57 77 Z" fill="url(#toe)" stroke="#95E7D7" stroke-width="1.4"/>
+<path d="M77 34 L111 51 L88 82 L59 65 Z" fill="#E4FBF3" stroke="#80DCC5" stroke-width="1.4"/>
+<path d="M79 41 L99 51 M73 49 L93 60 M68 57 L87 69 M64 65 L82 77" stroke="#11AC91" stroke-width="5.5" stroke-linecap="round"/>
+<path d="M80 41 L100 51 M75 48 L95 59 M70 55 L89 67" stroke="#F4FFFC" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M113 60 C138 63 160 62 179 70" fill="none" stroke="#FFFFFF" stroke-width="4.5" opacity=".8" stroke-linecap="round"/>
+<path d="M12 80 C17 70 29 67 38 68 L46 87 C37 91 24 93 8 91 Z" fill="#2AC8AA" opacity=".75"/>
+<path d="M21 112 C77 126 144 123 177 115" fill="none" stroke="#067F77" opacity=".42" stroke-width="2"/>
+<path d="M53 20 C71 19 80 33 89 36" fill="none" stroke="#FFFFFF" stroke-opacity=".8" stroke-width="3.5" stroke-linecap="round"/>
+</g>
+<path d="M140 47 L135 27 M157 49 L164 31 M122 59 L106 46" stroke="#24CDA4" stroke-width="6" stroke-linecap="round" opacity=".95"/>
+<circle cx="405" cy="26" r="6" fill="#A2EDD8" opacity=".55"/>
+<circle cx="37" cy="174" r="5" fill="#60D8B6" opacity=".5"/>
+</svg>

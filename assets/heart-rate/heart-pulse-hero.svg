@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="300" viewBox="0 0 320 300" role="img" aria-label="VitaLoom Heart Rate — dimensional coral heart with stylized white pulse line; transparent artwork"><title>VitaLoom Heart Rate — dimensional coral heart with stylized white pulse line; transparent artwork</title><defs>
+<linearGradient id="heartBase" x1=".12" y1=".04" x2=".83" y2="1"><stop stop-color="#FFB7CA"/><stop offset=".17" stop-color="#FF879F"/><stop offset=".5" stop-color="#F25D7D"/><stop offset=".78" stop-color="#E83C68"/><stop offset="1" stop-color="#B82955"/></linearGradient>
+<radialGradient id="heartShine" cx=".28" cy=".07" r=".89"><stop stop-color="#FFFFFF" stop-opacity=".79"/><stop offset=".22" stop-color="#FFC7D4" stop-opacity=".43"/><stop offset=".55" stop-color="#FC7D9C" stop-opacity=".04"/><stop offset="1" stop-color="#940A44" stop-opacity=".2"/></radialGradient>
+<linearGradient id="heartEdge" x1="0" y1="0" x2="1" y2=".7"><stop stop-color="#FFD7E2"/><stop offset=".42" stop-color="#FF85A3"/><stop offset="1" stop-color="#D73362"/></linearGradient>
+<filter id="heartDrop" x="-30%" y="-30%" width="170%" height="185%"><feDropShadow dx="0" dy="13" stdDeviation="10" flood-color="#D53362" flood-opacity=".27"/></filter>
+<filter id="lightBlur" x="-40%" y="-50%" width="200%" height="210%"><feGaussianBlur stdDeviation="9"/></filter>
+</defs><ellipse cx="161" cy="275" rx="99" ry="14" fill="#EB7895" opacity=".15" filter="url(#lightBlur)"/>
+<path d="M160 266 C139 249 35 187 34 115 C33 72 61 46 99 46 C128 46 145 63 160 79 C175 63 193 46 222 46 C260 46 288 73 286 117 C283 185 183 250 160 266Z" fill="url(#heartBase)" stroke="url(#heartEdge)" stroke-width="3.4" filter="url(#heartDrop)"/>
+<path d="M160 266 C139 249 35 187 34 115 C33 72 61 46 99 46 C128 46 145 63 160 79 C175 63 193 46 222 46 C260 46 288 73 286 117 C283 185 183 250 160 266Z" fill="url(#heartShine)"/>
+<path d="M62 106 C68 65 101 55 122 73" stroke="#FFFFFF" opacity=".55" stroke-width="11" stroke-linecap="round" fill="none" filter="url(#lightBlur)"/>
+<path d="M61 104 C75 60 111 58 127 84" stroke="#FFFFFF" opacity=".42" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+<path d="M200 59 C246 51 273 84 266 113" stroke="#FFDFE7" opacity=".6" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M72 158 C104 160 120 170 146 180" stroke="#FBC0CE" stroke-opacity=".2" stroke-width="15" stroke-linecap="round" fill="none"/>
+<path d="M64 155 L120 155 L134 137 L149 181 L169 118 L186 155 L205 145 L214 155 L256 155" stroke="#AD2D55" opacity=".22" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<path d="M64 150 L120 150 L134 132 L149 176 L169 113 L186 150 L205 140 L214 150 L256 150" stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<path d="M64 150 L120 150 L134 132 L149 176 L169 113 L186 150 L205 140 L214 150 L256 150" stroke="#FFFFFF" opacity=".6" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<path d="M107 216 Q151 260 181 229" stroke="#FFB7CB" opacity=".36" stroke-width="3" stroke-linecap="round" fill="none"/>
+</svg>
