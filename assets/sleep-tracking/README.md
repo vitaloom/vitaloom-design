@@ -1,6 +1,6 @@
 # Sleep Tracking — visual assets (transparent PNG + optional SVG)
 
-All nine **original generated PNG assets** are committed in this directory. They were independently created as standalone artworks (not cropped/masked from the screen designs). Each is a 1254 × 1254 RGBA source with transparent canvas.
+All nine **original generated PNG assets** are committed here, plus two additional independently uploaded PNGs in commit `7dd2fa9`. They were independently created as standalone artworks (not cropped/masked from the screen designs). The nine original assets are 1254 × 1254 RGBA sources with transparent canvas; verify alpha/dimensions of the two newer files at FE import.
 
 | Preview / download | Role |
 |---|---|
@@ -13,6 +13,15 @@ All nine **original generated PNG assets** are committed in this directory. They
 | [feeling-tired.png](feeling-tired.png) | Tired reaction |
 | [trend-up.png](trend-up.png) | Rising decorative trend chart |
 | [bars.png](bars.png) | Rising decorative bar chart |
+
+### Added assets — commit 7dd2fa9
+
+| File | Role | Color policy |
+|---|---|---|
+| [star-pillow-cloud.png](star-pillow-cloud.png) | Combined moon/cloud/pillow/star hero on Journal, Edit, Detail and Insights states | Overlay on **green wellness** UI |
+| [bed.png](bed.png) | Small purple bed illustration for sleep cards / goal | **Minor purple accent only**, not screen dominant |
+
+> Screens 7–12 are **structure-only** references because their purple-dominant palette is incorrect. See [mandatory wellness-green correction](../../sleep-tracking/ADDITIONAL_SCREENS_20261111.md).
 
 **Usage:** see [screen-to-asset mapping](../../sleep-tracking/ASSET_MAPPING.md), [behavior](../../sleep-tracking/BEHAVIOR.md), [asset manifest](asset-manifest.json).
 
