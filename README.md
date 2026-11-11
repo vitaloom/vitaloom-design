@@ -56,6 +56,8 @@ The realistic hero direction is user-selected; screen compositions remain `PENDI
 
 ## Current analytics design baseline (Steps + Heart Rate)
 
+**Implementation / BE readiness review:** [Agent handoff and compatibility audit checklist](AGENT_HANDOFF.md).
+
 - [Steps — latest design and behavior](steps/README.md) · [canonical API/model links](steps/REFERENCES.md)
 - [Heart Rate — latest design and behavior](heart-rate/README.md) · [canonical API/model links](heart-rate/REFERENCES.md)
 - [Chart interactions + theme guidance](shared/analytics-components/README.md)
