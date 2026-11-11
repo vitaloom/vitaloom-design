@@ -12,7 +12,7 @@ A public collection of UI design references and component specifications for Vit
 
 ## Feature references
 
-- [Statistics Overview — Wellness Analytics B **approved raster reference**](statistics/README.md) · [Week Light](statistics/approved-b-week-light.webp) · [Week Dark](statistics/approved-b-week-dark.webp) · [Day/Week behavior](statistics/BEHAVIOR.md) · [Asset mapping](statistics/ASSET_MAPPING.md). **Old hand-drawn SVGs are archived under [legacy](statistics/legacy/README.md), not authoritative.**
+- [Statistics — **four current Day/Week · Light/Dark PNG screen references**](statistics/README.md) · [Week Light](statistics/statistic_week_light.png) · [Week Dark](statistics/statistic_week_dark.png) · [Day Light](statistics/statistic_day_light.png) · [Day Dark](statistics/statistic_day_dark.png) · [Behavior](statistics/BEHAVIOR.md) · [Asset mapping](statistics/ASSET_MAPPING.md) · [Standalone Statistic assets](assets/statistic/README.md). **Known Day screenshot defect:** FE must use Week's fixed order **Heart Rate → Steps → Water → Sleep**, keeping Sleep last; Day Sleep uses feeling reaction + text instead of Week graph.
 
 
 - [Water designs](water/)

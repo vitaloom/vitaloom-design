@@ -1,36 +1,51 @@
-# Statistics Overview B — visual assets and composition
+# Statistics — Screen-to-Asset Mapping
 
-**Approved visual baseline:** raster crops of the original **Wellness Analytics B** phones:
-- [Light](approved-b-week-light.webp)
-- [Dark](approved-b-week-dark.webp)
+**Current screen source:** the four `statistics/statistic_*.png` files. **Standalone visual asset source:** `assets/statistic/` (singular); see [catalog](../assets/statistic/README.md). In accordance with [global mapping standard](../ASSET_MAPPING_STANDARD.md), full-screen screenshots remain references only; native components render functional UI.
 
-Both images are faithful **crops of the approved artwork**, reduced in pixel resolution for repo preview. No image-generation or SVG reconstruction step was applied to change their content. If the crop and a low-fidelity legacy SVG conflict, the **crop wins**. These crops must **not** be used as flat screens in the running app.
+> **Known visual defect / REQUIRED FE correction:** `statistic_day_light.png` and `statistic_day_dark.png` have an incorrect metric section order. Apply **Heart Rate → Steps → Water → Sleep** using the `statistic_week_*` order, with Sleep always last. Keep the screenshot files unchanged. The Day Sleep section should show a recorded feeling reaction and small text instead of the Week Sleep graph.
 
-## Reuse existing feature artwork
+## 1. Full-screen mapping
 
-| Card | Asset recommendation | Why |
-| --- | --- | --- |
-| HR | [Dimensional pulse heart](../assets/heart-rate/heart-pulse-hero.svg) or an existing matching polished heart icon | Matches glossy coral heart identity; **not** the prior hand-drawn tiny heart path |
-| Steps | [Sneaker illustration](../assets/steps/steps-sneakers-hero.svg) or existing app sneaker illustration | Preserve mint-and-white dimensional shoes from approved screen |
-| Water | Existing frontend water-bottle illustration from the Water feature, or suitable existing shared water asset | Preserve translucent blue bottle style; no flat square bottle rebuild |
-| Sleep | [Moon/cloud illustration](../assets/sleep-tracking/moon-cloud-stars.png) or selected sleep UI artwork | Dimensional purple pillow/moon/stars, not simple crescent built from paths |
-| Calendar / menu / chevron / bottom nav | Existing app shared icon library / AppShell | Same glyph, alignment and stroke style as app; not duplicated inline vector sketches |
-| Mini charts | **Native components** based on real API series | HR connected dot line; Steps mint bars; Water blue bars; Sleep violet duration bars; do **not** use sample chart pixels as measurements |
+| Stable ID | Full-screen reference / status | Feature-owned asset mapping | Per-variant note |
+| --- | --- | --- | --- |
+| `STA-SCR-001-W-L` | [Week Light](statistic_week_light.png) · `CURRENT_USER_UPLOADED_REFERENCE` | [heart](../assets/statistic/heart.png), [shoe](../assets/statistic/shoe.png), [bottle](../assets/statistic/blue_bottle.png), [sleep](../assets/statistic/sleeping_star_pillow.png); [pink trend](../assets/statistic/pink_graph.png), [pink glow](../assets/statistic/pink_smooth.png), [green trend](../assets/statistic/green_graph.png), [green glow](../assets/statistic/green_smooth.png) | Week Sleep uses a trend; order is canonical |
+| `STA-SCR-001-W-D` | [Week Dark](statistic_week_dark.png) · `CURRENT_USER_UPLOADED_REFERENCE` | Same standalone art; theme-adapt the native surfaces and labels | Week Sleep uses a trend; order is canonical |
+| `STA-SCR-001-D-L` | [Day Light](statistic_day_light.png) · `REFERENCE_WITH_KNOWN_ORDER_DEFECT` | Same illustration and decorative layer set; optional external [comfortable reaction](../assets/sleep-tracking/feeling-comfortable.png) **only for corresponding recorded feeling** | **FE overrides screenshot's wrong ordering**; replace Sleep graph with reaction + text |
+| `STA-SCR-001-D-D` | [Day Dark](statistic_day_dark.png) · `REFERENCE_WITH_KNOWN_ORDER_DEFECT` | Same; text, controls and surfaces theme-adapt | **FE overrides screenshot's wrong ordering**; replace Sleep graph with reaction + text |
 
-## Layout / layering
+The Day feeling icon is a **reuse candidate** from the existing Sleep Tracking asset set, not a new Statistic-specific asset, and is **PENDING_FE_VISUAL_VERIFICATION**. A matching recorded `normal` / `tired` state may reuse the corresponding existing Sleep Tracking reaction if validated. Never display `feeling-comfortable.png` by default when the recorded feeling is missing. **No separately exported Day Sleep reaction exists under `assets/statistic/` in these commits.**
 
-- Parent canvas uses the app's soft neutral/mint wellness palette in light mode and deep navy/charcoal dark mode.
-- Use top header from **shared AppShell** (sidebar closed by default), below it feature title/description and right-side small green/pink accent bars. Keep it subtle, not a big Home hero.
-- Place the global period control above **all** metric cards. The current active pill in B is **rose/coral**, not mint/teal.
-- Pastel backgrounds belong on the four individual cards. Each card contains: icon left, label/context center-left, value toward lower-left, compact chart at lower-right, and navigational chevron upper-right.
-- Match nuanced surface highlights, shadows, illustrations and spacing of the *actual B raster*. Never draw a replacement illustration using generic SVG circles/triangles.
-- No KPI comparison/range badge/footer insight, giant vertical chart, or detailed information in this approved compact view.
+## 2. Asset roles, ownership and provenance
 
-## QA checklist
+| Exact asset path (relative to repo root) | Suggested role / mapping | Ownership | Status |
+| --- | --- | --- | --- |
+| [`assets/statistic/heart.png`](../assets/statistic/heart.png) | HR metric illustration | Statistic | User-uploaded PNG / available |
+| [`assets/statistic/shoe.png`](../assets/statistic/shoe.png) | Steps metric illustration | Statistic | User-uploaded PNG / available |
+| [`assets/statistic/blue_bottle.png`](../assets/statistic/blue_bottle.png) | Water metric illustration | Statistic | User-uploaded PNG / available |
+| [`assets/statistic/sleeping_star_pillow.png`](../assets/statistic/sleeping_star_pillow.png) | Sleep metric illustration | Statistic | User-uploaded PNG / available |
+| [`assets/statistic/pink_graph.png`](../assets/statistic/pink_graph.png) | Pink/coral chart-like **visual reference/decorative overlay** (candidate for HR) | Statistic | User-uploaded PNG / available |
+| [`assets/statistic/pink_smooth.png`](../assets/statistic/pink_smooth.png) | Pink soft glow behind illustration/graph | Statistic | User-uploaded PNG / available |
+| [`assets/statistic/green_graph.png`](../assets/statistic/green_graph.png) | Green chart-like **visual reference/decorative overlay** (candidate for Steps) | Statistic | User-uploaded PNG / available |
+| [`assets/statistic/green_smooth.png`](../assets/statistic/green_smooth.png) | Green soft glow behind illustration/graph | Statistic | User-uploaded PNG / available |
 
-- [ ] Compare FE **directly against** the approved B Light/Dark crops at equivalent viewport aspect, not against any SVG in `legacy/`.
-- [ ] Illustration matches actual asset vocabulary: 3D heart / mint shoes / blue bottle / lavender sleep art.
-- [ ] Card content and mini chart remain separate native, accessible elements, not flattened images.
-- [ ] No forced fit-all-cards: natural vertical scroll, accessible text and responsive layouts.
-- [ ] Correct Day/Week chart semantics use backend data; no future dots/bars, no fabricated values or progress.
-- [ ] No redesigned detail pages, new backend contracts or unsolicited visual changes.
+**Provenance:** source files uploaded in the user-supplied commits, not crops created by this documentation task. **Alpha/transparency:** intended independent assets; validate actual alpha bounds and background in the Expo import pipeline rather than asserting an uninspected property. Exact associations/placement of the two color-coded chart assets must be visually checked against each screenshot; their filenames alone do not prove backend chart semantics.
+
+## 3. Composition (back to front)
+
+1. **Background:** actual native Light/Dark wellness surface; not the full-screen PNG.
+2. **Soft ambient color:** optionally layer `pink_smooth.png` or `green_smooth.png` behind its matching visual where the reference uses it; `contain`, respect natural aspect ratio, avoid readability overlap.
+3. **Metric illustration / decorative preview:** independently render heart/shoe/bottle/sleep artwork, and only appropriate `*_graph.png` visual accents. Header/banner artwork sits on the **right**, with live heading and copy on the **left**.
+4. **Native card surfaces:** four sections in fixed HR → Steps → Water → Sleep order; soft metric accents; responsive layouts.
+5. **Functional content above art:** real metric values, labels, scope control, navigation, chart paths/bars, and Day Sleep's conditional feeling/text. This layer must remain dynamic and accessible.
+
+**Data visualizations:** Never use a frozen PNG graph to impersonate actual recorded metrics. Reimplement any data-bearing line/bars with a chart component using valid data; isolated PNG graph artwork can serve only as decorative reference/overlay where it does not misrepresent a reading. Do not flatten screen into an image.
+
+## 4. FE handoff checks
+
+- [ ] Four current screenshots resolve and old cropped Week/legacy SVG links have been removed from active docs.
+- [ ] All eight listed standalone assets resolve at **`assets/statistic/`**, without relocating binary files during this documentation-only change.
+- [ ] The Day screenshot ordering defect is explicitly corrected in **both Day themes**; Week order is used across all variants.
+- [ ] Day Sleep feeling is data-backed; missing feeling has neutral fallback; Week Sleep still has trend.
+- [ ] Banner uses text-left/illustration-right; graphs/glows are positioned behind live text/controls with no clipping.
+- [ ] React Native chart/data UI is native; transparent PNG bounds and visual fidelity are reviewed at runtime.
+- [ ] Mapping is consistent with [component manifest](component-manifest.json) and [asset manifest](../assets/statistic/asset-manifest.json); no unsupported backend contract inferred from art.

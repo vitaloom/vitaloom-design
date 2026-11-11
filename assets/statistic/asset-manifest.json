@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 1,
+  "feature": "statistics",
+  "assetRoot": "assets/statistic",
+  "sourceCommits": [
+    "2fbcbfcd200895a6202fb88e62c2ff0d186be8d1",
+    "f152c19df06696bc150cf8878cfd0b02ea125d01"
+  ],
+  "provenance": "user-uploaded PNGs; not cropped by documentation update",
+  "binaryInspection": "PENDING_FE_IMPORT_ALPHA_VERIFICATION",
+  "assets": [
+    {
+      "path": "heart.png",
+      "format": "PNG",
+      "status": "COMMITTED",
+      "role": "illustration"
+    },
+    {
+      "path": "shoe.png",
+      "format": "PNG",
+      "status": "COMMITTED",
+      "role": "illustration"
+    },
+    {
+      "path": "blue_bottle.png",
+      "format": "PNG",
+      "status": "COMMITTED",
+      "role": "illustration"
+    },
+    {
+      "path": "sleeping_star_pillow.png",
+      "format": "PNG",
+      "status": "COMMITTED",
+      "role": "illustration"
+    },
+    {
+      "path": "pink_graph.png",
+      "format": "PNG",
+      "status": "COMMITTED",
+      "role": "decorative-graph-or-visual-reference"
+    },
+    {
+      "path": "pink_smooth.png",
+      "format": "PNG",
+      "status": "COMMITTED",
+      "role": "ambient-color"
+    },
+    {
+      "path": "green_graph.png",
+      "format": "PNG",
+      "status": "COMMITTED",
+      "role": "decorative-graph-or-visual-reference"
+    },
+    {
+      "path": "green_smooth.png",
+      "format": "PNG",
+      "status": "COMMITTED",
+      "role": "ambient-color"
+    }
+  ],
+  "screenAssets": {
+    "STA-SCR-001-W-L": {
+      "reference": "../../statistics/statistic_week_light.png",
+      "mode": "week",
+      "theme": "light",
+      "visualStatus": "CURRENT_USER_UPLOADED_REFERENCE",
+      "metricOrder": [
+        "heart-rate",
+        "steps",
+        "water",
+        "sleep"
+      ],
+      "correctOrderOverrideRequired": false,
+      "layers": [
+        {
+          "role": "illustration",
+          "asset": "heart.png",
+          "metric": "heart-rate",
+          "path": "heart.png"
+        },
+        {
+          "role": "illustration",
+          "asset": "shoe.png",
+          "metric": "steps",
+          "path": "shoe.png"
+        },
+        {
+          "role": "illustration",
+          "asset": "blue_bottle.png",
+          "metric": "water",
+          "path": "blue_bottle.png"
+        },
+        {
+          "role": "illustration",
+          "asset": "sleeping_star_pillow.png",
+          "metric": "sleep",
+          "path": "sleeping_star_pillow.png"
+        },
+        {
+          "role": "decorative-graph-or-visual-reference",
+          "asset": "pink_graph.png",
+          "metric": "heart-rate",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "pink_graph.png"
+        },
+        {
+          "role": "ambient-color",
+          "asset": "pink_smooth.png",
+          "metric": "heart-rate",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "pink_smooth.png"
+        },
+        {
+          "role": "decorative-graph-or-visual-reference",
+          "asset": "green_graph.png",
+          "metric": "steps",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "green_graph.png"
+        },
+        {
+          "role": "ambient-color",
+          "asset": "green_smooth.png",
+          "metric": "steps",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "green_smooth.png"
+        }
+      ],
+      "sleepPresentation": "dynamic-week-chart"
+    },
+    "STA-SCR-001-W-D": {
+      "reference": "../../statistics/statistic_week_dark.png",
+      "mode": "week",
+      "theme": "dark",
+      "visualStatus": "CURRENT_USER_UPLOADED_REFERENCE",
+      "metricOrder": [
+        "heart-rate",
+        "steps",
+        "water",
+        "sleep"
+      ],
+      "correctOrderOverrideRequired": false,
+      "layers": [
+        {
+          "role": "illustration",
+          "asset": "heart.png",
+          "metric": "heart-rate",
+          "path": "heart.png"
+        },
+        {
+          "role": "illustration",
+          "asset": "shoe.png",
+          "metric": "steps",
+          "path": "shoe.png"
+        },
+        {
+          "role": "illustration",
+          "asset": "blue_bottle.png",
+          "metric": "water",
+          "path": "blue_bottle.png"
+        },
+        {
+          "role": "illustration",
+          "asset": "sleeping_star_pillow.png",
+          "metric": "sleep",
+          "path": "sleeping_star_pillow.png"
+        },
+        {
+          "role": "decorative-graph-or-visual-reference",
+          "asset": "pink_graph.png",
+          "metric": "heart-rate",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "pink_graph.png"
+        },
+        {
+          "role": "ambient-color",
+          "asset": "pink_smooth.png",
+          "metric": "heart-rate",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "pink_smooth.png"
+        },
+        {
+          "role": "decorative-graph-or-visual-reference",
+          "asset": "green_graph.png",
+          "metric": "steps",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "green_graph.png"
+        },
+        {
+          "role": "ambient-color",
+          "asset": "green_smooth.png",
+          "metric": "steps",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "green_smooth.png"
+        }
+      ],
+      "sleepPresentation": "dynamic-week-chart"
+    },
+    "STA-SCR-001-D-L": {
+      "reference": "../../statistics/statistic_day_light.png",
+      "mode": "day",
+      "theme": "light",
+      "visualStatus": "REFERENCE_WITH_KNOWN_ORDER_DEFECT",
+      "metricOrder": [
+        "heart-rate",
+        "steps",
+        "water",
+        "sleep"
+      ],
+      "correctOrderOverrideRequired": true,
+      "layers": [
+        {
+          "role": "illustration",
+          "asset": "heart.png",
+          "metric": "heart-rate",
+          "path": "heart.png"
+        },
+        {
+          "role": "illustration",
+          "asset": "shoe.png",
+          "metric": "steps",
+          "path": "shoe.png"
+        },
+        {
+          "role": "illustration",
+          "asset": "blue_bottle.png",
+          "metric": "water",
+          "path": "blue_bottle.png"
+        },
+        {
+          "role": "illustration",
+          "asset": "sleeping_star_pillow.png",
+          "metric": "sleep",
+          "path": "sleeping_star_pillow.png"
+        },
+        {
+          "role": "decorative-graph-or-visual-reference",
+          "asset": "pink_graph.png",
+          "metric": "heart-rate",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "pink_graph.png"
+        },
+        {
+          "role": "ambient-color",
+          "asset": "pink_smooth.png",
+          "metric": "heart-rate",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "pink_smooth.png"
+        },
+        {
+          "role": "decorative-graph-or-visual-reference",
+          "asset": "green_graph.png",
+          "metric": "steps",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "green_graph.png"
+        },
+        {
+          "role": "ambient-color",
+          "asset": "green_smooth.png",
+          "metric": "steps",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "green_smooth.png"
+        }
+      ],
+      "sleepPresentation": "recorded-feeling-reaction-and-text"
+    },
+    "STA-SCR-001-D-D": {
+      "reference": "../../statistics/statistic_day_dark.png",
+      "mode": "day",
+      "theme": "dark",
+      "visualStatus": "REFERENCE_WITH_KNOWN_ORDER_DEFECT",
+      "metricOrder": [
+        "heart-rate",
+        "steps",
+        "water",
+        "sleep"
+      ],
+      "correctOrderOverrideRequired": true,
+      "layers": [
+        {
+          "role": "illustration",
+          "asset": "heart.png",
+          "metric": "heart-rate",
+          "path": "heart.png"
+        },
+        {
+          "role": "illustration",
+          "asset": "shoe.png",
+          "metric": "steps",
+          "path": "shoe.png"
+        },
+        {
+          "role": "illustration",
+          "asset": "blue_bottle.png",
+          "metric": "water",
+          "path": "blue_bottle.png"
+        },
+        {
+          "role": "illustration",
+          "asset": "sleeping_star_pillow.png",
+          "metric": "sleep",
+          "path": "sleeping_star_pillow.png"
+        },
+        {
+          "role": "decorative-graph-or-visual-reference",
+          "asset": "pink_graph.png",
+          "metric": "heart-rate",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "pink_graph.png"
+        },
+        {
+          "role": "ambient-color",
+          "asset": "pink_smooth.png",
+          "metric": "heart-rate",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "pink_smooth.png"
+        },
+        {
+          "role": "decorative-graph-or-visual-reference",
+          "asset": "green_graph.png",
+          "metric": "steps",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "green_graph.png"
+        },
+        {
+          "role": "ambient-color",
+          "asset": "green_smooth.png",
+          "metric": "steps",
+          "association": "PROPOSED_VERIFY_AGAINST_SCREEN",
+          "path": "green_smooth.png"
+        }
+      ],
+      "sleepPresentation": "recorded-feeling-reaction-and-text"
+    }
+  },
+  "sharedCandidateAssets": [
+    {
+      "assetPath": "../sleep-tracking/feeling-comfortable.png",
+      "role": "day-sleep-recorded-comfortable-only",
+      "status": "PROPOSED_REUSE_PENDING_FE_VISUAL_VERIFICATION"
+    }
+  ],
+  "visualPolicy": {
+    "canonicalMetricOrder": [
+      "heart-rate",
+      "steps",
+      "water",
+      "sleep"
+    ],
+    "dayImagesContainOrderDefect": true,
+    "daySleep": "reaction + text; no week graph",
+    "weekSleep": "data-bound trend chart",
+    "staticGraphPngs": "art only; not evidence of readings"
+  }
+}
