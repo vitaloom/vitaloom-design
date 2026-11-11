@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="430" height="960" viewBox="0 0 430 960" role="img" aria-label="VitaLoom Nhịp tim — minh họa light mode. Line chart có dot nối tại các bucket liền nhau, khoảng trống dữ liệu được ngắt và min/max mờ.">
-<title>VitaLoom · Heart Rate · Light</title><defs>
-<linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffafa"/><stop offset="1" stop-color="#fcf0f3"/></linearGradient>
+<title>VitaLoom · Heart Rate · Light</title><defs><radialGradient id="ambient-blush-preview"><stop stop-color="#FFC0D0" stop-opacity=".17"/><stop offset="1" stop-color="#FFC0D0" stop-opacity="0"/></radialGradient>
+<linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff9fa"/><stop offset="1" stop-color="#fff3f6"/></linearGradient>
 <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffafa"/><stop offset=".6" stop-color="#ffe8ed"/><stop offset="1" stop-color="#ffd6df"/></linearGradient>
 <linearGradient id="activeTab" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ec617f"/><stop offset="1" stop-color="#ff8798"/></linearGradient>
 <linearGradient id="barGrad" x1="0" y1="1" x2="0" y2="0"><stop stop-color="#ec617f"/><stop offset="1" stop-color="#ff8798"/></linearGradient>
@@ -11,6 +11,7 @@
 <clipPath id="chartClip"><rect x="78" y="558" width="316" height="158"/></clipPath>
 </defs>
 <rect x="0" y="0" width="430" height="960" rx="0" fill="url(#canvas)" />
+<ellipse cx="415" cy="52" rx="198" ry="206" fill="url(#ambient-blush-preview)"/>
 <circle cx="0" cy="90" r="94" fill="#ff8798" opacity=".025"/>
 <g>
 <g stroke="#ec617f" stroke-width="2.5" stroke-linecap="round"><line x1="24" y1="27" x2="40" y2="27" stroke="#ec617f" stroke-width="2.5" /><line x1="24" y1="33" x2="40" y2="33" stroke="#ec617f" stroke-width="2.5" /><line x1="24" y1="39" x2="40" y2="39" stroke="#ec617f" stroke-width="2.5" /></g>
@@ -76,6 +77,11 @@
 <text x="287" y="779" font-size="9" fill="#697a85" font-weight="600" >Cao nhất</text>
 <text x="287" y="803" font-size="20" fill="#153d42" font-weight="830" >112</text>
 <text x="356" y="803" font-size="9" fill="#697a85" font-weight="600" >BPM</text>
+<g id="sample-hr-kpi-icon-previews" aria-label="Min average max icon positions in KPI tiles">
+  <circle cx="130" cy="776" r="10" fill="#DFF7F1"/><path d="M130 770v12m-4-4 4 4 4-4" stroke="#098F83" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="250" cy="776" r="10" fill="#FFE6EC"/><path d="M242 776h4l2-3 3 6 2-5 2 2h3" stroke="#E85072" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="371" cy="776" r="10" fill="#FFE6EC"/><path d="M365 782l11-11m-7 0h7v7" stroke="#E45578" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
 <rect x="37" y="828" width="356" height="16" rx="8" fill="#fff5f7" />
 <text x="48" y="839" font-size="9" fill="#697a85" font-weight="500" >ⓘ  36 mẫu / 8 khoảng · Có khoảng không ghi nhận.</text>
 <g>

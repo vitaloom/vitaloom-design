@@ -11,6 +11,12 @@
 
 These editable SVGs are **full-screen visual references**, not code or account data. Example figures are illustrative and chosen to support the pictured chart. The user-approved prior raster mockup is the target visual language; review fidelity before production sign-off.
 
+## More complete visual asset kit (Min / Avg / Max + ambient blush)
+
+- [KPI icons light/dark](../assets/heart-rate/icons/README.md) — independent colored badges for **Thấp nhất**, **Trung bình**, **Cao nhất** and the HR analytics heading.
+- [Page ambient background tokens + subtle gradient overlay](../assets/heart-rate/BACKGROUND_TOKENS.md). **Light mode has a gently rosy page**, not a saturated red overlay. Dark remains muted plum/charcoal.
+- These assets are separate from chart data and functional controls; use [ASSET_MAPPING.md](ASSET_MAPPING.md) for exact composition.
+
 ## Independent hero artwork
 
 - [Glossy heart](../assets/heart-rate/heart-pulse-hero.svg) and [blush hero scenery](../assets/heart-rate/heart-hero-scenery.svg) are reusable transparent vectors.

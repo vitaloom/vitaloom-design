@@ -3,10 +3,25 @@
 **Scope:** HRT-SCR-001 and HRT-SCR-001-D. Approved overall visual direction, new independent art vectors `PROPOSED` pending visual review.  
 **Authority:** [Heart Rate screens](README.md), [UI behavior](BEHAVIOR.md), [asset mapping standard](../ASSET_MAPPING_STANDARD.md), [machine manifest](../assets/heart-rate/asset-manifest.json).
 
+## Additional page background and KPI art
+
+| UI role | Light | Dark | Placement |
+| --- | --- | --- | --- |
+| Feature-page native base gradient | `#FFF9FA` → `#FFF3F6` | `#211F29` → `#1A242B` | HR page only; behind scroll content; never global AppShell |
+| Optional ambient backdrop | [Blush glow — light](../assets/heart-rate/hr-screen-ambient-light.svg) | [Blush glow — dark](../assets/heart-rate/hr-screen-ambient-dark.svg) | `absoluteFill` behind HR content, pointer-events none, hidden from a11y |
+| Min KPI icon | [hr-min-light.svg](../assets/heart-rate/icons/hr-min-light.svg) | [hr-min-dark.svg](../assets/heart-rate/icons/hr-min-dark.svg) | Native Minimum tile, render 30–40dp |
+| Avg KPI icon | [hr-avg-light.svg](../assets/heart-rate/icons/hr-avg-light.svg) | [hr-avg-dark.svg](../assets/heart-rate/icons/hr-avg-dark.svg) | Native Average tile, render 30–40dp |
+| Max KPI icon | [hr-max-light.svg](../assets/heart-rate/icons/hr-max-light.svg) | [hr-max-dark.svg](../assets/heart-rate/icons/hr-max-dark.svg) | Native Maximum tile, render 30–40dp |
+| Analytics heading icon | [hr-analytics-light.svg](../assets/heart-rate/icons/hr-analytics-light.svg) | [hr-analytics-dark.svg](../assets/heart-rate/icons/hr-analytics-dark.svg) | Before native `Phân tích nhịp tim` label; ~28–32dp |
+
+Assets include their own circular badge backgrounds: **do not double-wrap in another pastel circle**. See [background theme guidance](../assets/heart-rate/BACKGROUND_TOKENS.md) and [HR icon catalog](../assets/heart-rate/icons/README.md). Numbers, labels and BPM units stay native accessible text sourced from canonical BE.
+
 ## Layer mapping
 
 | Layer / z-index | Asset | Native / size | Position and rendering |
 | --- | --- | --- | --- |
+| -2 — page background | Native warm blush/charcoal feature-only gradient | full-screen container | Under all HR feature content; AppShell unaffected |
+| -1 — page ambient | [Light](../assets/heart-rate/hr-screen-ambient-light.svg) / [Dark](../assets/heart-rate/hr-screen-ambient-dark.svg) | Transparent SVG | Optional ambient overlay behind scroll content; no pointer events |
 | 0 — hero surface | Native light blush gradient or dark rose surface | rounded card, themed | Fill rounded rectangle ~150–176dp high, ~22–26dp radius |
 | 1 — scenery | [Blush waves and botanical accents](../assets/heart-rate/heart-hero-scenery.svg) | Transparent 430×180 SVG | Anchor bottom, 100% width; clip within hero |
 | 2 — glossy heart | [Coral dimensional pulse illustration](../assets/heart-rate/heart-pulse-hero.svg) | Transparent 320×300 SVG | Contain on right, approx 150–175dp wide on 393dp viewport |
@@ -26,6 +41,13 @@ Reference screens: [Light](final-light.svg) · [Dark](final-dark.svg). Full-scre
 ## Feature / API boundary
 
 Do not bake chart dots, tooltip, low/avg/high or sample count into images. Those remain native UI based on the actual [canonical HR Backend contract](REFERENCES.md). No API schema or database model is copied into this design folder.
+
+## Additional icon QA
+
+- [ ] All 3 KPI tiles use the **dedicated matching theme variant** (`hr-min-*`, `hr-avg-*`, `hr-max-*`).
+- [ ] HR analytics title uses the `hr-analytics-*` icon, not a text emoji.
+- [ ] The ambient blush remains subtle on page margins; the white/elevated cards remain high contrast.
+- [ ] Do not tint Steps/Water pages with HR blush or overpaint shared shell/footer.
 
 ## Visual QA
 

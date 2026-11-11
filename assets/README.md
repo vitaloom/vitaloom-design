@@ -56,3 +56,10 @@ See [BEHAVIOR_STANDARD.md](../BEHAVIOR_STANDARD.md) for screen interaction docum
 - [UI enhancement handoff](../UI_ENHANCEMENT_HANDOFF.md) · [Steps mapping](../steps/ASSET_MAPPING.md) · [HR mapping](../heart-rate/ASSET_MAPPING.md)
 
 The independently authored SVGs use transparent roots, should be layered under native screen controls, and remain visual drafts until a final screenshot comparison.
+
+### Additional Heart Rate presentation kit
+
+- [Theme-specific Min / Avg / Max / analytics icons](heart-rate/icons/README.md)
+- [Transparent HR ambient light and dark backgrounds](heart-rate/BACKGROUND_TOKENS.md)
+
+These remain independent SVGs. The **page background is a feature-scoped native gradient plus optional transparent overlay**, not a rasterized entire screen.

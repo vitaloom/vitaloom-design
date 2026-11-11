@@ -12,6 +12,13 @@
       "visualStatus": "PROPOSED",
       "layers": [
         {
+          "id": "page-ambient",
+          "role": "decoration",
+          "path": "hr-screen-ambient-light.svg",
+          "order": -1,
+          "placement": "absolute page backdrop behind scroll content, opacity as authored; pointerEvents=none"
+        },
+        {
           "id": "hero-surface",
           "role": "background",
           "path": null,
@@ -40,7 +47,38 @@
           "renderer": "native UI; source from real API"
         }
       ],
-      "sharedIconCatalog": "../shared/analytics-icons/README.md"
+      "sharedIconCatalog": "../shared/analytics-icons/README.md",
+      "pageBackground": {
+        "renderer": "native theme gradient",
+        "referenceStops": [
+          "#FFF9FA",
+          "#FFF3F6"
+        ],
+        "scope": "heart-rate feature page only, behind native content; not AppShell"
+      },
+      "uiAssets": [
+        {
+          "role": "kpi-min-icon",
+          "path": "icons/hr-min-light.svg",
+          "position": "Minimum tile"
+        },
+        {
+          "role": "kpi-avg-icon",
+          "path": "icons/hr-avg-light.svg",
+          "position": "Average tile"
+        },
+        {
+          "role": "kpi-max-icon",
+          "path": "icons/hr-max-light.svg",
+          "position": "Maximum tile"
+        },
+        {
+          "role": "analytics-title-icon",
+          "path": "icons/hr-analytics-light.svg",
+          "position": "Analytics section title"
+        }
+      ],
+      "uiAssetsStatus": "PROPOSED_EDITORIAL_REDRAW"
     },
     {
       "screenId": "HRT-SCR-001-D",
@@ -49,6 +87,13 @@
       "visualStatus": "PROPOSED",
       "layers": [
         {
+          "id": "page-ambient",
+          "role": "decoration",
+          "path": "hr-screen-ambient-dark.svg",
+          "order": -1,
+          "placement": "absolute page backdrop behind scroll content, opacity as authored; pointerEvents=none"
+        },
+        {
           "id": "hero-surface",
           "role": "background",
           "path": null,
@@ -77,7 +122,38 @@
           "renderer": "native UI; source from real API"
         }
       ],
-      "sharedIconCatalog": "../shared/analytics-icons/README.md"
+      "sharedIconCatalog": "../shared/analytics-icons/README.md",
+      "pageBackground": {
+        "renderer": "native theme gradient",
+        "referenceStops": [
+          "#211F29",
+          "#1A242B"
+        ],
+        "scope": "heart-rate feature page only, behind native content; not AppShell"
+      },
+      "uiAssets": [
+        {
+          "role": "kpi-min-icon",
+          "path": "icons/hr-min-dark.svg",
+          "position": "Minimum tile"
+        },
+        {
+          "role": "kpi-avg-icon",
+          "path": "icons/hr-avg-dark.svg",
+          "position": "Average tile"
+        },
+        {
+          "role": "kpi-max-icon",
+          "path": "icons/hr-max-dark.svg",
+          "position": "Maximum tile"
+        },
+        {
+          "role": "analytics-title-icon",
+          "path": "icons/hr-analytics-dark.svg",
+          "position": "Analytics section title"
+        }
+      ],
+      "uiAssetsStatus": "PROPOSED_EDITORIAL_REDRAW"
     }
   ]
 }

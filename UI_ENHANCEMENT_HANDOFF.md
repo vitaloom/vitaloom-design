@@ -15,6 +15,22 @@
 
 **IMPORTANT:** `final-light.svg` and `final-dark.svg` are *editable screen-level vector reconstructions*, not an exact export of the original approved generated raster images. The independently authored hero assets in this branch are **new redraws** that follow the approved illustration direction. Compare mobile screenshots against the user-approved concepts and request final visual acceptance where needed; do not claim pixel-perfect parity from the existence of SVG alone.
 
+## HR visual completeness addendum — must apply (Min / Avg / Max and warm canvas)
+
+**The previous asset handoff lacked distinct KPI art and the soft blush page backdrop.** These assets now exist and are required for a visually faithful HR enhancement.
+
+| UI element | Light asset | Dark asset | Placement |
+| --- | --- | --- | --- |
+| Min tile (Thấp nhất) | `assets/heart-rate/icons/hr-min-light.svg` | `assets/heart-rate/icons/hr-min-dark.svg` | Integrated colored badge, 30–40dp; tile label/value remain native |
+| Average tile (Trung bình) | `assets/heart-rate/icons/hr-avg-light.svg` | `assets/heart-rate/icons/hr-avg-dark.svg` | Coral pulse badge |
+| Max tile (Cao nhất) | `assets/heart-rate/icons/hr-max-light.svg` | `assets/heart-rate/icons/hr-max-dark.svg` | Rose ascending-arrow badge |
+| Analytics title icon | `assets/heart-rate/icons/hr-analytics-light.svg` | `assets/heart-rate/icons/hr-analytics-dark.svg` | Header icon before “Phân tích nhịp tim” |
+| Optional background aura | `assets/heart-rate/hr-screen-ambient-light.svg` | `assets/heart-rate/hr-screen-ambient-dark.svg` | Behind feature scroll content only; native theme gradient beneath |
+
+**Page background requirement:** HR Light base `#FFF9FA → #FFF3F6`, dark `#211F29 → #1A242B` as visual references, adapted through existing app theme. Do **not** color the whole AppShell or the Steps page rose. Read [HR background tokens](assets/heart-rate/BACKGROUND_TOKENS.md), [HR icon guide](assets/heart-rate/icons/README.md), and the updated [asset manifest](assets/heart-rate/asset-manifest.json). The icons already have integrated tinted circles; avoid a second circle. Treat them as `PROPOSED` artwork redraws awaiting review, not pixel-identical extractions.
+
+**UI acceptance expansion:** HR Min/Avg/Max must have visible matching theme icons; gentle blush visible around content; existing hero and chart data structure kept intact. No backend work and **no DevTools fixes** as requested.
+
 ## 1. Current UI gaps to correct
 
 | Area | Present issue seen in screen review | Expected |
@@ -87,6 +103,8 @@ At minimum capture **Steps and Heart Rate in Light and Dark** at **393 × 852**,
 
 - [ ] Both hero cards have prominent feature illustrations + wave scenes (not flat text-only rectangles).
 - [ ] Icons actually present in chart title, badge, KPIs and notes; correct spacing with responsive type.
+- [ ] Dedicated **Min / Avg / Max** colored icon assets selected by active light/dark theme, no text-emoji substitutes.
+- [ ] Light-mode HR page softly warm blush (not mint or vivid red); dark mode muted mauve-charcoal; other metrics and AppShell unchanged.
 - [ ] No horizontal swipe for **daily** chart on 393dp viewport; vertical scrolling of page is okay.
 - [ ] Dot/bar tap produces a **positioned overlay tooltip**, no card insertion or layout shift.
 - [ ] HR mean line only connects neighboring observed buckets; translucent min-max markers correspond to observed data.
