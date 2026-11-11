@@ -1,6 +1,6 @@
 # Sleep Tracking — PNG import verification
 
-**Status:** **COMPLETE / COMMITTED** on branch `design/sleep-tracking-ui-behavior-assets-20261111`. Six independent selected screen PNGs, one selected overview PNG and nine original transparent PNG assets are present in the repository. Binary blobs were uploaded without resizing, downsampling or screen-cropping.
+**Status:** Original six selected screen PNGs, overview and nine original transparent assets are COMMITTED. Six supplemental screen PNGs and two new standalone assets were committed to `main` in `fba900f` and `7dd2fa9`. **The supplemental screenshots are structure-only due to their rejected purple-dominant UI palette; green wellness FE correction is mandatory.** Binary blobs were uploaded without resizing, downsampling or screen-cropping.
 
 ## Exact paths and content fingerprints
 
@@ -44,3 +44,20 @@ The user selected the visuals; any illustrative time, date, percentage, average 
 - [x] Small standalone PNGs live under `assets/sleep-tracking/`.
 - [x] The independent asset names match `ASSET_MAPPING.md` and machine manifest.
 - [ ] FE device QA and alternate-state screenshot approvals remain future work.
+
+## Supplemental uploads — 2026-11-11
+
+| File | GitHub tree size (bytes) | Git blob SHA | Source commit | Visual usage |
+|---|---:|---|---|---|
+| [7_sleep_journal.png](7_sleep_journal.png) | 1579015 | `0348a3ceacb56fe8ea4bef9cefa3b196e05d6734` | `fba900f` | Structure only; change purple to green |
+| [8_sleep_record_detail.png](8_sleep_record_detail.png) | 1587541 | `7fb589a7509c74b2717a37020841dd8f70d0e918` | `fba900f` | Structure only; change purple to green |
+| [9_sleep_record_detail_edit.png](9_sleep_record_detail_edit.png) | 1532376 | `4ef9340e1144ad4e23e8b62096a63f5b69e4a540` | `fba900f` | Structure only; change purple to green |
+| [10_sleep_goal_setup.png](10_sleep_goal_setup.png) | 1551066 | `3c91b15d4e3d80bcaff8ef71f831a678c0066033` | `fba900f` | Structure only; change purple to green |
+| [11_sleep_insight_empty.png](11_sleep_insight_empty.png) | 1526932 | `5bc2ff148eaa6a2736ffbc8c9284809942bd6f0d` | `fba900f` | 003 NO_DATA state; change purple to green |
+| [12_sleep_not_enough_data_insight.png](12_sleep_not_enough_data_insight.png) | 1414049 | `b5cf2a8fbf6e4e774bb104cfec658e53eee3d564` | `fba900f` | 003 INSUFFICIENT_DATA state; change purple to green |
+| [bed.png](../assets/sleep-tracking/bed.png) | 823175 | `162e1faaba01505bceb46c1b1bda9be48c5586eb` | `7dd2fa9` | Small purple accent only |
+| [star-pillow-cloud.png](../assets/sleep-tracking/star-pillow-cloud.png) | 1080527 | `978b0438ef3f8523c97e7528f8b1d5b4673ba0a8` | `7dd2fa9` | Independent hero for green-themed UI |
+
+The new values above are **Git blob SHA identifiers, not SHA-256 content hashes**; the SHA-256 table higher in this file applies only to the original upload set. New PNG format/alpha and pixel dimensions were not independently decoded by this documentation update; verify in FE import QA.
+
+**Do not modify source PNGs or infer purple color tokens**. Their color is a known design error. See [mandatory green wellness override](ADDITIONAL_SCREENS_20261111.md). Corrected FE visual acceptance is still pending.
