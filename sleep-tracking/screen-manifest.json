@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "feature": "sleep-tracking",
+  "status": "BEHAVIOR_DEFINED_VISUALS_COMMITTED",
+  "artboard": {
+    "referenceDp": {
+      "width": 390
+    },
+    "pngExport": {
+      "width": 941,
+      "height": 1672
+    },
+    "overview": {
+      "width": 1199,
+      "height": 1312
+    }
+  },
+  "screens": [
+    {
+      "id": "SLT-SCR-001",
+      "filename": "01-sleep-home.png",
+      "imageExistsInGitHub": true,
+      "visualDecision": "USER_SELECTED_BASELINE",
+      "binaryStatus": "COMMITTED",
+      "businessOwner": "F1/F2",
+      "proposedSvgFallbacks": [
+        "../assets/sleep-tracking/icons/trend-up.svg",
+        "../assets/sleep-tracking/icons/bars.svg"
+      ]
+    },
+    {
+      "id": "SLT-SCR-002A",
+      "filename": "02a-sleep-entry-time-range.png",
+      "imageExistsInGitHub": true,
+      "visualDecision": "USER_SELECTED_BASELINE",
+      "binaryStatus": "COMMITTED",
+      "businessOwner": "SLT-UC-004",
+      "proposedSvgFallbacks": [
+        "../assets/sleep-tracking/icons/feeling-comfortable.svg",
+        "../assets/sleep-tracking/icons/feeling-normal.svg",
+        "../assets/sleep-tracking/icons/feeling-tired.svg"
+      ]
+    },
+    {
+      "id": "SLT-SCR-002B",
+      "filename": "02b-sleep-entry-duration-only.png",
+      "imageExistsInGitHub": true,
+      "visualDecision": "USER_SELECTED_BASELINE",
+      "binaryStatus": "COMMITTED",
+      "businessOwner": "SLT-UC-004",
+      "proposedSvgFallbacks": [
+        "../assets/sleep-tracking/icons/feeling-comfortable.svg",
+        "../assets/sleep-tracking/icons/feeling-normal.svg",
+        "../assets/sleep-tracking/icons/feeling-tired.svg"
+      ]
+    },
+    {
+      "id": "SLT-SCR-003",
+      "filename": "03-sleep-insights.png",
+      "imageExistsInGitHub": true,
+      "visualDecision": "USER_SELECTED_BASELINE",
+      "binaryStatus": "COMMITTED",
+      "businessOwner": "SLT-UC-009",
+      "proposedSvgFallbacks": [
+        "../assets/sleep-tracking/icons/trend-up.svg",
+        "../assets/sleep-tracking/icons/bars.svg"
+      ]
+    },
+    {
+      "id": "SLT-SCR-004",
+      "filename": "04-ai-insight-detail.png",
+      "imageExistsInGitHub": true,
+      "visualDecision": "USER_SELECTED_BASELINE",
+      "binaryStatus": "COMMITTED",
+      "businessOwner": "SLT-UC-009",
+      "proposedSvgFallbacks": [
+        "../assets/sleep-tracking/icons/bars.svg",
+        "../assets/sleep-tracking/icons/feeling-comfortable.svg",
+        "../assets/sleep-tracking/icons/feeling-tired.svg"
+      ]
+    },
+    {
+      "id": "SLT-SCR-005",
+      "filename": "05-ai-weekly-sleep-story.png",
+      "imageExistsInGitHub": true,
+      "visualDecision": "USER_SELECTED_BASELINE",
+      "binaryStatus": "COMMITTED",
+      "businessOwner": "HIR-UC-002",
+      "proposedSvgFallbacks": [
+        "../assets/sleep-tracking/icons/bars.svg",
+        "../assets/sleep-tracking/icons/trend-up.svg"
+      ]
+    }
+  ],
+  "overview": {
+    "path": "00-sleep-design-overview.png",
+    "imageExistsInGitHub": true,
+    "role": "reference-collage-not-screen"
+  }
+}

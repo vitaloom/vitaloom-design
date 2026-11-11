@@ -46,3 +46,8 @@ The approved screen artwork is stored as optimized WebP images with relative ima
 - [Personal Health Profile — 11 proposed screens](personal-health-profile/README.md) · [Behavior](personal-health-profile/BEHAVIOR.md) · [Asset mapping](personal-health-profile/ASSET_MAPPING.md) · [Reusable photorealistic hero](assets/personal-health-profile/README.md).
 
 The realistic hero direction is user-selected; screen compositions remain `PENDING_VISUAL_ACCEPTANCE`. These are design references, not deployed frontend screens.
+
+## Sleep Tracking UI baseline
+
+- [Sleep Tracking — screen registry and selected design baseline](sleep-tracking/README.md) · [Behavior](sleep-tracking/BEHAVIOR.md) · [Asset mapping](sleep-tracking/ASSET_MAPPING.md) · [Expo handoff](sleep-tracking/FE_HANDOFF.md).
+- **Available:** six selected screen PNGs, one overview, and nine independently generated transparent PNG assets are [committed](sleep-tracking/SCREEN_IMPORT.md); [asset catalog](assets/sleep-tracking/README.md) includes optional SVG fallbacks.
