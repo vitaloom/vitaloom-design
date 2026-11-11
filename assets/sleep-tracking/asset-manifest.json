@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "feature": "sleep-tracking",
+  "assetRoot": "assets/sleep-tracking",
+  "pngSourceStatus": "PENDING_BINARY_IMPORT",
+  "originalPngTargets": [
+    {
+      "name": "moon-cloud-stars.png",
+      "status": "PENDING_BINARY_IMPORT",
+      "fileExistsInGitHub": false,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+    },
+    {
+      "name": "sleep-cloud.png",
+      "status": "PENDING_BINARY_IMPORT",
+      "fileExistsInGitHub": false,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+    },
+    {
+      "name": "pillow-stars.png",
+      "status": "PENDING_BINARY_IMPORT",
+      "fileExistsInGitHub": false,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+    },
+    {
+      "name": "star-smiling.png",
+      "status": "PENDING_BINARY_IMPORT",
+      "fileExistsInGitHub": false,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+    },
+    {
+      "name": "feeling-comfortable.png",
+      "status": "PENDING_BINARY_IMPORT",
+      "fileExistsInGitHub": false,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+    },
+    {
+      "name": "feeling-normal.png",
+      "status": "PENDING_BINARY_IMPORT",
+      "fileExistsInGitHub": false,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+    },
+    {
+      "name": "feeling-tired.png",
+      "status": "PENDING_BINARY_IMPORT",
+      "fileExistsInGitHub": false,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+    },
+    {
+      "name": "trend-up.png",
+      "status": "PENDING_BINARY_IMPORT",
+      "fileExistsInGitHub": false,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+    },
+    {
+      "name": "bars.png",
+      "status": "PENDING_BINARY_IMPORT",
+      "fileExistsInGitHub": false,
+      "provenance": "original generated standalone transparent PNG; not screenshot crop"
+    }
+  ],
+  "proposedFallbacks": [
+    {
+      "path": "icons/moon.svg",
+      "status": "PROPOSED",
+      "format": "SVG",
+      "transparent": true
+    },
+    {
+      "path": "icons/cloud.svg",
+      "status": "PROPOSED",
+      "format": "SVG",
+      "transparent": true
+    },
+    {
+      "path": "icons/pillow.svg",
+      "status": "PROPOSED",
+      "format": "SVG",
+      "transparent": true
+    },
+    {
+      "path": "icons/star.svg",
+      "status": "PROPOSED",
+      "format": "SVG",
+      "transparent": true
+    },
+    {
+      "path": "icons/feeling-comfortable.svg",
+      "status": "PROPOSED",
+      "format": "SVG",
+      "transparent": true
+    },
+    {
+      "path": "icons/feeling-normal.svg",
+      "status": "PROPOSED",
+      "format": "SVG",
+      "transparent": true
+    },
+    {
+      "path": "icons/feeling-tired.svg",
+      "status": "PROPOSED",
+      "format": "SVG",
+      "transparent": true
+    },
+    {
+      "path": "icons/trend-up.svg",
+      "status": "PROPOSED",
+      "format": "SVG",
+      "transparent": true
+    },
+    {
+      "path": "icons/bars.svg",
+      "status": "PROPOSED",
+      "format": "SVG",
+      "transparent": true
+    }
+  ],
+  "screenAssets": {
+    "SLT-SCR-001": {
+      "fallbacks": [
+        "icons/trend-up.svg",
+        "icons/bars.svg"
+      ],
+      "approvedPngStatus": "PENDING_BINARY_IMPORT"
+    },
+    "SLT-SCR-002A": {
+      "fallbacks": [
+        "icons/feeling-comfortable.svg",
+        "icons/feeling-normal.svg",
+        "icons/feeling-tired.svg"
+      ],
+      "approvedPngStatus": "PENDING_BINARY_IMPORT"
+    },
+    "SLT-SCR-002B": {
+      "fallbacks": [
+        "icons/feeling-comfortable.svg",
+        "icons/feeling-normal.svg",
+        "icons/feeling-tired.svg"
+      ],
+      "approvedPngStatus": "PENDING_BINARY_IMPORT"
+    },
+    "SLT-SCR-003": {
+      "fallbacks": [
+        "icons/trend-up.svg",
+        "icons/bars.svg"
+      ],
+      "approvedPngStatus": "PENDING_BINARY_IMPORT"
+    },
+    "SLT-SCR-004": {
+      "fallbacks": [
+        "icons/bars.svg",
+        "icons/feeling-comfortable.svg",
+        "icons/feeling-tired.svg"
+      ],
+      "approvedPngStatus": "PENDING_BINARY_IMPORT"
+    },
+    "SLT-SCR-005": {
+      "fallbacks": [
+        "icons/bars.svg",
+        "icons/trend-up.svg"
+      ],
+      "approvedPngStatus": "PENDING_BINARY_IMPORT"
+    }
+  }
+}
