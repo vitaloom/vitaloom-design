@@ -46,3 +46,10 @@ The approved screen artwork is stored as optimized WebP images with relative ima
 - [Personal Health Profile — 11 proposed screens](personal-health-profile/README.md) · [Behavior](personal-health-profile/BEHAVIOR.md) · [Asset mapping](personal-health-profile/ASSET_MAPPING.md) · [Reusable photorealistic hero](assets/personal-health-profile/README.md).
 
 The realistic hero direction is user-selected; screen compositions remain `PENDING_VISUAL_ACCEPTANCE`. These are design references, not deployed frontend screens.
+
+## Sleep Tracking — uploaded design baseline
+
+- [Sleep Tracking screen catalog (6 baseline PNGs)](sleep-tracking/README.md) · [Behavior contract](sleep-tracking/BEHAVIOR.md) · [Screen-to-asset mapping](sleep-tracking/ASSET_MAPPING.md) · [Screen manifest](sleep-tracking/screen-manifest.json).
+- [Sleep standalone assets (9 PNGs)](assets/sleep-tracking/README.md) · [Machine asset manifest](assets/sleep-tracking/asset-manifest.json).
+
+Sleep image filenames remain unchanged. Per-screen decorative asset placements are **proposed pending visual QA**; behavior follows the Sleep F1/F2 specification. Weekly Sleep Report is a visual reference in Sleep but its view/period workflow belongs to `HIR-UC-002`.

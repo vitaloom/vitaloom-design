@@ -91,3 +91,7 @@ Use **CONFIRMED** only for behavior backed by an approved specification or user-
 - [Global asset mapping standard](ASSET_MAPPING_STANDARD.md)
 
 This convention does **not** introduce new business requirements or API contracts.
+
+## Sleep Tracking adoption (2026-11-11)
+
+[Sleep screen registry](sleep-tracking/README.md), [behavior contract](sleep-tracking/BEHAVIOR.md) and [asset mapping](sleep-tracking/ASSET_MAPPING.md) adopt this standard for the six existing baseline screenshots. Missing Journal/Goal/state images are explicitly OPEN rather than invented; weekly-report viewing remains owned by HIR.

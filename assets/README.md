@@ -47,3 +47,8 @@ These names are examples of future files, not assets already committed. Add link
 - Do not create placeholder mappings or claim visual approval for new art merely because a full-screen mockup is approved. Functional controls stay native UI.
 
 See [BEHAVIOR_STANDARD.md](../BEHAVIOR_STANDARD.md) for screen interaction documentation.
+
+## Sleep Tracking assets
+
+- [Sleep standalone PNG inventory (9 files)](sleep-tracking/README.md) and [machine mapping](sleep-tracking/asset-manifest.json); the [six baseline screenshots](../sleep-tracking/README.md) remain in their feature directory.
+- Preserve pre-existing filenames; `good_emo`/`nornal_emo`/`tired_emo` are **illustrations** for optional per-session feeling, not automatically selected values. Static chart artwork is not a replacement for computed data or native charts.

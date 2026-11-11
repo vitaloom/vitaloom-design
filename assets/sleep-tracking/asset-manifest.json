@@ -1,0 +1,265 @@
+{
+  "module": "sleep-tracking",
+  "status": "UPLOADED_FILES_WITH_PROPOSED_SCREEN_PLACEMENTS",
+  "source_date": "2026-11-11",
+  "asset_base": ".",
+  "path_reference": "All screen paths are relative to assets/sleep-tracking/asset-manifest.json; paths beginning ../../sleep-tracking point to the existing baseline directory.",
+  "semantic_status": "Candidate placement is not visual approval; verify against original baseline before using it as an authoritative FE mapping.",
+  "assets": [
+    {
+      "id": "start_cloud",
+      "path": "start_cloud.png",
+      "role": "Illustration",
+      "description": "Trăng lưỡi liềm và các ngôi sao trên mây; visual hero/cue",
+      "provenance": "USER_UPLOADED",
+      "file_present": true
+    },
+    {
+      "id": "cloud",
+      "path": "cloud.png",
+      "role": "Illustration",
+      "description": "Mây đang ngủ; decorative/support",
+      "provenance": "USER_UPLOADED",
+      "file_present": true
+    },
+    {
+      "id": "pillow_star",
+      "path": "pillow_star.png",
+      "role": "Illustration",
+      "description": "Gối tím và sao; entry/decorative",
+      "provenance": "USER_UPLOADED",
+      "file_present": true
+    },
+    {
+      "id": "smilling_star",
+      "path": "smilling_star.png",
+      "role": "Illustration",
+      "description": "Ngôi sao mỉm cười; positive insight/decorative",
+      "provenance": "USER_UPLOADED",
+      "file_present": true
+    },
+    {
+      "id": "bar_chart",
+      "path": "bar_chart.png",
+      "role": "Data motif",
+      "description": "Cụm cột xanh; decoration ONLY, không thay chart thật",
+      "provenance": "USER_UPLOADED",
+      "file_present": true
+    },
+    {
+      "id": "arrow_bar_chart",
+      "path": "arrow_bar_chart.png",
+      "role": "Data motif",
+      "description": "Cột xanh và mũi tên; decoration ONLY, không thay chart thật",
+      "provenance": "USER_UPLOADED",
+      "file_present": true
+    },
+    {
+      "id": "good_emo",
+      "path": "good_emo.png",
+      "role": "Feeling option",
+      "description": "Dễ chịu (self-report)",
+      "provenance": "USER_UPLOADED",
+      "file_present": true
+    },
+    {
+      "id": "nornal_emo",
+      "path": "nornal_emo.png",
+      "role": "Feeling option",
+      "description": "Bình thường (self-report); tên file gốc giữ nguyên",
+      "provenance": "USER_UPLOADED",
+      "file_present": true
+    },
+    {
+      "id": "tired_emo",
+      "path": "tired_emo.png",
+      "role": "Feeling option",
+      "description": "Mệt mỏi (self-report)",
+      "provenance": "USER_UPLOADED",
+      "file_present": true
+    }
+  ],
+  "screenAssets": [
+    {
+      "screenId": "SLT-SCR-001",
+      "screenReference": "../../sleep-tracking/1_sleep_tracking_main_screen.png",
+      "baselineStatus": "UPLOADED",
+      "mappingStatus": "PROPOSED_VISUAL_QA_REQUIRED",
+      "layers": [
+        {
+          "assetId": "start_cloud",
+          "path": "start_cloud.png",
+          "role": "decorative-illustration",
+          "order": 1,
+          "verifiedOnBaseline": false
+        },
+        {
+          "assetId": "cloud",
+          "path": "cloud.png",
+          "role": "decorative-illustration",
+          "order": 2,
+          "verifiedOnBaseline": false
+        },
+        {
+          "assetId": "pillow_star",
+          "path": "pillow_star.png",
+          "role": "decorative-illustration",
+          "order": 3,
+          "verifiedOnBaseline": false
+        }
+      ]
+    },
+    {
+      "screenId": "SLT-SCR-002",
+      "screenReference": "../../sleep-tracking/2_record_start_end_time_sleep.png",
+      "baselineStatus": "UPLOADED",
+      "mappingStatus": "PROPOSED_VISUAL_QA_REQUIRED",
+      "layers": [
+        {
+          "assetId": "pillow_star",
+          "path": "pillow_star.png",
+          "role": "decorative-illustration",
+          "order": 1,
+          "verifiedOnBaseline": false
+        },
+        {
+          "assetId": "good_emo",
+          "path": "good_emo.png",
+          "role": "feeling-option",
+          "order": 2,
+          "verifiedOnBaseline": false
+        },
+        {
+          "assetId": "nornal_emo",
+          "path": "nornal_emo.png",
+          "role": "feeling-option",
+          "order": 3,
+          "verifiedOnBaseline": false
+        },
+        {
+          "assetId": "tired_emo",
+          "path": "tired_emo.png",
+          "role": "feeling-option",
+          "order": 4,
+          "verifiedOnBaseline": false
+        }
+      ]
+    },
+    {
+      "screenId": "SLT-SCR-003",
+      "screenReference": "../../sleep-tracking/3_record_duration_sleep.png",
+      "baselineStatus": "UPLOADED",
+      "mappingStatus": "PROPOSED_VISUAL_QA_REQUIRED",
+      "layers": [
+        {
+          "assetId": "pillow_star",
+          "path": "pillow_star.png",
+          "role": "decorative-illustration",
+          "order": 1,
+          "verifiedOnBaseline": false
+        },
+        {
+          "assetId": "good_emo",
+          "path": "good_emo.png",
+          "role": "feeling-option",
+          "order": 2,
+          "verifiedOnBaseline": false
+        },
+        {
+          "assetId": "nornal_emo",
+          "path": "nornal_emo.png",
+          "role": "feeling-option",
+          "order": 3,
+          "verifiedOnBaseline": false
+        },
+        {
+          "assetId": "tired_emo",
+          "path": "tired_emo.png",
+          "role": "feeling-option",
+          "order": 4,
+          "verifiedOnBaseline": false
+        }
+      ]
+    },
+    {
+      "screenId": "SLT-SCR-004",
+      "screenReference": "../../sleep-tracking/4_sleep_insights_screen.png",
+      "baselineStatus": "UPLOADED",
+      "mappingStatus": "PROPOSED_VISUAL_QA_REQUIRED",
+      "layers": [
+        {
+          "assetId": "bar_chart",
+          "path": "bar_chart.png",
+          "role": "decorative-data-motif",
+          "order": 1,
+          "verifiedOnBaseline": false
+        },
+        {
+          "assetId": "arrow_bar_chart",
+          "path": "arrow_bar_chart.png",
+          "role": "decorative-data-motif",
+          "order": 2,
+          "verifiedOnBaseline": false
+        },
+        {
+          "assetId": "smilling_star",
+          "path": "smilling_star.png",
+          "role": "decorative-illustration",
+          "order": 3,
+          "verifiedOnBaseline": false
+        }
+      ]
+    },
+    {
+      "screenId": "SLT-SCR-005",
+      "screenReference": "../../sleep-tracking/5_insight-detail-screeen.png",
+      "baselineStatus": "UPLOADED",
+      "mappingStatus": "PROPOSED_VISUAL_QA_REQUIRED",
+      "layers": [
+        {
+          "assetId": "smilling_star",
+          "path": "smilling_star.png",
+          "role": "decorative-illustration",
+          "order": 1,
+          "verifiedOnBaseline": false
+        },
+        {
+          "assetId": "bar_chart",
+          "path": "bar_chart.png",
+          "role": "decorative-data-motif",
+          "order": 2,
+          "verifiedOnBaseline": false
+        }
+      ]
+    },
+    {
+      "screenId": "SLT-SCR-006",
+      "screenReference": "../../sleep-tracking/6_weekly_report_screen.png",
+      "baselineStatus": "UPLOADED",
+      "mappingStatus": "PROPOSED_VISUAL_QA_REQUIRED",
+      "layers": [
+        {
+          "assetId": "arrow_bar_chart",
+          "path": "arrow_bar_chart.png",
+          "role": "decorative-data-motif",
+          "order": 1,
+          "verifiedOnBaseline": false
+        },
+        {
+          "assetId": "bar_chart",
+          "path": "bar_chart.png",
+          "role": "decorative-data-motif",
+          "order": 2,
+          "verifiedOnBaseline": false
+        },
+        {
+          "assetId": "start_cloud",
+          "path": "start_cloud.png",
+          "role": "decorative-illustration",
+          "order": 3,
+          "verifiedOnBaseline": false
+        }
+      ]
+    }
+  ]
+}

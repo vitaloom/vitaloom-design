@@ -1,0 +1,67 @@
+{
+  "module": "sleep-tracking",
+  "source_branch": "main",
+  "source_date": "2026-11-11",
+  "status": "BASELINE_UPLOADED",
+  "assets_placement_status": "PROPOSED_VISUAL_QA_REQUIRED",
+  "behavior": "BEHAVIOR.md",
+  "asset_mapping": "ASSET_MAPPING.md",
+  "domain_spec": "https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/00-module.md",
+  "notes": "Complete screen images were uploaded manually; no implementation or formal visual approval implied. Existing filenames preserved.",
+  "screens": [
+    {
+      "screen_id": "SLT-SCR-001",
+      "path": "1_sleep_tracking_main_screen.png",
+      "title": "Sleep Home",
+      "use_case": "SLT-UC-005 / SLT-UC-008 / SLT-UC-009 (entry)",
+      "domain_owner": "Sleep",
+      "baseline_status": "UPLOADED",
+      "asset_placements_verified": false
+    },
+    {
+      "screen_id": "SLT-SCR-002",
+      "path": "2_record_start_end_time_sleep.png",
+      "title": "Record Sleep — start/end",
+      "use_case": "SLT-UC-004",
+      "domain_owner": "Sleep",
+      "baseline_status": "UPLOADED",
+      "asset_placements_verified": false
+    },
+    {
+      "screen_id": "SLT-SCR-003",
+      "path": "3_record_duration_sleep.png",
+      "title": "Record Sleep — duration only",
+      "use_case": "SLT-UC-004",
+      "domain_owner": "Sleep",
+      "baseline_status": "UPLOADED",
+      "asset_placements_verified": false
+    },
+    {
+      "screen_id": "SLT-SCR-004",
+      "path": "4_sleep_insights_screen.png",
+      "title": "Sleep Insights",
+      "use_case": "SLT-UC-009",
+      "domain_owner": "Sleep",
+      "baseline_status": "UPLOADED",
+      "asset_placements_verified": false
+    },
+    {
+      "screen_id": "SLT-SCR-005",
+      "path": "5_insight-detail-screeen.png",
+      "title": "Insight Detail",
+      "use_case": "SLT-UC-009",
+      "domain_owner": "Sleep",
+      "baseline_status": "UPLOADED",
+      "asset_placements_verified": false
+    },
+    {
+      "screen_id": "SLT-SCR-006",
+      "path": "6_weekly_report_screen.png",
+      "title": "Weekly Sleep Report visual",
+      "use_case": "HIR-UC-002",
+      "domain_owner": "HIR (visual reference housed here)",
+      "baseline_status": "UPLOADED",
+      "asset_placements_verified": false
+    }
+  ]
+}

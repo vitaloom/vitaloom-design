@@ -94,3 +94,5 @@ Existing manifests may use named roles such as `hero` and `landscape`. More comp
 
 - [Onboarding implementation](onboarding/ASSET_MAPPING.md), [illustration catalog](assets/onboarding/README.md) and [manifest](assets/onboarding/asset-manifest.json).
 - Other existing feature references continue to be authoritative as documented; introduce mapping in those features **when independent artwork is available**, without implying their adoption has already been completed.
+
+- [Sleep Tracking mapping](sleep-tracking/ASSET_MAPPING.md), [asset inventory](assets/sleep-tracking/README.md), and [machine manifest](assets/sleep-tracking/asset-manifest.json) (six uploaded screen baselines and nine independent assets; placement verification pending).
