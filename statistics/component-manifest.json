@@ -1,84 +1,56 @@
 {
   "name": "StatisticsWellnessOverview",
-  "version": "1.0",
-  "baseline": "WELLNESS_ANALYTICS_B_SIMPLE",
-  "status": "APPROVED_DESIGN_DIRECTION",
-  "references": {
-    "screens": "README.md",
-    "behaviors": "BEHAVIOR.md",
-    "assetMapping": "ASSET_MAPPING.md",
-    "appShell": "../shared/health-metrics-sidebar/README.md"
-  },
+  "status": "APPROVED_B_WEEK_RASTER_BASELINE",
+  "version": "2.0",
+  "sourceOfTruth": "User-approved original Wellness Analytics B mockup. Raster screenshot crops committed here as low-resolution, composition-faithful previews; full original in design review conversation.",
   "screens": [
     {
       "id": "STA-SCR-001-W-L",
-      "file": "overview-week-light.svg",
       "mode": "week",
       "theme": "light",
-      "default": true
+      "visual": "approved-b-week-light.webp",
+      "authority": "APPROVED_RASTER"
     },
     {
       "id": "STA-SCR-001-W-D",
-      "file": "overview-week-dark.svg",
       "mode": "week",
-      "theme": "dark"
+      "theme": "dark",
+      "visual": "approved-b-week-dark.webp",
+      "authority": "APPROVED_RASTER"
     },
     {
       "id": "STA-SCR-001-D-L",
-      "file": "overview-day-light.svg",
       "mode": "day",
-      "theme": "light"
+      "theme": "light",
+      "visual": null,
+      "authority": "BEHAVIOR_APPROVED_VISUAL_DERIVED_FROM_WEEK"
     },
     {
       "id": "STA-SCR-001-D-D",
-      "file": "overview-day-dark.svg",
       "mode": "day",
-      "theme": "dark"
+      "theme": "dark",
+      "visual": null,
+      "authority": "BEHAVIOR_APPROVED_VISUAL_DERIVED_FROM_WEEK"
     }
   ],
-  "metrics": [
-    {
-      "key": "heart-rate",
-      "route": "/heart-rate",
-      "preview": "gap-aware line with dots",
-      "iconRef": "../assets/heart-rate/heart-pulse-hero.svg"
-    },
-    {
-      "key": "steps",
-      "route": "/steps",
-      "preview": "sparse vertical bars",
-      "iconRef": "../assets/steps/steps-sneakers-hero.svg"
-    },
-    {
-      "key": "water",
-      "route": "/water",
-      "preview": "daily intake bars (week) / compact progress (day)",
-      "iconRef": "vitaloom-frontend/assets/images/bottle.png"
-    },
-    {
-      "key": "sleep",
-      "route": "/sleep",
-      "preview": "duration bars (week) / duration visual (day)",
-      "iconRef": "../assets/sleep-tracking/moon-cloud-stars.png"
-    }
+  "behavior": "BEHAVIOR.md",
+  "assetMapping": "ASSET_MAPPING.md",
+  "visualLegacyDirectory": "legacy/",
+  "defaultMode": "week",
+  "metricOrder": [
+    "heart-rate",
+    "steps",
+    "water",
+    "sleep"
   ],
-  "ui": {
-    "defaultMode": "week",
-    "modeOptions": [
-      "day",
-      "week"
-    ],
-    "layout": "vertical scroll",
-    "cardTap": "navigate existing detail",
-    "chartTooltip": false,
-    "cardHorizontalScroll": false
-  },
+  "previewInteraction": "WHOLE_CARD_NAVIGATES",
   "forbidden": [
-    "enriched comparison / detailed insights",
-    "toggle minimal/details",
-    "duplicate page from Home",
-    "quick-add controls",
-    "duplicated backend DTO",
-    "mock numbers treated as actual results"
-  ]
+    "using legacy SVG as visual source",
+    "rendering screenshot as actual app",
+    "enriched comparisons",
+    "toggle detailed/minimal",
+    "duplicate business rules or backend DTOs",
+    "redesign metric details"
+  ],
+  "notes": "Do not treat the original illustrative metric values or generated chart preview points as real data."
 }

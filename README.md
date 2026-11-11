@@ -12,7 +12,7 @@ A public collection of UI design references and component specifications for Vit
 
 ## Feature references
 
-- [Statistics Overview — Wellness Analytics B (approved simple direction)](statistics/README.md) · [Day/Week and navigation behavior](statistics/BEHAVIOR.md) · [Asset mapping](statistics/ASSET_MAPPING.md).
+- [Statistics Overview — Wellness Analytics B **approved raster reference**](statistics/README.md) · [Week Light](statistics/approved-b-week-light.webp) · [Week Dark](statistics/approved-b-week-dark.webp) · [Day/Week behavior](statistics/BEHAVIOR.md) · [Asset mapping](statistics/ASSET_MAPPING.md). **Old hand-drawn SVGs are archived under [legacy](statistics/legacy/README.md), not authoritative.**
 
 
 - [Water designs](water/)

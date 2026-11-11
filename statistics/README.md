@@ -1,46 +1,46 @@
-# Statistics Overview — Wellness Analytics B (minimal / approved)
+# Statistics Overview — Wellness Analytics B (approved visual direction)
 
-**Design status:** `APPROVED_DIRECTION` (user selected Wellness Analytics **B – simple**).  
-**Scope:** **Statistics Overview only**. Do not redesign Steps, Heart Rate, Water or Sleep detail screens.  
-**Visual source:** this folder's light/dark, Day/Week SVG screen references. Artboards are `390 × 844`, SVGs are self-contained editable drawings. Their numbers/charts are **illustrative fixtures**, never actual user/API data. The accepted board image in the design conversation establishes the visual direction; these vectors are implementation-friendly reconstructions, not a pixel-identical export.
+**Status: APPROVED VISUAL BASELINE FOR WEEK OVERVIEW.** The **user-approved high-fidelity Wellness Analytics B** from the original four-screen design board is the **sole visual source of truth**. This folder now includes *unaltered-composition crops* of the two B phone screens as raster previews. They are scaled-down preview exports of the user's selected board, **not manually redrawn SVGs**. The original board image supplied during design review takes precedence if a tiny preview lacks fine detail.  
 
-## Screen catalog
+**Do not implement any of the older `overview-*.svg` drawings as current design.** Those were primitive approximations and have been moved under [legacy](legacy/README.md) specifically to prevent an agent copying their inferior illustrations.
 
-| ID | Reference | Purpose |
+## Current approved visual references (mode = Week)
+
+| Screen | Reference | Purpose |
 | --- | --- | --- |
-| `STA-SCR-001-W-L` | [Week / Light](overview-week-light.svg) | **Default**, all four metric cards, weekly comparison period |
-| `STA-SCR-001-W-D` | [Week / Dark](overview-week-dark.svg) | Same hierarchy with dark-themed pastel-on-charcoal |
-| `STA-SCR-001-D-L` | [Day / Light](overview-day-light.svg) | Single selected date, same cards and layout |
-| `STA-SCR-001-D-D` | [Day / Dark](overview-day-dark.svg) | Day mode in dark theme |
+| `STA-SCR-001-W-L` | ![Approved B — Week Light](approved-b-week-light.webp) | Light mode, original B card artwork and proportions |
+| `STA-SCR-001-W-D` | ![Approved B — Week Dark](approved-b-week-dark.webp) | Dark mode, original B colors and rendering |
 
-## Design goal
+[Open Week Light](approved-b-week-light.webp) · [Open Week Dark](approved-b-week-dark.webp).
 
-**Statistics = multi-metric trend explorer, not Home 2.0.**
+These are **reduced-resolution raster crops** directly from the approved board, included to preserve visual fidelity and avoid another redraw. They should **not** be used as actual UI images. Real UI must be responsive React Native components with real data and independent chart rendering. Use the original board presented in the review conversation for the highest-clarity comparison. Do not interpret its example metric values as API fixtures.
 
-- Use a **single vertical scrolling list of four metric cards**: Heart Rate, Steps, Water, Sleep.
-- Global **Ngày / Tuần** switcher and previous/next period selector; default `Tuần`.
-- Each card has **one main value + concise context + a small chart preview**. Use appropriate chart geometry for each metric.
-- Full card is a navigation target to **existing** metric detail screen.
-- No greeting, encouragement/marketing hero, reminder, quick add, add-record buttons, comparison badges, separate per-card time selectors, min/avg/max tile grid, custom-range control, or Tối giản/Chi tiết toggle in this **approved simple baseline**.
-- Future enriched mode is a separate design decision; do not implement from historical exploration.
+### Day mode
 
-## Layout reference (390dp phone)
+**Behavior approved, separate visual artwork NOT independently approved:** The global period control supports Day as well as Week. Use the exact same card shell, iconography, spacing, palette and visual language as the approved Week B mockup. Adjust the displayed metric context, period text and charts according to [BEHAVIOR.md](BEHAVIOR.md). **Do not revive the hand-drawn SVG day version as a new visual baseline.** If a separate Day screenshot is needed later, it requires its own design review.
 
-| Element | Suggested size / treatment |
-| --- | --- |
-| Shared app header / drawer | Reuse existing AppShell/sidebar; do not duplicate within feature |
-| Heading | Small eyebrow + `Thống kê` at ~26–30sp + one-line subtitle |
-| Global time switch | Full-content-width segmented pill: Day and Week; active style rose/coral |
-| Date scope selector | Previous chevron, centered period label, next chevron; future scopes disabled |
-| Card layout | Content width minus ~16–20dp side margins; corner radius ~18–20dp; gap ~8–12dp |
-| Card height | Roughly **110–125dp**, with responsive growth for longer locale/text |
-| Icon/illustration | ~36–50dp, left; distinct pastel tint per metric; visually similar to accepted B |
-| Metric label & caption | Title ~14–16sp, supporting line ~10–12sp |
-| Main value | ~21–25sp bold, proper unit; no overlap with chart |
-| Mini chart | ~105–125dp wide × 42–60dp high, right-lower quadrant; **native interactive card preview**, not a static screenshot |
-| Footer | Shared bottom navigation, active Statistics destination, no nested scroll |
-| Dynamic type & 320dp | Value/text win space over decoration; allow card height to grow or stack chart below text when needed |
+## Scope and layout
 
-Color hierarchy: HR coral pink `#FFF0F4` / rose line, Steps mint `#E6FBF3` / green bars, Water pale blue `#E6F4FF` / blue bars, Sleep lilac `#F0E9FF` / purple bars **only inside its card**; overall app and header stay mint/neutral. Dark uses desaturated charcoal cards with corresponding colored chart accents, not fully saturated panels.
+- **Statistics is a multi-metric trend explorer**, not Home 2.0.
+- One vertically scrollable page with **four metric preview cards**, in order: Heart Rate → Steps → Water → Sleep.
+- Shared header/navigation shell. Native `Thống kê` heading, subtle wave and compact green decorative bars at upper right. Separate global `Ngày / Tuần` segmented selector and period navigation.
+- Week is the **default** first-visit scope. User taps whole card to open existing metric detail screen.
+- Each card: expressive original **metric artwork** on left, title + short context, large value + unit, **small chart preview** at lower-right, chevron at upper-right. No tooltip on preview cards.
+- HR coral/blush, Steps mint, Water sky blue, Sleep lavender. Light page mostly cream-white and mint; dark page deep navy/charcoal with softened metric-color panels.
+- Cards may extend below screen and require vertical scrolling. **Do not compress them just to show all four in one viewport.**
+- Only compact B: no comparison with previous periods, no Min/Avg/Max sub-cards, no long insight ribbons, no `Tối giản / Chi tiết` toggle, no quick-add, and no new metric-detail redesign.
 
-See [Behavior](BEHAVIOR.md), [Asset mapping](ASSET_MAPPING.md), [Component manifest](component-manifest.json). **No Backend contracts or data models are duplicated here.** Always use existing app services and canonical docs for real metric values.
+## Responsive reference
+
+A cropped screenshot from a design presentation is not a precise DP scale. For a 393dp viewport, start with ~16dp outer gutters, ~16dp internal card padding, ~18–22dp radius, ~10–14dp card gap, and a ~110–145dp natural card height depending on text scaling/locale. Treat these as **implementation guidelines**, not a reason to change the approved screenshot's proportions. Mini charts should fit their designated right-side space with no horizontal scrolling.
+
+**Important:** The SVGs in [legacy](legacy/) are not authoritative for proportions, font, illustration or icons. The original B screenshot is authoritative for those properties. Other modules' legacy backgrounds or redesign experiments must not override it.
+
+## Related specifications
+
+- [Behavior: day/week/navigation, independently handled states](BEHAVIOR.md)
+- [Asset reuse and screenshot fidelity](ASSET_MAPPING.md)
+- [Manifest — current screen authority and deprecated references](component-manifest.json)
+- [Shared health metrics drawer](../shared/health-metrics-sidebar/README.md)
+
+**API/model ownership:** This is a visual specification, not a duplicate API schema or database model. Read current canonical backend docs and existing frontend repositories when implementing.

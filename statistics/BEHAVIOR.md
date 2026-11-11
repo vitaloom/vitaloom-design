@@ -1,6 +1,6 @@
 # Statistics Overview B — UI-only behavior contract
 
-**Screen:** `STA-SCR-001` in [README](README.md). **Status:** approved simplified UX direction, implementation validation pending.
+**Screen:** `STA-SCR-001` in [README](README.md). **Status:** approved simple-B interaction direction. **Visual authority is the raster-cropped original Wellness Analytics B**, not any SVG in [legacy](legacy/README.md). Day mode follows the same card style but has no separately approved Day visual.
 
 | ID | User action / state | Observable behavior |
 | --- | --- | --- |

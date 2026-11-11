@@ -1,25 +1,36 @@
-# Statistics Overview — visual asset and composition mapping
+# Statistics Overview B — visual assets and composition
 
-The Statistics Overview is **presentation only**. Import reusable illustrations from existing design/frontend repositories rather than copying or reauthoring them. Full-screen [Week](overview-week-light.svg) and [Day](overview-day-light.svg) mockups are visual references, **not flattened UI components**.
+**Approved visual baseline:** raster crops of the original **Wellness Analytics B** phones:
+- [Light](approved-b-week-light.webp)
+- [Dark](approved-b-week-dark.webp)
 
-| Card | Preferred existing asset | Native sizing / use |
+Both images are faithful **crops of the approved artwork**, reduced in pixel resolution for repo preview. No image-generation or SVG reconstruction step was applied to change their content. If the crop and a low-fidelity legacy SVG conflict, the **crop wins**. These crops must **not** be used as flat screens in the running app.
+
+## Reuse existing feature artwork
+
+| Card | Asset recommendation | Why |
 | --- | --- | --- |
-| Heart Rate | [Glossy coral heart SVG](../assets/heart-rate/heart-pulse-hero.svg) or [HR pulse icon](../assets/shared/analytics-icons/heart-pulse.svg) | About 36–50dp, clipped/contained within card left icon slot, no ECG/live claim |
-| Steps | [Mint sneaker SVG](../assets/steps/steps-sneakers-hero.svg) or [footsteps icon](../assets/shared/analytics-icons/footsteps.svg) | About 40–50dp; reuse art without adding a second hero |
-| Water | Existing frontend bottle artwork (`vitaloom-frontend/assets/images/bottle.png`) or native droplets icon | Blue accent, about 36–50dp. Water design repo currently has no standalone approved bottle PNG |
-| Sleep | [Moon-cloud-stars PNG](../assets/sleep-tracking/moon-cloud-stars.png), [Moon SVG fallback](../assets/sleep-tracking/icons/moon.svg) | About 40–50dp, only muted lilac inside card; do not recolor the page purple |
-| Header / calendar / chevron | Existing app icon components | Shared UI, no cloned icon file required |
-| Mini chart | **Native SVG/views derived from real metric data** | Never embed pre-rendered chart pictures from screenshot |
-| Tab and bottom nav | Existing app design tokens + shared navigation | Single owner, keep existing app shell |
+| HR | [Dimensional pulse heart](../assets/heart-rate/heart-pulse-hero.svg) or an existing matching polished heart icon | Matches glossy coral heart identity; **not** the prior hand-drawn tiny heart path |
+| Steps | [Sneaker illustration](../assets/steps/steps-sneakers-hero.svg) or existing app sneaker illustration | Preserve mint-and-white dimensional shoes from approved screen |
+| Water | Existing frontend water-bottle illustration from the Water feature, or suitable existing shared water asset | Preserve translucent blue bottle style; no flat square bottle rebuild |
+| Sleep | [Moon/cloud illustration](../assets/sleep-tracking/moon-cloud-stars.png) or selected sleep UI artwork | Dimensional purple pillow/moon/stars, not simple crescent built from paths |
+| Calendar / menu / chevron / bottom nav | Existing app shared icon library / AppShell | Same glyph, alignment and stroke style as app; not duplicated inline vector sketches |
+| Mini charts | **Native components** based on real API series | HR connected dot line; Steps mint bars; Water blue bars; Sleep violet duration bars; do **not** use sample chart pixels as measurements |
 
-## Screen composition
+## Layout / layering
 
-1. Header, VitaLoom brand, shared drawer toggle → app-owned.
-2. Statistics eyebrow/title/subtitle → native feature screen content.
-3. Segmented mode + centered period navigation → shared local state.
-4. Four pastel cards (HR / Steps / Water / Sleep), each native card: illustration left, title, context, value, **right-side mini chart**, chevron.
-5. Existing shared bottom tabs, active Statistics route.
+- Parent canvas uses the app's soft neutral/mint wellness palette in light mode and deep navy/charcoal dark mode.
+- Use top header from **shared AppShell** (sidebar closed by default), below it feature title/description and right-side small green/pink accent bars. Keep it subtle, not a big Home hero.
+- Place the global period control above **all** metric cards. The current active pill in B is **rose/coral**, not mint/teal.
+- Pastel backgrounds belong on the four individual cards. Each card contains: icon left, label/context center-left, value toward lower-left, compact chart at lower-right, and navigational chevron upper-right.
+- Match nuanced surface highlights, shadows, illustrations and spacing of the *actual B raster*. Never draw a replacement illustration using generic SVG circles/triangles.
+- No KPI comparison/range badge/footer insight, giant vertical chart, or detailed information in this approved compact view.
 
-No additional 3D artwork or red-background layer is required for this simple Statistics baseline. The **pastel color is local to each metric card**; keep the canvas mint/neutral with a very subtle decorative heading wave only.
+## QA checklist
 
-To avoid screenshot-implementation drift: compare frontend renders against the four [screen references](README.md), but treat example dates/values as illustrative. Do not use a large HR/Shoes hero banner inside a 110–125dp overview card.
+- [ ] Compare FE **directly against** the approved B Light/Dark crops at equivalent viewport aspect, not against any SVG in `legacy/`.
+- [ ] Illustration matches actual asset vocabulary: 3D heart / mint shoes / blue bottle / lavender sleep art.
+- [ ] Card content and mini chart remain separate native, accessible elements, not flattened images.
+- [ ] No forced fit-all-cards: natural vertical scroll, accessible text and responsive layouts.
+- [ ] Correct Day/Week chart semantics use backend data; no future dots/bars, no fabricated values or progress.
+- [ ] No redesigned detail pages, new backend contracts or unsolicited visual changes.
