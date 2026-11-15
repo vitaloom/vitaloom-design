@@ -1,0 +1,3 @@
+# Design repository instructions
+
+For tasks in the VitaLoom workspace, read the [workspace instructions](../AGENTS.md), [workflow](../vitaloom-business-docs-and-tools/docs/development-workflow/README.md) and [Decision Ledger](../vitaloom-business-docs-and-tools/docs/development-workflow/decisions.md). Start with [README.md](README.md), the relevant feature and its handoff, [behavior standard](BEHAVIOR_STANDARD.md) and [asset mapping standard](ASSET_MAPPING_STANDARD.md). Preserve stable screen and asset IDs and distinguish approved visual direction, proposed alternatives and historical references. Link to Business and Backend for rules and API contracts.

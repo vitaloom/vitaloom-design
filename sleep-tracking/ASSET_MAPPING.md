@@ -28,7 +28,7 @@
 | `SLT-SCR-002B` | [02b Duration Only](02b-sleep-entry-duration-only.png) | Same hero + reaction set as 02a; `Date/Hour/Minute` are native interactive pickers |
 | `SLT-SCR-003` | [03 Sleep Insights](03-sleep-insights.png) | [moon hero](../assets/sleep-tracking/moon-cloud-stars.png), [trend graphic](../assets/sleep-tracking/trend-up.png), [bars](../assets/sleep-tracking/bars.png) |
 | `SLT-SCR-004` | [04 AI Insight Detail](04-ai-insight-detail.png) | [pillow](../assets/sleep-tracking/pillow-stars.png), [reaction graphics](../assets/sleep-tracking/feeling-comfortable.png), [bars](../assets/sleep-tracking/bars.png) |
-| `SLT-SCR-005` | [05 Weekly Sleep Report](05-ai-weekly-sleep-story.png) | [moon hero](../assets/sleep-tracking/moon-cloud-stars.png), [trend graphic](../assets/sleep-tracking/trend-up.png), [reaction graphics](../assets/sleep-tracking/feeling-tired.png) |
+| `SLT-SCR-005` | [05 Fixed-week Sleep concept](05-ai-weekly-sleep-story.png) · historical reference | [moon hero](../assets/sleep-tracking/moon-cloud-stars.png), [trend graphic](../assets/sleep-tracking/trend-up.png), [reaction graphics](../assets/sleep-tracking/feeling-tired.png) |
 
 ### Added screen/state-to-asset mapping (2026-11-11)
 

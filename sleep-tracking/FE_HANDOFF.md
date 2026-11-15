@@ -23,7 +23,7 @@ AppShell (shared header, drawer, global tabs)
    ├─ SleepGoalScreen                  SLT-SCR-009
    ├─ SleepInsightsScreen              SLT-SCR-003 (also NO_DATA/INSUFFICIENT_DATA)
    ├─ SleepInsightDetailScreen         SLT-SCR-004
-   └─ HIRWeeklyReportScreen            SLT-SCR-005 (HIR-owned)
+   └─ Recent Sleep Report             Sleep F2 / SLT-UC-009
 ```
 
 ## Data dependencies to define with BE
@@ -41,7 +41,7 @@ AppShell (shared header, drawer, global tabs)
 | Save | request identity, acknowledged/unknown status | idempotency and version control per backend tech design |
 | Insights list | insight code/category, period, status, coverage, sample, summary, evidence version | only READY insights displayed as evidence-backed |
 | Insight detail | deterministic evidence, source record refs, limitations, AI eligibility/consent, validated explanation | AI cannot override numbers; stale text hidden |
-| Weekly Report | completed week status, day-level dataStatus, daily durations, weekly metrics, eligible insights and optional AI story | date missing != 0h; owner HIR-UC-002 |
+| Recent Sleep Report | verified current rolling-window metrics, date-level data state, eligible insights and optional AI Recent Sleep Story | Follow [SLT-UC-009](https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/f2-sleep-goals-insights/SLT-UC-009_kham-pha-sleep-insights.md) and the canonical Backend contract. Show verified missing dates as “Not recorded.” |
 
 Do not invent endpoint paths, response field names, token storage, retry API, or time zone serialization; request them from backend contract. The F2 insight catalog's JSON example is **logic illustration, not approved wire schema**.
 
@@ -70,14 +70,14 @@ Do not invent endpoint paths, response field names, token storage, retry API, or
 3. 00:00 invalid; 24:00 valid; 24:15 and 25:00 invalid even if wheel visually allows 0–100h.
 4. Loading ≠ empty; unknown save result ≠ success; deleted source records invalidate linked AI copy.
 5. C01 is not displayed without eligible B02; detailed evidence/sample is consistent with its card.
-6. Current/incomplete week shows numeric/template report but no AI Weekly Story.
-7. AI consent-off/network-failure does not block deterministic insights/weekly metrics.
+6. Recent report shows verified metrics while the optional story loads separately. Apply F2 eligibility and consent before showing the story.
+7. AI opt-out or story request failure leaves verified metrics and deterministic insights available.
 
 ## Missing before FE integration
 
 - Journal/Detail/Edit/Goal and two Insights state **structure-only** references now exist; green-theme correction and visual review required. Consent, further error/confirmation and unconfigured-state visual designs remain open.
 - API contract with exact request/response/error schema, idempotency rules and evidence version semantics.
-- Cross-module HIR-UC-002 presentation alignment and privacy/security review.
+- Recent Sleep Report and AI presentation review against Sleep F2, including privacy and security.
 - App-specific font/spacing token review. Screenshot/PNG asset import is now complete; see [asset mapping](ASSET_MAPPING.md).
 
 Release readiness requires Expo device QA against approved visual and validated BR/UC, not just this handoff.

@@ -22,7 +22,7 @@
 | SLT-SCR-002B | [`02b-sleep-entry-duration-only.png`](./02b-sleep-entry-duration-only.png) | SLT-UC-004: duration + end date | AVAILABLE / PNG |
 | SLT-SCR-003 | [`03-sleep-insights.png`](./03-sleep-insights.png) | SLT-UC-009: A/B/C discovery | AVAILABLE / PNG |
 | SLT-SCR-004 | [`04-ai-insight-detail.png`](./04-ai-insight-detail.png) | SLT-UC-009: evidence + optional AI explanation | AVAILABLE / PNG |
-| SLT-SCR-005 | [`05-ai-weekly-sleep-story.png`](./05-ai-weekly-sleep-story.png) | HIR-UC-002: weekly report section, Sleep F2 metrics | AVAILABLE / PNG |
+| SLT-SCR-005 | [`05-ai-weekly-sleep-story.png`](./05-ai-weekly-sleep-story.png) | Historical fixed-week concept | HISTORICAL / PNG |
 
 ### Supplemental screen references — NOT palette baselines
 
@@ -62,7 +62,7 @@ Also available: [`00-sleep-design-overview.png`](./00-sleep-design-overview.png)
 - **Sleep Journal / record detail/edit/delete**: SLT-UC-005/006/007 — structural images 7–9 now available; correct to green wellness before FE approval.
 - **Sleep Goal Management**: SLT-UC-008 — structural image 10 now available; correct to green wellness. Suggested 8h goal is never auto-saved.
 - **Insights empty/insufficient**: images 11/12 now cover two states of existing screen 003, not new screens; eligibility copy is rule-dependent.
-- **Weekly Report** belongs to **HIR-UC-002**, not a newly invented Sleep UC. Sleep supplies metrics, insight/evidence and data-state eligibility.
+- **Recent Sleep Report and AI Recent Sleep Story** belong to Sleep F2 under [SLT-UC-009](https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/f2-sleep-goals-insights/SLT-UC-009_kham-pha-sleep-insights.md). SLT-SCR-005 preserves the former fixed-week concept as historical artwork. HIR-UC-002 covers Steps and Water.
 - **Post-MVP** reminders, wearables, sleep stages, sleep coaching, free-form chat and offline journal queue are excluded.
 
 Approval of the selected screenshot appearance does not by itself approve every illustrative numeric value, a new API contract, an SVG fallback, or an unreviewed navigation/detail screen.

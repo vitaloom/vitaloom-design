@@ -14,7 +14,7 @@
 | Edit Record | [9](9_sleep_record_detail_edit.png), valid edit draft | saving | feeling optional | validation/revision conflict/unknown result | retain draft and reconcile |
 | Goal Setup | [10](10_sleep_goal_setup.png), confirmed goal | saving | no active goal; 8h only suggestion | invalid/stale/unknown | retain prior goal; retry safely |
 | Detail | summary + deterministic evidence + limitations | checking version / AI | no AI consent ⇒ factual explanation | AI invalid/unavailable ⇒ no AI output; stale version ⇒ reload | view source records / reload |
-| Weekly | selected verified week, 6 of 7 illustrative coverage | loading | missing dates shown `—`, not `0h` | current week: no AI story; unverified: no story | switch completed week / retry |
+| Recent Sleep Report | verified current rolling-window metrics and eligible insights from Sleep F2 | report loading; optional story loads independently | show verified missing dates as “Not recorded” | unverified history suppresses unsupported results; story error has its own state | retry report or keep viewing verified results on story error |
 
 ## Reusable microcopy candidates (not backend enums)
 
@@ -29,4 +29,4 @@ Prefer exact backend domain status semantics; these are proposed English UI phra
 
 ## Visual coverage
 
-The original six screens cover selected happy paths. New structure-only images 7–10 illustrate Journal/Detail/Edit/Goal and images 11–12 illustrate Insights NO_DATA/INSUFFICIENT_DATA. Their purple UI palette is explicitly NOT approved; corrected green wellness implementation is required. Loading, failed save, delete confirmation, DST ambiguity, unconfigured goal, network failures, AI opt-out/stale still lack accepted dedicated visual references. Distinguish unverified from empty; request green FE visual review.
+The original six images include the historical fixed-week report concept. New structure-only images 7–10 illustrate Journal/Detail/Edit/Goal and images 11–12 illustrate Insights NO_DATA/INSUFFICIENT_DATA. Their purple UI palette is explicitly NOT approved; corrected green wellness implementation is required. Loading, failed save, delete confirmation, DST ambiguity, unconfigured goal, network failures, AI opt-out/stale still lack accepted dedicated visual references. Distinguish unverified from empty; request green FE visual review.

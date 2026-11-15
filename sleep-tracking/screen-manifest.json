@@ -83,9 +83,9 @@
       "id": "SLT-SCR-005",
       "filename": "05-ai-weekly-sleep-story.png",
       "imageExistsInGitHub": true,
-      "visualDecision": "USER_SELECTED_BASELINE",
+      "visualDecision": "HISTORICAL_REFERENCE",
       "binaryStatus": "COMMITTED",
-      "businessOwner": "HIR-UC-002",
+      "supersededBy": "SLT-UC-009",
       "proposedSvgFallbacks": [
         "../assets/sleep-tracking/icons/bars.svg",
         "../assets/sleep-tracking/icons/trend-up.svg"
