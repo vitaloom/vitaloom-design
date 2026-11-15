@@ -1,83 +1,87 @@
-# Sleep Tracking — Expo FE implementation handoff (design-level)
+# Sleep Tracking — Expo FE handoff (design-level, updated 2026-11-15)
 
-**MANDATORY COLOR OVERRIDE:** New screen PNGs 7–12 use the WRONG purple-dominant palette. Implement their structure and content in green/mint wellness UI with cream neutral surfaces and green primary CTA; purple is decorative bed/pillow/icon accent only. See [2026-11-11 correction](ADDITIONAL_SCREENS_20261111.md).
+> **Not an API contract and not evidence of implementation.** Business [F1 rules](https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/f1-sleep-journal/rules.md) and [F2 rules](https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/f2-sleep-goals-insights/rules.md) override mockup data. Read [RECENT_INSIGHT_DESIGN.md](RECENT_INSIGHT_DESIGN.md), [BEHAVIOR.md](BEHAVIOR.md), [ASSET_MAPPING.md](ASSET_MAPPING.md).
 
-**Not an API contract.** This is a screen-to-data dependency checklist for FE/BE agreement. Canonical business rules and the backend's published API contract take precedence.
-
-## Component boundaries
+## Component / navigator structure
 
 ```text
-AppShell (shared header, drawer, global tabs)
-└─ Sleep feature navigator
-   ├─ SleepHomeScreen                  SLT-SCR-001
-   ├─ RecordSleepScreen                SLT-SCR-002A/B (one shared draft)
-   │  ├─ SleepTypeSegment
-   │  ├─ InputMethodSegment
-   │  ├─ TimeRangePicker                date + hour wheel + minute wheel + timezone
-   │  ├─ DurationPicker                 end date + hour/minute wheels
-   │  ├─ OptionalFeelingPicker
-   │  └─ SaveRecordAction
-   ├─ SleepJournalScreen               SLT-SCR-006
-   │  └─ SleepRecordDetailScreen        SLT-SCR-007
-   │     └─ SleepRecordEditScreen       SLT-SCR-008 (reuse record form)
-   ├─ SleepGoalScreen                  SLT-SCR-009
-   ├─ SleepInsightsScreen              SLT-SCR-003 (also NO_DATA/INSUFFICIENT_DATA)
-   ├─ SleepInsightDetailScreen         SLT-SCR-004
-   └─ Recent Sleep Report             Sleep F2 / SLT-UC-009
+Shared AppShell & navigation
+└─ Sleep feature
+   ├─ SleepHomeScreen                SLT-SCR-001  (01-sleep-home-recent.png)
+   ├─ RecordSleepScreen              SLT-SCR-002A/B (one draft, Main-only)
+   │  ├─ TimeRangePicker / DurationPicker
+   │  └─ OptionalFeelingPicker
+   ├─ SleepJournalScreen             SLT-SCR-006
+   │  └─ RecordDetailScreen          SLT-SCR-007
+   │     └─ RecordEditScreen         SLT-SCR-008
+   ├─ SleepGoalScreen                SLT-SCR-009
+   ├─ RecentSleepReportScreen        SLT-SCR-010  (02-recent-sleep-report.png)
+   │  ├─ VerifiedSummary + 7DayCoverageChart
+   │  ├─ HighlightInsightCards (max 3 READY)
+   │  └─ AIRecentStoryCard (conditional, independent HTTP/loading)
+   ├─ AllSleepInsightsScreen         SLT-SCR-003  (03-all-sleep-insights-recent.png)
+   └─ SleepInsightDetailScreen       SLT-SCR-004  (insightCode parameter)
+      ├─ VerifiedEvidenceHeader + Sample/Period
+      ├─ InsightSpecificChart        (A01–A05, B01–B04)
+      ├─ EvidenceAndLimitations      (collapsible)
+      └─ AIExplanationInline         (explicit click + consent)
 ```
 
-## Data dependencies to define with BE
+**Never implement a weekly selector, `HIRWeeklyReportScreen` for Sleep, `SLT-SCR-005` as active, 9 separate Detail routes, or C-group navigation.** HIR weekly is Steps/Water only. The old 01/03/04/05 PNGs remain provenance, not current code baselines.
 
-| UI surface | Server-derived data needed | Nonnegotiable semantics |
-|---|---|---|
-| Journal | confirmed sessions grouped by statistical day, method, feeling | duration-only never has inferred clock times |
-| Record detail/edit/delete | persisted record, revision, stored timezone and write outcome | existing timed timezone immutable; conflict/reconciliation, no false success |
-| Goal management | active/historic goal, duration constraints, confirmation | 8h suggested only; removing goal preserves history |
-| Insights empty/insufficient | verified no-data vs category-specific insufficient evidence | images 11/12 are states of 003, not routes |
-| Latest sleep | confirmed session ID, type, duration, statistical day, optional feeling, and time semantics | no invented timestamps for duration-only |
-| Sleep Goal | current goal + historical effective goal + day status/progress | no auto 8h goal; no percent without verified data |
-| Time Range form | resolved timezone; submit start/end instants; validation errors | DST/overlaps checked server-side; preserve one reference zone |
-| Duration Only | total integer minutes; user-chosen end date | 1–1440, no implied clock times |
-| Save | request identity, acknowledged/unknown status | idempotency and version control per backend tech design |
-| Insights list | insight code/category, period, status, coverage, sample, summary, evidence version | only READY insights displayed as evidence-backed |
-| Insight detail | deterministic evidence, source record refs, limitations, AI eligibility/consent, validated explanation | AI cannot override numbers; stale text hidden |
-| Recent Sleep Report | verified current rolling-window metrics, date-level data state, eligible insights and optional AI Recent Sleep Story | Follow [SLT-UC-009](https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/f2-sleep-goals-insights/SLT-UC-009_kham-pha-sleep-insights.md) and the canonical Backend contract. Show verified missing dates as “Not recorded.” |
+## Server-derived data checklist (logical, NOT endpoint schema)
 
-Do not invent endpoint paths, response field names, token storage, retry API, or time zone serialization; request them from backend contract. The F2 insight catalog's JSON example is **logic illustration, not approved wire schema**.
+| Surface | Needed from backend | FE invariant |
+| --- | --- | --- |
+| Home/latest | confirmed MAIN ID/day/duration/method/optional feeling, Goal/progress | never infer clock time from duration-only, no 0 for missing |
+| Journal/Create/Edit/Delete | server-confirmed records, reference timezone, edit/delete eligibility and outcomes | F1 current-calendar-week create/backfill; edit/delete latest-only |
+| Goal | active goal + historic effective goal | 8h suggestion is not active; validate 60–1440 minutes, 15-min step |
+| Recent Report | current `[D−6,D]`, verification state, coverage calendar, days with MAIN, mean/denominator, up to 3 READY highlights | `D` today in Asia/Ho_Chi_Minh; no historical picker |
+| All Insights | A/B code/title/status/priority/evidence fingerprint, READY vs Locked | backend-sorted READY; Locked last with status only; C hidden |
+| Insight Detail | code, period, baseline period where relevant, sample/denominator, measurement, limitations, source references, fingerprint/status | render **code-specific chart**; never use screenshot's illustrative figures |
+| A03/B03 | two **completed** seven-day windows + means or feeling ratios per period | excludes today even if Report includes today |
+| A04 | eligible MAIN RANGE samples, reference timezone, min/max relative-day times, DST status | no fabricated timestamps/regularity labels |
+| B01/B02/B03/B04 | actual opted-in feeling per MAIN; effective goal history for B04 | missing feeling != tired; descriptive only, correct denominators |
+| AI Story | consent, eligibility, independent response + evidence freshness | only on Report open/focus, cache/fallback as server directed; hide Story area when consent OFF |
+| AI Explanation | consent + latest READY detail evidence; explicit request outcome | never auto-generate on detail open; show 3 parts inline; stale text hidden |
 
-## FE-specific recommendations (PROPOSED)
+AI Story max 120 Vietnamese words, <=2 selected READY observations (>=1 outside A01); Explanation max 150 words. API, Redis TTL/cooldown/timeout/validation/retry/single-flight are Backend responsibilities. FE must not create speculative client-side caches, sleep scores, medical labels, polling or background AI jobs.
 
-- Navigation IDs must map to current Expo navigation implementation, not assumed route strings.
-- Use a single screen plus method-specific form sections for 002A/B. Preserve raw user edits while switching tabs, but do not send hidden incompatible fields.
-- Create accessible wheel pickers and date pickers; support DST disambiguation or fallback to duration-only if instants cannot be resolved.
-- Extract date/time normalization in pure tested helpers; keep server as authority on overlap/date validation.
-- Store one optional feeling per session; charts use actual computed aggregates, not exported decorative assets.
-- Use reusable skeleton/empty/error/unknown-result components and a refresh-on-confirmation data strategy.
-- AI consent state and versioning must be server-provided/validated; no client-generated medical inference.
+## Component-specific chart mapping
 
-## New assets and corrected visual acceptance
+- `A01`: 7-day coverage calendar + count /7; >=3 MAIN, verified recent 7 days.
+- `A02`: 7-day achieved/not-achieved/missing/not-applicable state cells + numerator/eligible denominator; >=3 MAIN days with effective historical Goal; verified Journal+Goal history.
+- `A03`: two completed 7-day mean bars + signed minute delta; >=3 MAIN per completed window, both verified; current day excluded.
+- `A04`: two min-max range tracks: bedtime and wake-up, relative-day timeline; >=3 eligible MAIN RANGE in selected same timezone; DST exclusions.
+- `A05`: two bars for weekday/weekend means, signed minute delta, per-group n; >=3 weekday MAIN and >=2 weekend MAIN in recent window.
+- `B01`: three-segment 100% distribution/donut, count/denominator, missing-feeling note; >=3 MAIN with feeling in recent window.
+- `B02`: two comparable average-duration bars for Comfortable and Tired, signed minutes; >=3 Comfortable and >=3 Tired MAIN in recent window.
+- `B03`: two 100%-stacked distributions for completed windows, signed percentage-point changes; >=3 MAIN with feeling in each completed 7-day window.
+- `B04`: exception count + dated verified record cards with duration vs effective day-goal; >=3 MAIN with feeling, >=1 Tired with duration >= effective Goal, verified goal history.
 
-- Structural screenshot references: [Journal 7](7_sleep_journal.png), [Detail 8](8_sleep_record_detail.png), [Edit 9](9_sleep_record_detail_edit.png), [Goal 10](10_sleep_goal_setup.png), [No Data 11](11_sleep_insight_empty.png), [Insufficient 12](12_sleep_not_enough_data_insight.png).
-- Standalone assets: [combined hero](../assets/sleep-tracking/star-pillow-cloud.png) and [small purple bed](../assets/sleep-tracking/bed.png).
-- Do not sample purple screen gradients/buttons/cards from screenshots 7–12: use existing wellness-green design tokens and shared shell components.
-- Reject screenshot sample values contradicting F1: time-range record statistical day is local end date in stored timezone; duration-only clock times must not be invented.
-- Verify corrected green FE screens visually; design image existence alone is not UI implementation proof.
+Treat all PNG example values independently illustrative; even an attractive generated statement may contradict conditions. Derive every number and annotation from the verified wire contract, show `n` and period; time, absence, Goal and feeling semantics are mandatory.
 
-## Suggested contract acceptance scenarios
+## Existing asset reuse (first choice)
 
-1. Time-range example 2026-11-10 23:15 → 2026-11-11 06:45 in a stable zone = 450 min; future/unresolvable/overlapping invalid.
-2. Duration-only 07:30 + selected end date creates 450-minute estimated record, without start/end timestamps.
-3. 00:00 invalid; 24:00 valid; 24:15 and 25:00 invalid even if wheel visually allows 0–100h.
-4. Loading ≠ empty; unknown save result ≠ success; deleted source records invalidate linked AI copy.
-5. C01 is not displayed without eligible B02; detailed evidence/sample is consistent with its card.
-6. Recent report shows verified metrics while the optional story loads separately. Apply F2 eligibility and consent before showing the story.
-7. AI opt-out or story request failure leaves verified metrics and deterministic insights available.
+Assets are in [`../assets/sleep-tracking/`](../assets/sleep-tracking/README.md), mapped per code in [RECENT_INSIGHT_DESIGN.md](RECENT_INSIGHT_DESIGN.md), [ASSET_MAPPING.md](ASSET_MAPPING.md), and machine-readable [asset manifest](../assets/sleep-tracking/asset-manifest.json).
 
-## Missing before FE integration
+- Reuse `moon-cloud-stars.png`, `sleep-cloud.png`, `pillow-stars.png`, `star-pillow-cloud.png`, `bed.png` for calm decorations, and `feeling-*.png` for actual three feeling categories.
+- For A01 calendar, A02 Goal, A04 time range, use existing native/vector icon components. `bars.png` and `trend-up.png` are decorative and **never substitute data-driven graphs**.
+- No screen screenshot cropping or new generated assets unless explicitly reviewed. Use native React Native layouts, charts, type, progress, safe areas and hit areas.
+- Screens 7–12 remain **structure-only** due to invalid purple-dominant palette; mint/green is required in code, purple minor (~10%).
 
-- Journal/Detail/Edit/Goal and two Insights state **structure-only** references now exist; green-theme correction and visual review required. Consent, further error/confirmation and unconfigured-state visual designs remain open.
-- API contract with exact request/response/error schema, idempotency rules and evidence version semantics.
-- Recent Sleep Report and AI presentation review against Sleep F2, including privacy and security.
-- App-specific font/spacing token review. Screenshot/PNG asset import is now complete; see [asset mapping](ASSET_MAPPING.md).
+## Progressive loading and error handling
 
-Release readiness requires Expo device QA against approved visual and validated BR/UC, not just this handoff.
+- On Report focus: server-verified metrics/evidence first; AI Story separate. Stale output never remains visible when data/policy/window/consent change. No polling; next focus can recheck.
+- `NO_DATA`: guided Journal action; not a 0h chart. `INSUFFICIENT_DATA`: verified metrics if valid, no unsupported insight. `UNVERIFIED_DATA`: show only verified *individual* facts, no aggregate/Story.
+- On a non-READY insight Detail: show status only, no fake evidence/chart/AI. Locked list item exposes status only, not missing requirements/progress.
+- F1 write outcomes and form validation stay server-authoritative. Do not optimistically assert success or lose drafts on uncertain responses.
+
+## FE acceptance gate
+
+- [ ] No fixed-week Sleep report, weekly navigation, Group C or nine separately routed detail screens.
+- [ ] All 9 chart variants use correct window, sample, Goal and feeling facts.
+- [ ] Existing small assets imported once into shared mapping, not duplicated or cropped from PNG screenshots.
+- [ ] Native charts accessible, screen-reader labels for actual measurements, no misleading green health verdicts.
+- [ ] READY/non-READY/stale/consent/loading/fallback states visually tested in Expo on supported screen sizes.
+- [ ] Backend contract reconciled before API integration; documented visual baselines are not acceptance of backend numbers.

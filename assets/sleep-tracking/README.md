@@ -30,3 +30,12 @@ All nine **original generated PNG assets** are committed here, plus two addition
 [moon](icons/moon.svg) · [cloud](icons/cloud.svg) · [pillow](icons/pillow.svg) · [star](icons/star.svg) · [comfortable](icons/feeling-comfortable.svg) · [normal](icons/feeling-normal.svg) · [tired](icons/feeling-tired.svg) · [trend](icons/trend-up.svg) · [bars](icons/bars.svg).
 
 SVGs are simpler editable icon alternatives and **not the approved glossy PNG illustrations**. Native icon libraries may be preferable for basic calendar, back arrow, clock and menu glyphs. Do not render PNG trend artwork as if it were computed live health data.
+
+## Recent F2 visual handoff — existing assets first (2026-11-15)
+
+The 13 new screen PNGs in commit `e0ceb5a` are **visual references**, not reusable image assets. Reuse the 11 standalone PNGs already in this folder, with exact per-insight mapping in [RECENT_INSIGHT_DESIGN.md](../../sleep-tracking/RECENT_INSIGHT_DESIGN.md) and [ASSET_MAPPING.md](../../sleep-tracking/ASSET_MAPPING.md).
+
+- A01/A02/A03/A04/A05: moon/cloud, pillow/bed and small decorative trend artworks where appropriate; calendar/Goal/clock primitives use existing vector/native icons.
+- B01/B02/B03/B04: reuse three feeling PNGs according to the actual stored feeling; don't use a generic generated smiley or crop from mockups.
+- `bars.png` and `trend-up.png` are **decorative only**; charts and displayed percentages must be rendered dynamically from verified backend evidence.
+- Keep Soft Wellness mint/green dominant; lilac is a sparse accent. Avoid importing all PNGs into every screen; use only the mapped illustrations and layout-native charts.

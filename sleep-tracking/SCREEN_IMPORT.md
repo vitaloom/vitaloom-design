@@ -61,3 +61,15 @@ The user selected the visuals; any illustrative time, date, percentage, average 
 The new values above are **Git blob SHA identifiers, not SHA-256 content hashes**; the SHA-256 table higher in this file applies only to the original upload set. New PNG format/alpha and pixel dimensions were not independently decoded by this documentation update; verify in FE import QA.
 
 **Do not modify source PNGs or infer purple color tokens**. Their color is a known design error. See [mandatory green wellness override](ADDITIONAL_SCREENS_20261111.md). Corrected FE visual acceptance is still pending.
+
+## Recent F2 PNG baseline upload — main commit e0ceb5a (2026-11-15)
+
+The following new visual references were verified by repository path on `main`; **no new transparent artwork assets** were uploaded in this change, and we have not independently recomputed image content fingerprints. Original `SCREEN_IMPORT.md` source-file hashes remain historical.
+
+| Scope | New committed PNGs | Guidance |
+| --- | --- | --- |
+| Recent F2 | `01-sleep-home-recent.png`, `02-recent-sleep-report.png`, `03-all-sleep-insights-recent.png`, `04-recent-insight-detail.png` | Current visuals replacing old home/list/detail/weekly concept |
+| Pattern A | `13-insight-a01-recording-coverage.png` through `17-insight-a05-weekday-weekend-duration.png` | Distinct chart variants of the same parameterized Detail route |
+| Feeling B | `18-insight-b01-feeling-distribution.png` through `21-insight-b04-tired-goal-exception.png` | Distinct feeling-related chart variants, no separate routes |
+
+Current handoff and asset reuse: [RECENT_INSIGHT_DESIGN.md](RECENT_INSIGHT_DESIGN.md), [ASSET_MAPPING.md](ASSET_MAPPING.md), [screen-manifest.json](screen-manifest.json). Existing legacy images are kept for traceability but must not be treated as current F2 behavior.

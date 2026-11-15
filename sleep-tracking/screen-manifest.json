@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "feature": "sleep-tracking",
-  "status": "BEHAVIOR_DEFINED_VISUALS_COMMITTED",
+  "status": "RECENT_F2_VISUAL_BASELINES_COMMITTED_HANDOFF_DOCUMENTED",
   "artboard": {
     "referenceDp": {
       "width": 390
@@ -18,15 +18,16 @@
   "screens": [
     {
       "id": "SLT-SCR-001",
-      "filename": "01-sleep-home.png",
+      "filename": "01-sleep-home-recent.png",
       "imageExistsInGitHub": true,
-      "visualDecision": "USER_SELECTED_BASELINE",
+      "visualDecision": "RECENT_F2_VISUAL_BASELINE",
       "binaryStatus": "COMMITTED",
       "businessOwner": "F1/F2",
       "proposedSvgFallbacks": [
         "../assets/sleep-tracking/icons/trend-up.svg",
         "../assets/sleep-tracking/icons/bars.svg"
-      ]
+      ],
+      "replacesVisual": "01-sleep-home.png"
     },
     {
       "id": "SLT-SCR-002A",
@@ -56,40 +57,44 @@
     },
     {
       "id": "SLT-SCR-003",
-      "filename": "03-sleep-insights.png",
+      "filename": "03-all-sleep-insights-recent.png",
       "imageExistsInGitHub": true,
-      "visualDecision": "USER_SELECTED_BASELINE",
+      "visualDecision": "RECENT_F2_VISUAL_BASELINE",
       "binaryStatus": "COMMITTED",
       "businessOwner": "SLT-UC-009",
       "proposedSvgFallbacks": [
         "../assets/sleep-tracking/icons/trend-up.svg",
         "../assets/sleep-tracking/icons/bars.svg"
-      ]
+      ],
+      "replacesVisual": "03-sleep-insights.png"
     },
     {
       "id": "SLT-SCR-004",
-      "filename": "04-ai-insight-detail.png",
+      "filename": "04-recent-insight-detail.png",
       "imageExistsInGitHub": true,
-      "visualDecision": "USER_SELECTED_BASELINE",
+      "visualDecision": "RECENT_F2_VISUAL_BASELINE",
       "binaryStatus": "COMMITTED",
       "businessOwner": "SLT-UC-009",
       "proposedSvgFallbacks": [
         "../assets/sleep-tracking/icons/bars.svg",
         "../assets/sleep-tracking/icons/feeling-comfortable.svg",
         "../assets/sleep-tracking/icons/feeling-tired.svg"
-      ]
+      ],
+      "replacesVisual": "04-ai-insight-detail.png"
     },
     {
       "id": "SLT-SCR-005",
       "filename": "05-ai-weekly-sleep-story.png",
       "imageExistsInGitHub": true,
-      "visualDecision": "HISTORICAL_REFERENCE",
+      "visualDecision": "HISTORICAL_REFERENCE_SUPERSEDED",
       "binaryStatus": "COMMITTED",
       "supersededBy": "SLT-UC-009",
       "proposedSvgFallbacks": [
         "../assets/sleep-tracking/icons/bars.svg",
         "../assets/sleep-tracking/icons/trend-up.svg"
-      ]
+      ],
+      "active": false,
+      "businessOwner": "HISTORICAL_ONLY"
     },
     {
       "id": "SLT-SCR-006",
@@ -142,6 +147,19 @@
         "../assets/sleep-tracking/star-pillow-cloud.png",
         "../assets/sleep-tracking/bed.png"
       ]
+    },
+    {
+      "id": "SLT-SCR-010",
+      "filename": "02-recent-sleep-report.png",
+      "imageExistsInGitHub": true,
+      "visualDecision": "RECENT_F2_VISUAL_BASELINE",
+      "binaryStatus": "COMMITTED",
+      "businessOwner": "SLT-UC-009",
+      "status": "ACTIVE",
+      "assetPaths": [
+        "../assets/sleep-tracking/moon-cloud-stars.png",
+        "../assets/sleep-tracking/pillow-stars.png"
+      ]
     }
   ],
   "overview": {
@@ -193,5 +211,190 @@
         "../assets/sleep-tracking/star-pillow-cloud.png"
       ]
     }
-  ]
+  ],
+  "insightDetailVariants": [
+    {
+      "parentScreenId": "SLT-SCR-004",
+      "insightCode": "A01",
+      "filename": "13-insight-a01-recording-coverage.png",
+      "imageExistsInGitHub": true,
+      "binaryStatus": "COMMITTED",
+      "visualDecision": "RECENT_F2_VISUAL_VARIANT",
+      "separateRoute": false,
+      "chartKind": "7-day coverage calendar + count /7",
+      "eligibleEvidence": ">=3 MAIN, verified recent 7 days",
+      "assetPaths": [
+        "../assets/sleep-tracking/moon-cloud-stars.png",
+        "../assets/sleep-tracking/sleep-cloud.png"
+      ],
+      "businessRule": "BR-F2.11"
+    },
+    {
+      "parentScreenId": "SLT-SCR-004",
+      "insightCode": "A02",
+      "filename": "14-insight-a02-goal-achievement.png",
+      "imageExistsInGitHub": true,
+      "binaryStatus": "COMMITTED",
+      "visualDecision": "RECENT_F2_VISUAL_VARIANT",
+      "separateRoute": false,
+      "chartKind": "7-day achieved/not-achieved/missing/not-applicable state cells + numerator/eligible denominator",
+      "eligibleEvidence": ">=3 MAIN days with effective historical Goal; verified Journal+Goal history",
+      "assetPaths": [
+        "../assets/sleep-tracking/pillow-stars.png",
+        "../assets/sleep-tracking/bed.png"
+      ],
+      "businessRule": "BR-F2.12"
+    },
+    {
+      "parentScreenId": "SLT-SCR-004",
+      "insightCode": "A03",
+      "filename": "15-insight-a03-duration-trend.png",
+      "imageExistsInGitHub": true,
+      "binaryStatus": "COMMITTED",
+      "visualDecision": "RECENT_F2_VISUAL_VARIANT",
+      "separateRoute": false,
+      "chartKind": "two completed 7-day mean bars + signed minute delta",
+      "eligibleEvidence": ">=3 MAIN per completed window, both verified; current day excluded",
+      "assetPaths": [
+        "../assets/sleep-tracking/trend-up.png",
+        "../assets/sleep-tracking/bars.png"
+      ],
+      "businessRule": "BR-F2.13"
+    },
+    {
+      "parentScreenId": "SLT-SCR-004",
+      "insightCode": "A04",
+      "filename": "16-insight-a04-bedtime-wake-variation.png",
+      "imageExistsInGitHub": true,
+      "binaryStatus": "COMMITTED",
+      "visualDecision": "RECENT_F2_VISUAL_VARIANT",
+      "separateRoute": false,
+      "chartKind": "two min-max range tracks: bedtime and wake-up, relative-day timeline",
+      "eligibleEvidence": ">=3 eligible MAIN RANGE in selected same timezone; DST exclusions",
+      "assetPaths": [
+        "../assets/sleep-tracking/moon-cloud-stars.png",
+        "../assets/sleep-tracking/sleep-cloud.png"
+      ],
+      "businessRule": "BR-F2.14–17"
+    },
+    {
+      "parentScreenId": "SLT-SCR-004",
+      "insightCode": "A05",
+      "filename": "17-insight-a05-weekday-weekend-duration.png",
+      "imageExistsInGitHub": true,
+      "binaryStatus": "COMMITTED",
+      "visualDecision": "RECENT_F2_VISUAL_VARIANT",
+      "separateRoute": false,
+      "chartKind": "two bars for weekday/weekend means, signed minute delta, per-group n",
+      "eligibleEvidence": ">=3 weekday MAIN and >=2 weekend MAIN in recent window",
+      "assetPaths": [
+        "../assets/sleep-tracking/moon-cloud-stars.png",
+        "../assets/sleep-tracking/bars.png"
+      ],
+      "businessRule": "BR-F2.27"
+    },
+    {
+      "parentScreenId": "SLT-SCR-004",
+      "insightCode": "B01",
+      "filename": "18-insight-b01-feeling-distribution.png",
+      "imageExistsInGitHub": true,
+      "binaryStatus": "COMMITTED",
+      "visualDecision": "RECENT_F2_VISUAL_VARIANT",
+      "separateRoute": false,
+      "chartKind": "three-segment 100% distribution/donut, count/denominator, missing-feeling note",
+      "eligibleEvidence": ">=3 MAIN with feeling in recent window",
+      "assetPaths": [
+        "../assets/sleep-tracking/feeling-comfortable.png",
+        "../assets/sleep-tracking/feeling-normal.png",
+        "../assets/sleep-tracking/feeling-tired.png"
+      ],
+      "businessRule": "BR-F2.24"
+    },
+    {
+      "parentScreenId": "SLT-SCR-004",
+      "insightCode": "B02",
+      "filename": "19-insight-b02-duration-vs-feeling.png",
+      "imageExistsInGitHub": true,
+      "binaryStatus": "COMMITTED",
+      "visualDecision": "RECENT_F2_VISUAL_VARIANT",
+      "separateRoute": false,
+      "chartKind": "two comparable average-duration bars for Comfortable and Tired, signed minutes",
+      "eligibleEvidence": ">=3 Comfortable and >=3 Tired MAIN in recent window",
+      "assetPaths": [
+        "../assets/sleep-tracking/feeling-comfortable.png",
+        "../assets/sleep-tracking/feeling-tired.png",
+        "../assets/sleep-tracking/bars.png"
+      ],
+      "businessRule": "BR-F2.25"
+    },
+    {
+      "parentScreenId": "SLT-SCR-004",
+      "insightCode": "B03",
+      "filename": "20-insight-b03-feeling-trend.png",
+      "imageExistsInGitHub": true,
+      "binaryStatus": "COMMITTED",
+      "visualDecision": "RECENT_F2_VISUAL_VARIANT",
+      "separateRoute": false,
+      "chartKind": "two 100%-stacked distributions for completed windows, signed percentage-point changes",
+      "eligibleEvidence": ">=3 MAIN with feeling in each completed 7-day window",
+      "assetPaths": [
+        "../assets/sleep-tracking/feeling-comfortable.png",
+        "../assets/sleep-tracking/feeling-normal.png",
+        "../assets/sleep-tracking/feeling-tired.png",
+        "../assets/sleep-tracking/trend-up.png"
+      ],
+      "businessRule": "BR-F2.26"
+    },
+    {
+      "parentScreenId": "SLT-SCR-004",
+      "insightCode": "B04",
+      "filename": "21-insight-b04-tired-goal-exception.png",
+      "imageExistsInGitHub": true,
+      "binaryStatus": "COMMITTED",
+      "visualDecision": "RECENT_F2_VISUAL_VARIANT",
+      "separateRoute": false,
+      "chartKind": "exception count + dated verified record cards with duration vs effective day-goal",
+      "eligibleEvidence": ">=3 MAIN with feeling, >=1 Tired with duration >= effective Goal, verified goal history",
+      "assetPaths": [
+        "../assets/sleep-tracking/feeling-tired.png",
+        "../assets/sleep-tracking/bed.png",
+        "../assets/sleep-tracking/pillow-stars.png"
+      ],
+      "businessRule": "BR-F2.28"
+    }
+  ],
+  "historicalVisualReferences": [
+    "00-sleep-design-overview.png",
+    "01-sleep-home.png",
+    "03-sleep-insights.png",
+    "04-ai-insight-detail.png",
+    "05-ai-weekly-sleep-story.png",
+    "6_weekly_report_screen.png"
+  ],
+  "implementationPolicy": {
+    "liveChartType": "native-data-driven",
+    "reuseExistingAssetsFirst": true,
+    "noScreenshotCropping": true,
+    "allGroupCodes": [
+      "A01",
+      "A02",
+      "A03",
+      "A04",
+      "A05",
+      "B01",
+      "B02",
+      "B03",
+      "B04"
+    ],
+    "deferredCodes": [
+      "C01",
+      "C02",
+      "C03",
+      "C04"
+    ],
+    "recentWindow": "[D-6,D]",
+    "trendWindows": "[D-7,D-1] vs [D-14,D-8]",
+    "doc": "RECENT_INSIGHT_DESIGN.md",
+    "visualsAreNotApiContract": true
+  }
 }

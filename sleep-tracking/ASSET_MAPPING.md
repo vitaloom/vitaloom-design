@@ -1,6 +1,6 @@
 # Sleep Tracking — Screen to Asset Mapping
 
-> Scope: all selected Sleep UI mockups and independently generated transparent PNG assets. Follows [ASSET_MAPPING_STANDARD](../ASSET_MAPPING_STANDARD.md) and [BEHAVIOR.md](BEHAVIOR.md).
+> Scope: current Sleep UI mockups (Recent F2 + F1), legacy structural references and independently generated transparent PNG assets. Follows [ASSET_MAPPING_STANDARD](../ASSET_MAPPING_STANDARD.md) and [BEHAVIOR.md](BEHAVIOR.md).
 >
 > **Visual baseline:** screen compositions were selected by the user; the 9 standalone PNG artworks were generated independently and **not cropped from the UI screenshots**. SVG outlines under `icons/` are independently authored, PROPOSED editable alternatives, not visually approved substitutes for the glossy PNGs.
 
@@ -23,12 +23,12 @@
 
 | Screen ID | Approved screen reference | Primary PNG assets & roles |
 |---|---|---|
-| `SLT-SCR-001` | [01 Sleep Home](01-sleep-home.png) | [moon hero](../assets/sleep-tracking/moon-cloud-stars.png), [pillow](../assets/sleep-tracking/pillow-stars.png), [trend graphic](../assets/sleep-tracking/trend-up.png) |
+| `SLT-SCR-001` | [01 Recent Sleep Home](01-sleep-home-recent.png) | [moon hero](../assets/sleep-tracking/moon-cloud-stars.png), [pillow](../assets/sleep-tracking/pillow-stars.png), [trend graphic](../assets/sleep-tracking/trend-up.png) |
 | `SLT-SCR-002A` | [02a Start & End](02a-sleep-entry-time-range.png) | [moon hero](../assets/sleep-tracking/moon-cloud-stars.png); [Comfortable](../assets/sleep-tracking/feeling-comfortable.png), [Normal](../assets/sleep-tracking/feeling-normal.png), [Tired](../assets/sleep-tracking/feeling-tired.png) |
 | `SLT-SCR-002B` | [02b Duration Only](02b-sleep-entry-duration-only.png) | Same hero + reaction set as 02a; `Date/Hour/Minute` are native interactive pickers |
-| `SLT-SCR-003` | [03 Sleep Insights](03-sleep-insights.png) | [moon hero](../assets/sleep-tracking/moon-cloud-stars.png), [trend graphic](../assets/sleep-tracking/trend-up.png), [bars](../assets/sleep-tracking/bars.png) |
-| `SLT-SCR-004` | [04 AI Insight Detail](04-ai-insight-detail.png) | [pillow](../assets/sleep-tracking/pillow-stars.png), [reaction graphics](../assets/sleep-tracking/feeling-comfortable.png), [bars](../assets/sleep-tracking/bars.png) |
-| `SLT-SCR-005` | [05 Fixed-week Sleep concept](05-ai-weekly-sleep-story.png) · historical reference | [moon hero](../assets/sleep-tracking/moon-cloud-stars.png), [trend graphic](../assets/sleep-tracking/trend-up.png), [reaction graphics](../assets/sleep-tracking/feeling-tired.png) |
+| `SLT-SCR-003` | [03 All A/B Insights](03-all-sleep-insights-recent.png) | [moon hero](../assets/sleep-tracking/moon-cloud-stars.png), [trend graphic](../assets/sleep-tracking/trend-up.png), [bars](../assets/sleep-tracking/bars.png) |
+| `SLT-SCR-004` | [04 Recent Insight Detail shell](04-recent-insight-detail.png) | [pillow](../assets/sleep-tracking/pillow-stars.png), [reaction graphics](../assets/sleep-tracking/feeling-comfortable.png), [bars](../assets/sleep-tracking/bars.png) |
+| `SLT-SCR-005` | [05 Old fixed-week design](05-ai-weekly-sleep-story.png) — **HISTORICAL ONLY** | [moon hero](../assets/sleep-tracking/moon-cloud-stars.png), [trend graphic](../assets/sleep-tracking/trend-up.png), [reaction graphics](../assets/sleep-tracking/feeling-tired.png) |
 
 ### Added screen/state-to-asset mapping (2026-11-11)
 
@@ -44,6 +44,31 @@
 **Composition:** green/mint native background → isolated transparent artwork with `contain` → cream/white surface cards → green/teal functional controls. Keep only limited purple accents (bed/pillow/icon). Do not use screenshots for functional UI or data charts; preserve screen IDs and separate Insights states.
 
 [See selected overview](00-sleep-design-overview.png).
+
+
+## 2A. Current Recent Report and A01–B04 small-asset reuse (2026-11-15)
+
+**Current report:** `SLT-SCR-010` → [02-recent-sleep-report.png](02-recent-sleep-report.png); reuse `moon-cloud-stars.png`, `pillow-stars.png` or `sleep-cloud.png` as optional decoration; chart/coverage/Story layout must be native and data-bound. Home `SLT-SCR-001`, All Insights `SLT-SCR-003` and Detail `SLT-SCR-004` use their `*-recent.png` references. `SLT-SCR-005` and the former fixed-week assets are historical only.
+
+**Asset-first mapping for nine variants of `SLT-SCR-004`:**
+
+| Code | PNG variant | Reused standalone artwork | Chart implementation |
+| --- | --- | --- | --- |
+| A01 | [13-insight-a01-recording-coverage.png](13-insight-a01-recording-coverage.png) | [moon-cloud-stars.png](../assets/sleep-tracking/moon-cloud-stars.png), [sleep-cloud.png](../assets/sleep-tracking/sleep-cloud.png) | 7-day coverage calendar + count /7; **native/data-driven** |
+| A02 | [14-insight-a02-goal-achievement.png](14-insight-a02-goal-achievement.png) | [pillow-stars.png](../assets/sleep-tracking/pillow-stars.png), [bed.png](../assets/sleep-tracking/bed.png) | 7-day achieved/not-achieved/missing/not-applicable state cells + numerator/eligible denominator; **native/data-driven** |
+| A03 | [15-insight-a03-duration-trend.png](15-insight-a03-duration-trend.png) | [trend-up.png](../assets/sleep-tracking/trend-up.png), [bars.png](../assets/sleep-tracking/bars.png) | two completed 7-day mean bars + signed minute delta; **native/data-driven** |
+| A04 | [16-insight-a04-bedtime-wake-variation.png](16-insight-a04-bedtime-wake-variation.png) | [moon-cloud-stars.png](../assets/sleep-tracking/moon-cloud-stars.png), [sleep-cloud.png](../assets/sleep-tracking/sleep-cloud.png) | two min-max range tracks: bedtime and wake-up, relative-day timeline; **native/data-driven** |
+| A05 | [17-insight-a05-weekday-weekend-duration.png](17-insight-a05-weekday-weekend-duration.png) | [moon-cloud-stars.png](../assets/sleep-tracking/moon-cloud-stars.png), [bars.png](../assets/sleep-tracking/bars.png) | two bars for weekday/weekend means, signed minute delta, per-group n; **native/data-driven** |
+| B01 | [18-insight-b01-feeling-distribution.png](18-insight-b01-feeling-distribution.png) | [feeling-comfortable.png](../assets/sleep-tracking/feeling-comfortable.png), [feeling-normal.png](../assets/sleep-tracking/feeling-normal.png), [feeling-tired.png](../assets/sleep-tracking/feeling-tired.png) | three-segment 100% distribution/donut, count/denominator, missing-feeling note; **native/data-driven** |
+| B02 | [19-insight-b02-duration-vs-feeling.png](19-insight-b02-duration-vs-feeling.png) | [feeling-comfortable.png](../assets/sleep-tracking/feeling-comfortable.png), [feeling-tired.png](../assets/sleep-tracking/feeling-tired.png), [bars.png](../assets/sleep-tracking/bars.png) | two comparable average-duration bars for Comfortable and Tired, signed minutes; **native/data-driven** |
+| B03 | [20-insight-b03-feeling-trend.png](20-insight-b03-feeling-trend.png) | [feeling-comfortable.png](../assets/sleep-tracking/feeling-comfortable.png), [feeling-normal.png](../assets/sleep-tracking/feeling-normal.png), [feeling-tired.png](../assets/sleep-tracking/feeling-tired.png), [trend-up.png](../assets/sleep-tracking/trend-up.png) | two 100%-stacked distributions for completed windows, signed percentage-point changes; **native/data-driven** |
+| B04 | [21-insight-b04-tired-goal-exception.png](21-insight-b04-tired-goal-exception.png) | [feeling-tired.png](../assets/sleep-tracking/feeling-tired.png), [bed.png](../assets/sleep-tracking/bed.png), [pillow-stars.png](../assets/sleep-tracking/pillow-stars.png) | exception count + dated verified record cards with duration vs effective day-goal; **native/data-driven** |
+
+- Reuse the exact assets in `../assets/sleep-tracking/` via shared import registry. `feeling-comfortable.png`, `feeling-normal.png`, `feeling-tired.png` have distinct semantics and must not be interchanged.
+- Calendar/Goal/clock/check/info/lock/back icons are basic controls: reuse an existing icon library/native SVG, **not** a cropped icon from new screenshots. No need to create another PNG before FE builds these screens.
+- `bars.png`/`trend-up.png` represent decorative illustrations, **never health data**. Computed bars/donuts/time tracks/coverage cells must use API evidence and accessible vector/native chart primitives.
+- Use `contain` on standalone transparent PNGs without causing clipping; avoid oversize hero decoration on dense insight pages. Green/mint dominant with lilac <=~10%; one primary KPI/graph, collapsed evidence/limitations.
+- [RECENT_INSIGHT_DESIGN.md](RECENT_INSIGHT_DESIGN.md) defines exactly what A01–B04 must measure and the evidence conditions. This mapping is **proposed artwork composition**, not confirmation that visuals have already been extracted and reused in React Native.
 
 ## 3. Transparent PNG inventory (all actual files)
 

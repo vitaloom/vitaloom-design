@@ -166,7 +166,13 @@
         "icons/trend-up.svg",
         "icons/bars.svg"
       ],
-      "approvedPngStatus": "COMMITTED"
+      "approvedPngStatus": "COMMITTED",
+      "activeCurrentVisual": "../../sleep-tracking/01-sleep-home-recent.png",
+      "reuseExistingStandalonePngs": [
+        "moon-cloud-stars.png",
+        "pillow-stars.png"
+      ],
+      "liveDataChartsAreNative": true
     },
     "SLT-SCR-002A": {
       "fallbacks": [
@@ -189,7 +195,14 @@
         "icons/trend-up.svg",
         "icons/bars.svg"
       ],
-      "approvedPngStatus": "COMMITTED"
+      "approvedPngStatus": "COMMITTED",
+      "activeCurrentVisual": "../../sleep-tracking/03-all-sleep-insights-recent.png",
+      "reuseExistingStandalonePngs": [
+        "moon-cloud-stars.png",
+        "trend-up.png",
+        "bars.png"
+      ],
+      "liveDataChartsAreNative": true
     },
     "SLT-SCR-004": {
       "fallbacks": [
@@ -197,14 +210,24 @@
         "icons/feeling-comfortable.svg",
         "icons/feeling-tired.svg"
       ],
-      "approvedPngStatus": "COMMITTED"
+      "approvedPngStatus": "COMMITTED",
+      "activeCurrentVisual": "../../sleep-tracking/04-recent-insight-detail.png",
+      "reuseExistingStandalonePngs": [
+        "pillow-stars.png",
+        "sleep-cloud.png",
+        "feeling-comfortable.png",
+        "feeling-normal.png",
+        "feeling-tired.png"
+      ],
+      "liveDataChartsAreNative": true
     },
     "SLT-SCR-005": {
       "fallbacks": [
         "icons/bars.svg",
         "icons/trend-up.svg"
       ],
-      "approvedPngStatus": "COMMITTED"
+      "approvedPngStatus": "COMMITTED",
+      "deprecated": true
     },
     "SLT-SCR-006": {
       "reference": "../../sleep-tracking/7_sleep_journal.png",
@@ -244,6 +267,15 @@
       ],
       "colorOverrideRequired": true,
       "visualDecision": "STRUCTURE_ONLY_COLOR_OVERRIDE_REQUIRED"
+    },
+    "SLT-SCR-010": {
+      "activeCurrentVisual": "../../sleep-tracking/02-recent-sleep-report.png",
+      "reuseExistingStandalonePngs": [
+        "moon-cloud-stars.png",
+        "sleep-cloud.png",
+        "pillow-stars.png"
+      ],
+      "liveDataChartsAreNative": true
     }
   },
   "additionalStandaloneAssets": [
@@ -293,5 +325,138 @@
     "primary": "wellness-green-mint",
     "purple": "minor independent illustration/icon accent only",
     "reference": "../../sleep-tracking/ADDITIONAL_SCREENS_20261111.md"
+  },
+  "insightDetailVariants": [
+    {
+      "insightCode": "A01",
+      "parentScreenId": "SLT-SCR-004",
+      "visualReference": "../../sleep-tracking/13-insight-a01-recording-coverage.png",
+      "assets": [
+        "moon-cloud-stars.png",
+        "sleep-cloud.png"
+      ],
+      "reusePolicy": "EXISTING_PNG_DECORATION_ONLY",
+      "chartKind": "7-day coverage calendar + count /7",
+      "chartData": "SERVER_VERIFIED_NATIVE_DRAWING",
+      "separateRoute": false
+    },
+    {
+      "insightCode": "A02",
+      "parentScreenId": "SLT-SCR-004",
+      "visualReference": "../../sleep-tracking/14-insight-a02-goal-achievement.png",
+      "assets": [
+        "pillow-stars.png",
+        "bed.png"
+      ],
+      "reusePolicy": "EXISTING_PNG_DECORATION_ONLY",
+      "chartKind": "7-day achieved/not-achieved/missing/not-applicable state cells + numerator/eligible denominator",
+      "chartData": "SERVER_VERIFIED_NATIVE_DRAWING",
+      "separateRoute": false
+    },
+    {
+      "insightCode": "A03",
+      "parentScreenId": "SLT-SCR-004",
+      "visualReference": "../../sleep-tracking/15-insight-a03-duration-trend.png",
+      "assets": [
+        "trend-up.png",
+        "bars.png"
+      ],
+      "reusePolicy": "EXISTING_PNG_DECORATION_ONLY",
+      "chartKind": "two completed 7-day mean bars + signed minute delta",
+      "chartData": "SERVER_VERIFIED_NATIVE_DRAWING",
+      "separateRoute": false
+    },
+    {
+      "insightCode": "A04",
+      "parentScreenId": "SLT-SCR-004",
+      "visualReference": "../../sleep-tracking/16-insight-a04-bedtime-wake-variation.png",
+      "assets": [
+        "moon-cloud-stars.png",
+        "sleep-cloud.png"
+      ],
+      "reusePolicy": "EXISTING_PNG_DECORATION_ONLY",
+      "chartKind": "two min-max range tracks: bedtime and wake-up, relative-day timeline",
+      "chartData": "SERVER_VERIFIED_NATIVE_DRAWING",
+      "separateRoute": false
+    },
+    {
+      "insightCode": "A05",
+      "parentScreenId": "SLT-SCR-004",
+      "visualReference": "../../sleep-tracking/17-insight-a05-weekday-weekend-duration.png",
+      "assets": [
+        "moon-cloud-stars.png",
+        "bars.png"
+      ],
+      "reusePolicy": "EXISTING_PNG_DECORATION_ONLY",
+      "chartKind": "two bars for weekday/weekend means, signed minute delta, per-group n",
+      "chartData": "SERVER_VERIFIED_NATIVE_DRAWING",
+      "separateRoute": false
+    },
+    {
+      "insightCode": "B01",
+      "parentScreenId": "SLT-SCR-004",
+      "visualReference": "../../sleep-tracking/18-insight-b01-feeling-distribution.png",
+      "assets": [
+        "feeling-comfortable.png",
+        "feeling-normal.png",
+        "feeling-tired.png"
+      ],
+      "reusePolicy": "EXISTING_PNG_DECORATION_ONLY",
+      "chartKind": "three-segment 100% distribution/donut, count/denominator, missing-feeling note",
+      "chartData": "SERVER_VERIFIED_NATIVE_DRAWING",
+      "separateRoute": false
+    },
+    {
+      "insightCode": "B02",
+      "parentScreenId": "SLT-SCR-004",
+      "visualReference": "../../sleep-tracking/19-insight-b02-duration-vs-feeling.png",
+      "assets": [
+        "feeling-comfortable.png",
+        "feeling-tired.png",
+        "bars.png"
+      ],
+      "reusePolicy": "EXISTING_PNG_DECORATION_ONLY",
+      "chartKind": "two comparable average-duration bars for Comfortable and Tired, signed minutes",
+      "chartData": "SERVER_VERIFIED_NATIVE_DRAWING",
+      "separateRoute": false
+    },
+    {
+      "insightCode": "B03",
+      "parentScreenId": "SLT-SCR-004",
+      "visualReference": "../../sleep-tracking/20-insight-b03-feeling-trend.png",
+      "assets": [
+        "feeling-comfortable.png",
+        "feeling-normal.png",
+        "feeling-tired.png",
+        "trend-up.png"
+      ],
+      "reusePolicy": "EXISTING_PNG_DECORATION_ONLY",
+      "chartKind": "two 100%-stacked distributions for completed windows, signed percentage-point changes",
+      "chartData": "SERVER_VERIFIED_NATIVE_DRAWING",
+      "separateRoute": false
+    },
+    {
+      "insightCode": "B04",
+      "parentScreenId": "SLT-SCR-004",
+      "visualReference": "../../sleep-tracking/21-insight-b04-tired-goal-exception.png",
+      "assets": [
+        "feeling-tired.png",
+        "bed.png",
+        "pillow-stars.png"
+      ],
+      "reusePolicy": "EXISTING_PNG_DECORATION_ONLY",
+      "chartKind": "exception count + dated verified record cards with duration vs effective day-goal",
+      "chartData": "SERVER_VERIFIED_NATIVE_DRAWING",
+      "separateRoute": false
+    }
+  ],
+  "recentF2Policy": {
+    "visualRefsCommit": "e0ceb5a",
+    "noNewAssetRequiredForMvp": true,
+    "existingPngOnlyForIllustration": true,
+    "neverCropFromScreenshot": true,
+    "buildLiveChartsFromApi": true,
+    "groupC": "DEFERRED",
+    "document": "../../sleep-tracking/RECENT_INSIGHT_DESIGN.md"
   }
 }

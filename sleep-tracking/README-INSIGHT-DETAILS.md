@@ -1,19 +1,17 @@
-# VitaLoom F2 — Insight Detail Visual Baselines
+# VitaLoom F2 — Insight Detail visual baselines (2026-11-15)
 
-9 màn hình thiết kế riêng theo [insight-catalog-v2.md](https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/f2-sleep-goals-insights/insight-catalog-v2.md).
+All nine individual 941 × 1672 PNGs are committed to `main` in `e0ceb5a`. **This README is an index**; the canonical design/behavior/data/asset handoff is [RECENT_INSIGHT_DESIGN.md](RECENT_INSIGHT_DESIGN.md).
 
-- A01: Recording Coverage — lịch 7 ngày có/thiếu MAIN.
-- A02: Goal Achievement — ngày MAIN đạt Goal hiệu lực / ngày đủ điều kiện.
-- A03: Duration Trend — hai kỳ 7 ngày **đã kết thúc**, chênh lệch phút.
-- A04: Bedtime/Wake Variation — hai biên độ giờ ngủ và giờ thức, Main RANGE cùng timezone.
-- A05: Weekday/Weekend Duration — hai trung bình mẫu ngày thường/cuối tuần.
-- B01: Feeling Distribution — tỷ lệ 3 cảm nhận theo MAIN có feeling.
-- B02: Duration vs Feeling — so sánh 2 nhóm Dễ chịu và Mệt mỏi, >=3/nhóm.
-- B03: Feeling Trend — hai biểu đồ phân bố 100% trên 2 kỳ đã kết thúc, chênh lệch điểm %.
-- B04: Long-duration Tired Exceptions — MAIN >= Goal ngày đó nhưng feeling Mệt mỏi.
+| Code | Visual reference | Main visualization |
+| --- | --- | --- |
+| A01 | [13-insight-a01-recording-coverage.png](13-insight-a01-recording-coverage.png) | 7-day coverage calendar + count /7 |
+| A02 | [14-insight-a02-goal-achievement.png](14-insight-a02-goal-achievement.png) | 7-day achieved/not-achieved/missing/not-applicable state cells + numerator/eligible denominator |
+| A03 | [15-insight-a03-duration-trend.png](15-insight-a03-duration-trend.png) | two completed 7-day mean bars + signed minute delta |
+| A04 | [16-insight-a04-bedtime-wake-variation.png](16-insight-a04-bedtime-wake-variation.png) | two min-max range tracks: bedtime and wake-up, relative-day timeline |
+| A05 | [17-insight-a05-weekday-weekend-duration.png](17-insight-a05-weekday-weekend-duration.png) | two bars for weekday/weekend means, signed minute delta, per-group n |
+| B01 | [18-insight-b01-feeling-distribution.png](18-insight-b01-feeling-distribution.png) | three-segment 100% distribution/donut, count/denominator, missing-feeling note |
+| B02 | [19-insight-b02-duration-vs-feeling.png](19-insight-b02-duration-vs-feeling.png) | two comparable average-duration bars for Comfortable and Tired, signed minutes |
+| B03 | [20-insight-b03-feeling-trend.png](20-insight-b03-feeling-trend.png) | two 100%-stacked distributions for completed windows, signed percentage-point changes |
+| B04 | [21-insight-b04-tired-goal-exception.png](21-insight-b04-tired-goal-exception.png) | exception count + dated verified record cards with duration vs effective day-goal |
 
-**Lưu ý:** Các con số trên 9 màn hình là dữ liệu mô phỏng độc lập, không đảm bảo đồng nhất giữa các mockup. Các điều kiện READY, period, số mẫu, consent và evidence được xác thực ở Backend khi triển khai. Trạng thái Locked, Empty, Unverified và AI loading sẽ cần biến thể giao diện bổ sung. UI không tạo phán đoán y khoa, không hiểu ngày chưa ghi nhận là 0 giờ ngủ.
-
-**Visual:** Soft Wellness green / mint, purple accents restrained. Files PNG 941 × 1672 px, từng ảnh độc lập.
-
-Giải nén các file PNG trực tiếp vào `vitaloom-design/sleep-tracking/`. Giữ các file thiết kế cũ để truy vết cho đến khi update manifest.
+All examples are **mock values** that may be inconsistent across PNGs; do not hard-code them or infer clinical outcomes. Group C is DEFERRED. F2 rules, insight eligibility and window boundaries are defined in [Insight Catalog v2](https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/f2-sleep-goals-insights/insight-catalog-v2.md). Reuse committed assets via [ASSET_MAPPING.md](ASSET_MAPPING.md), not screenshot cropping. `04-recent-insight-detail.png` is a shared UI shell; the nine PNGs are variants of `SLT-SCR-004`, not separate routes.

@@ -11,9 +11,10 @@
 | `SLT-SCR-001` | Sleep Home | AppShell Sleep metric entry; navigates to other Sleep/Report pages | F1/F2, BR-F2.31 |
 | `SLT-SCR-002A` | Record Sleep — Start & End | `Record Sleep`, method A selected | SLT-UC-004 |
 | `SLT-SCR-002B` | Record Sleep — Duration Only | Method switch inside same form; **one shared draft** | SLT-UC-004 |
-| `SLT-SCR-003` | Sleep Insights | Home `Insights`; filter A/B/C | SLT-UC-009 |
-| `SLT-SCR-004` | Insight Detail | Select an eligible insight; evidence/source | SLT-UC-009 |
-| `SLT-SCR-005` | Historical fixed-week concept | [Archived visual reference](05-ai-weekly-sleep-story.png) | Superseded by Sleep F2 / SLT-UC-009 |
+| `SLT-SCR-003` | All Sleep Insights | Home/Recent Report → A/B READY + Locked; C deferred | SLT-UC-009 |
+| `SLT-SCR-004` | Insight Detail | Single component with 9 A/B layout variants, `insightCode` and verified evidence | SLT-UC-009; [detail spec](RECENT_INSIGHT_DESIGN.md) |
+| `SLT-SCR-005` | Retired fixed-week reference | [Historical PNG](05-ai-weekly-sleep-story.png); **not a route** | SUPERSEDED (do not implement) |
+| `SLT-SCR-010` | Recent Sleep Report | [02-recent-sleep-report.png](02-recent-sleep-report.png); current rolling 7-day | SLT-UC-009 |
 | `SLT-SCR-006` | Sleep Journal | Home Journal, select record or Add Sleep | SLT-UC-005; [structure-only 7](7_sleep_journal.png) |
 | `SLT-SCR-007` | Record Detail | Journal or linked source record; edit/delete | SLT-UC-005/006/007; [structure-only 8](8_sleep_record_detail.png) |
 | `SLT-SCR-008` | Edit Record | Detail Edit, current version | SLT-UC-006; [structure-only 9](9_sleep_record_detail_edit.png) |
@@ -33,7 +34,7 @@ flowchart TD
   C[SLT-SCR-002B Duration Only]
   D[SLT-SCR-003 Insights]
   E[SLT-SCR-004 Insight Detail]
-  F[Recent Sleep Report]
+  F[SLT-SCR-010 Recent Report]
   J[SLT-SCR-006 Journal]
   R[SLT-SCR-007 Detail]
   U[SLT-SCR-008 Edit Record]
@@ -56,7 +57,8 @@ flowchart TD
   A -->|Goal card| G
   D -->|Verified NO_DATA/INSUFFICIENT_DATA - Record Sleep| B
   A -->|Recent Sleep Report| F
-  F -->|Key insight| E
+  F -->|READY Highlight or Story observation| E
+  F -->|View All Insights| D
   E -.->|Optional AI, consent missing| X
   F -.->|Optional AI, consent missing| X
 ```
@@ -70,7 +72,7 @@ Shared Health Metrics Drawer / bottom navigation are owned by AppShell. Do not c
 | Action ID | Screen / component | Trigger and immediate feedback | Result / alternate outcome | Status / source |
 | --- | --- | --- | --- | --- |
 | `SLT-ACT-001` | Home / Record Sleep | Tap CTA | Open 002A; no data written yet | CONFIRMED design |
-| `SLT-ACT-002` | Entry / Main Sleep, Nap | Switch type; selected pill visible | Update only draft classification | CONFIRMED BR-F1.1 |
+| `SLT-ACT-002` | Entry / Main Sleep | Main-only classification; no Nap toggle in MVP | Keep a Main Sleep draft | CONFIRMED F1 current Main-only scope |
 | `SLT-ACT-003` | Entry / method tabs | Select Start & End or Duration Only | Swap relevant input controls; do **not** infer date-time from duration | CONFIRMED BR-F1.1–3; preserve draft values PROPOSED |
 | `SLT-ACT-004` | 002A / Start Date picker | Open calendar, select date | Update Start date subject to no-future rule | CONFIRMED BR-F1.7, picker PROPOSED |
 | `SLT-ACT-005` | 002A / Start Hour + Minute wheels | Scroll hour 00–23 and minute 00/15/30/45 | Update draft; normalize wrap/carry; do not save | CONFIRMED selected UI; carry PROPOSED |
@@ -84,13 +86,13 @@ Shared Health Metrics Drawer / bottom navigation are owned by AppShell. Do not c
 | `SLT-ACT-013` | Home / Latest Sleep | Tap summary | View relevant Journal record | PROPOSED target, SLT-UC-005 |
 | `SLT-ACT-014` | Home / Sleep Goal | Tap card | Open Goal management; show verified progress only if goal and data valid | CONFIRMED BR-F2.5/6/18, route PROPOSED |
 | `SLT-ACT-015` | Home / Journal | Tap tile | Open Journal; absent record is not zero duration | CONFIRMED SLT-UC-005 |
-| `SLT-ACT-016` | Home / Insights | Tap tile | Open 003; select All/Patterns/Feelings/Discoveries filter without fabricating missing insights | CONFIRMED SLT-UC-009 |
+| `SLT-ACT-016` | Home / Insights | Tap tile | Open 003; show Groups A (Patterns) and B (Feelings) only | CONFIRMED SLT-UC-009 |
 | `SLT-ACT-017` | Home / Featured insight | Tap the **one** valid featured insight | Open 004 using same insight ID/period/evidenceVersion | CONFIRMED BR-F2.31 |
-| `SLT-ACT-018` | Insights / filter chips | Change A/B/C filter | Refilter READY insight entries; empty category state if none qualifies | CONFIRMED SLT-UC-009 |
+| `SLT-ACT-018` | Insights / optional A/B filters | Choose category | READY first by backend relevance; Locked last by code; no Group C | CONFIRMED BR-F2.29/31/49 |
 | `SLT-ACT-019` | Insights / insight card | Tap eligible insight | Open 004; recheck data status/version | CONFIRMED BR-F2.30–32 |
 | `SLT-ACT-020` | Insight Detail / AI Explanation | Request when opted in | Show validated interpretation after evidence; otherwise facts/template, no chatbot | CONFIRMED BR-F2.34–37 |
 | `SLT-ACT-021` | Detail / Source Records | Tap action | Open permission-checked source journal records; 404/deleted → reload insight | CONFIRMED BR-F2.30/34, route PROPOSED |
-| `SLT-ACT-022` | Home / Recent Sleep Report | Open report | Show the Sleep F2 Recent Sleep Report | CONFIRMED owner, SLT-UC-009; entry placement PROPOSED |
+| `SLT-ACT-022` | Home / Recent Report | Tap `Giấc ngủ gần đây` | Open SLT-SCR-010 current [D−6,D], no week selector | CONFIRMED SLT-UC-009 |
 | `SLT-ACT-023` | Former week navigation | Historical | Superseded under the current [F2 rules](https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/f2-sleep-goals-insights/rules.md) | SUPERSEDED |
 | `SLT-ACT-024` | Recent Sleep Report / Key Insight | Tap card | Open 004 only if READY and evidence matches the insight | CONFIRMED BR-F2.30–33 |
 | `SLT-ACT-025` | Report/Detail / AI data-use choice | Opt in or decline | Decline: factual metrics and deterministic explanations still available | CONFIRMED BR-M.6 / BR-F2.36 |
@@ -148,11 +150,25 @@ For 002A, the illustration `Nov 10 23:15 → Nov 11 06:45 = 7h30` holds when the
 ## 6. Home, insight and report rules
 
 1. **Home:** latest confirmed session + optional feeling; goal progress only if goal history and verified data; at most **one** featured READY insight (BR-F2.31).
-2. **Insights:** A=Patterns, B=Feelings, C=Discoveries. `C02` is deferred; C01 only if B02 eligible; categories can be empty. No fake discoveries to fill design.
-3. **Detail:** use exact `insightCode, period, sample, sourceSessionIds, evidenceVersion, status`. Present deterministic evidence first, then limitations and optional AI explanation (AI text must be clearly separated from facts). Do not claim causality or medical diagnoses.
-4. **Recent Sleep Report:** Sleep F2 uses the current rolling window. Show verified missing dates as “Not recorded.” Follow [F2 rules](https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/f2-sleep-goals-insights/rules.md) for report data states, AI consent and published evidence eligibility.
+2. **Insights:** A=Patterns and B=Feelings only (A01–A05, B01–B04). Group C01–C04 is **DEFERRED and completely hidden**, including Locked. READY first by backend relevance; Locked at the end with status only, no unlock counts.
+3. **Detail:** use exact `insightCode, period, baselinePeriod (when required), sample/denominator, sourceSessionIds, evidenceFingerprint, status` from verified API. One parameterized route, **9 distinct chart variants**, see [RECENT_INSIGHT_DESIGN.md](RECENT_INSIGHT_DESIGN.md). Deterministic evidence first; AI Explanation inline only after explicit user request, consent ON, READY. No causality/medical claims.
+4. **Recent Sleep Report (SLT-SCR-010):** current [D−6,D] in Asia/Ho_Chi_Minh only; 7-day verified coverage, average over recorded MAIN days, up to 3 READY highlights and optional AI Recent Story as separate lazy HTTP loading. No week navigator/archive. Show verified missing days as `Chưa ghi nhận`, never 0h. Story hidden when consent OFF. A03/B03 detail evidence uses two **completed** 7-day windows (not Report bars).
 5. **Stale:** server-confirmed changes to source sessions/feeling/goal version invalidate relevant insights and AI text. Hide stale claims and reload; preserve factual fallback if valid.
 6. **Privacy:** never send whole raw journal by default for AI; present data-use disclosure & opt-in. Without consent, show numeric analytics and non-AI explanation.
+
+
+## 6A. Recent Report & nine Insight Detail interactions (2026-11-15)
+
+| Action | Surface | User interaction | Expected behavior |
+| --- | --- | --- | --- |
+| `SLT-ACT-039` | SLT-SCR-010 Report focus | Open/return | Read verified metrics/Published Insights first, then lazy Story HTTP only when consent ON and >=1 READY outside A01; no polling. |
+| `SLT-ACT-040` | Report Story observation | Tap observation | Navigate by `insightCode` to SLT-SCR-004; server rechecks READY/fingerprint. |
+| `SLT-ACT-041` | Report Highlights | Tap a READY card / View All | Open parameterized Detail / A+B All Insights; max 3 highlights chosen by BE independent of AI. |
+| `SLT-ACT-042` | SLT-SCR-004 | Expand Data & Formula / Limitations | Show evidence period, signed delta, sample denominator, source and limitations; never guess from mockup. |
+| `SLT-ACT-043` | READY detail | Tap `Giải thích bằng AI` | Only with consent ON: independent HTTP explanation, inline 3 sections, latest evidence, no auto generation on visit. |
+| `SLT-ACT-044` | Detail evidence changes | Return/focus | Refresh status and evidence; stale AI/metrics removed, non-READY state replaces chart. |
+
+**Per-insight chart/evidence mapping:** [RECENT_INSIGHT_DESIGN.md](RECENT_INSIGHT_DESIGN.md). Static PNG artwork supports the shell only; calculated charts must be native/data-bound. Story cooldown 15min, Explanation cooldown 5min, Redis TTL 24h, and privacy/consent follow canonical F2; these are **Backend policies**, not animation or client timers.
 
 ## 7. Accessibility
 
@@ -166,7 +182,7 @@ Use native touch targets ≥44×44 pt, real buttons for reactions/filters, progr
 - [ ] Feeling is optional and saved per session only.
 - [ ] No duplicate requests or false success on response loss, stale edit, or overlapping intervals.
 - [ ] No goal indicator without valid goal history, no sleep score/stages, no empty day represented as 0h.
-- [ ] Home has ≤1 featured eligible insight; filtering never invents C insights.
+- [ ] Home has ≤1 featured READY insight; All Insights exposes only Groups A/B; Locked is status-only, Group C absent.
 - [ ] Detail evidence, AI output and source records reference same verified version.
 - [ ] AI failure/opt-out leaves reports, Journal and deterministic insights usable.
 - [ ] AI Recent Sleep Story uses verified published evidence and follows the current F2 consent and eligibility rules.
@@ -179,12 +195,13 @@ Use native touch targets ≥44×44 pt, real buttons for reactions/filters, progr
 - `SLT-UX-OPEN-002`: reference timezone picker placement, DST ambiguity resolution UI, and travel cases.
 - `SLT-UX-OPEN-003`: new/edit dirty draft policy and switching methods with partially completed values.
 - `SLT-UX-OPEN-004`: location/wording of AI consent/disclosure and revoke flow; privacy review.
-- `SLT-UX-OPEN-005`: design handoff ownership synchronized with SLT-UC-009. SLT-SCR-005 stays as historical artwork.
+- `SLT-UX-OPEN-005`: verify the new 01/02/03/04 and 13–21 PNG baselines in Expo; SLT-SCR-005 stays historical, not a route.
 - `SLT-UX-OPEN-006`: Journal/Detail/Edit/Goal and Insights NO_DATA/INSUFFICIENT_DATA structural references now exist; corrected GREEN FE visuals and remaining error/confirmation states are pending approval.
 - `SLT-UX-OPEN-007`: new independent assets bed.png and star-pillow-cloud.png uploaded; verify their use in green-themed FE. SVGs remain merely proposed alternatives.
 
 ## Change log
 
+- 2026-11-15 — Registered SLT-SCR-010 Recent Report, new 01/03/04 baselines and 9 Detail variants; enforced existing asset reuse, A/B-only group, 7-day rolling and 7+7 completed windows.
 - 2026-11-11 — Registered images 7–12, Journal/Detail/Edit/Goal and Insights NO_DATA/INSUFFICIENT states, actions 026–038, and mandatory green wellness palette override (purple screenshot colors rejected).
 
 - 2026-11-11 — Defined selected 6-screen baseline interaction contract, wheel picker normalization proposal, A/B/C evidence constraints, and offline/AI failure behavior.

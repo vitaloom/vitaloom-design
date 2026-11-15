@@ -1,32 +1,31 @@
-# Sleep Tracking — UI state matrix
+# Sleep Tracking — UI states (F1/F2, updated 2026-11-15)
 
-> **MANDATORY:** New illustrations of Journal/Goal/Insights states (images 7–12) are STRUCTURE-ONLY; their purple-dominant palette is WRONG. FE must use green/mint wellness as dominant UI, purple only small asset/icon accents. See [additional screens](ADDITIONAL_SCREENS_20261111.md).
+> Design-state mapping only; see [BEHAVIOR](BEHAVIOR.md), [RECENT_INSIGHT_DESIGN](RECENT_INSIGHT_DESIGN.md), [F2 rules](https://github.com/vitaloom/vitaloom-business-docs-and-tools/blob/main/docs/usecase_spec/sleep-tracking/f2-sleep-goals-insights/rules.md). Historic screens 11/12 are structure-only; their purple palette is not accepted.
 
-| Area | Data-ready | Pending | Empty / insufficient | Error / stale | Required user feedback |
-|---|---|---|---|---|---|
-| Home/latest | Confirmed session and optional feeling | skeleton | `No recorded sleep yet` | network/auth failure, not an empty history | record action or retry |
-| Home/goal | history-valid progress | load goal and day | no goal ⇒ don't show percent; optionally invite to set | unverified data ⇒ hide percentage | navigate Goal management |
-| Home/featured | ≤1 eligible READY insight | load | none if ineligible | stale ⇒ hide claim | navigate Insights |
-| Entry | valid local draft | `SAVING` | feeling is optional | invalid range/DST/future/overlap, offline, unknown result | inline error / retry or reconcile |
-| Insights | eligible A/B/C cards | loading | `NO_DATA`: [11](11_sleep_insight_empty.png) on verified no-data; `INSUFFICIENT_DATA`: [12](12_sleep_not_enough_data_insight.png) when evidence below category-specific threshold | `UNVERIFIED_DATA`, stale | Record Sleep / Continue Tracking or reload |
-| Journal | [7](7_sleep_journal.png), sessions by statistical date | loading | confirmed empty day ≠ 0h | auth/network/unverified | add session or retry |
-| Record Detail | [8](8_sleep_record_detail.png), actual persisted record | loading | deleted/not found | stale or permission error | reload / back to Journal |
-| Edit Record | [9](9_sleep_record_detail_edit.png), valid edit draft | saving | feeling optional | validation/revision conflict/unknown result | retain draft and reconcile |
-| Goal Setup | [10](10_sleep_goal_setup.png), confirmed goal | saving | no active goal; 8h only suggestion | invalid/stale/unknown | retain prior goal; retry safely |
-| Detail | summary + deterministic evidence + limitations | checking version / AI | no AI consent ⇒ factual explanation | AI invalid/unavailable ⇒ no AI output; stale version ⇒ reload | view source records / reload |
-| Recent Sleep Report | verified current rolling-window metrics and eligible insights from Sleep F2 | report loading; optional story loads independently | show verified missing dates as “Not recorded” | unverified history suppresses unsupported results; story error has its own state | retry report or keep viewing verified results on story error |
+| Surface | READY / verified | Loading | NO_DATA / INSUFFICIENT_DATA | UNVERIFIED / stale / error |
+| --- | --- | --- | --- | --- |
+| Sleep Home | last confirmed MAIN, goal/progress only if verified, <=1 READY feature | skeleton | no MAIN → Journal CTA; no Goal → set Goal invitation | no invented 0h/progress; auth/network notice |
+| Journal / Record | confirmed sessions by statistical day; Main-only | loading/saving | verified missing record → `Chưa ghi nhận` | edit/delete restricted to latest in calendar week; uncertain save outcome != success |
+| Goal | confirmed value/history | saving | 8h is suggestion not active by default | preserve prior confirmed Goal on error |
+| Recent Report `SLT-SCR-010` | verified [D−6,D] coverage, mean over recorded MAIN, 0–3 READY highlights | metrics skeleton | NO_DATA → record MAIN; insufficient insight → metrics + empty insight area | unverified → individual facts only, no aggregate/AI |
+| AI Recent Story section | consent ON + eligible READY evidence, validated <=2 observations | **independent** skeleton after Report metrics | no qualifying READY → no generated Story | consent OFF → entire section hidden; stale/cooldown/error → server deterministic fallback clearly non-AI if provided |
+| All Insights `SLT-SCR-003` | A/B READY sorted by backend relevance; Locked after READY, status only | list skeleton | none READY → suitable empty message, no Group C | unverified claims hidden |
+| Insight Detail `SLT-SCR-004` | one of nine code-specific charts + verified period/sample + limitations | check latest status | non-READY → state instead of chart/evidence/AI; sources not invented | stale evidence → hide stale metrics/AI and refetch |
+| AI Explanation (inline) | consent ON, READY, user clicked: three parts <=150 Vietnamese words | independent button/loading state | not requested → no AI call; consent OFF → deterministic evidence only | cooldown/error → server-approved factual fallback from current evidence if available |
+ 
+## State principles
 
-## Reusable microcopy candidates (not backend enums)
+- **Verified missing MAIN != 0 hours slept.** Missing feeling != Tired. Missing Goal does not imply failure. No projected quality labels.
+- `NO_DATA` vs `INSUFFICIENT_DATA` vs `UNVERIFIED_DATA` are distinct, and eligibility can differ for each insight.
+- Detail evidence must remain aligned with current `insightCode`, sample and fingerprint. Linked Story detail may become non-READY.
+- Story only requests on Report focus when consent ON/eligible. Explanation only after user click; no timers or polling.
+- Accessibility: use readable color contrast, screen reader status labels and native chart summaries. Purple is only a minor accent.
 
-- No data: “Record a sleep session to start exploring.”
-- Too little evidence: “Not enough recorded sleep data for this insight yet.”
-- Unverified: “Your records couldn't be fully verified. Please retry.”
-- Stale: “Your sleep records changed. Refresh to see the latest insights.”
-- AI unavailable: “AI explanation is unavailable. You can still review the evidence.”
-- Save result unknown: “We haven't confirmed whether this record was saved. Check your journal before retrying.”
+## Microcopy suggestions (not backend enums)
 
-Prefer exact backend domain status semantics; these are proposed English UI phrases, not a guaranteed translated API schema. Never show “0 hours slept” for missing data.
-
-## Visual coverage
-
-The original six images include the historical fixed-week report concept. New structure-only images 7–10 illustrate Journal/Detail/Edit/Goal and images 11–12 illustrate Insights NO_DATA/INSUFFICIENT_DATA. Their purple UI palette is explicitly NOT approved; corrected green wellness implementation is required. Loading, failed save, delete confirmation, DST ambiguity, unconfigured goal, network failures, AI opt-out/stale still lack accepted dedicated visual references. Distinguish unverified from empty; request green FE visual review.
+- No data: “Ghi nhận giấc ngủ để bắt đầu khám phá.”
+- Insufficient: “Chưa đủ dữ liệu cho nhận xét này.”
+- Unverified: “Dữ liệu chưa được xác minh đầy đủ. Vui lòng thử lại.”
+- Stale: “Dữ liệu giấc ngủ đã thay đổi. Đang cập nhật nhận xét.”
+- AI fallback: “Tóm tắt từ dữ liệu đã ghi nhận” (not labeled AI).
+- Locked insight: “Chưa đủ dữ liệu”; do not show fabricated counts to unlock.
